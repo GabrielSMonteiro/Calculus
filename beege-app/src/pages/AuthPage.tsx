@@ -19,7 +19,7 @@ export const AuthPage: React.FC = () => {
   const [senha, setSenha] = useState('');
   const [confirmarSenha, setConfirmarSenha] = useState('');
   const [nome, setNome] = useState('');
-  const [universidadeNome, setUniversidadeNome] = useState('UnB');
+  const [universidadeNome, setUniversidadeNome] = useState('USP');
   const [showPass, setShowPass] = useState(false);
   const [showConfirmPass, setShowConfirmPass] = useState(false);
   const [loading, setLoading] = useState(false);

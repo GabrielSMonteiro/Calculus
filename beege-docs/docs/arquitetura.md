@@ -1,4 +1,4 @@
-# Documento de Arquitetura de Software — BeeGe
+# Documento de Arquitetura de Software: BeeGe
 
 Descricao da organizacao estrutural do sistema, camadas tecnologicas, padroes de projeto e fluxo de dados.
 

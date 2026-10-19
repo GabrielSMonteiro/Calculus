@@ -1,4 +1,4 @@
-# Plano de Qualidade de Software — BeeGe
+# Plano de Qualidade de Software: BeeGe
 
 Diretrizes, ferramentas e metricas para assegurar a corretude, manutenibilidade e desempenho do sistema em todas as suas camadas.
 

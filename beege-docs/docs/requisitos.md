@@ -1,4 +1,4 @@
-# Documento de Requisitos (RF e RNF) — BeeGe
+# Documento de Requisitos (RF e RNF): BeeGe
 
 Especificacao dos requisitos funcionais e nao-funcionais do sistema, categorizados por prioridade (Essencial, Importante e Desejavel).
 

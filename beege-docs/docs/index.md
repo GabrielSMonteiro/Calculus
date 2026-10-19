@@ -1,4 +1,4 @@
-# Documentacao Oficial — BeeGe
+# Documentacao Oficial: BeeGe
 
 <p align="center">
   <img src="assets/limia.jpg" alt="Limia - Mascote BeeGe" width="160" style="border-radius: 50%; border: 3px solid #f59e0b; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);" />
@@ -8,11 +8,15 @@
   <em>Limia, mascote oficial do BeeGe: orientacao conceitual e apoio continuo em Calculo 1.</em>
 </p>
 
+<p align="center">
+  <strong>Repositorio do Projeto:</strong> <a href="https://github.com/GabrielSMonteiro/Calculus">https://github.com/GabrielSMonteiro/Calculus</a>
+</p>
+
 ---
 
 ## Apresentacao
 
-O **BeeGe** e uma plataforma mobile e web de revisao e resolucao orientada de exercicios para Calculo 1, estruturada sob a abordagem SaaS multi-universidade. O sistema adapta o conteudo e a sequencia pedagogica as ementas das instituicoes cadastradas (iniciando pela Universidade de Brasilia - UnB).
+O **BeeGe** e uma plataforma mobile e web de revisao e resolucao orientada de exercicios para Calculo 1, estruturada sob a abordagem SaaS multi-universidade. O sistema adapta o conteudo e a sequencia pedagogica as ementas das instituicoes cadastradas.
 
 A mascote do projeto e a abelha **Limia**, caracterizada por seus oculos redondos e gravata borboleta estampada com formulas matematicas, atuando como guia pedagogico em dicas conceituais e explicacoes analiticas de exercicios.
 

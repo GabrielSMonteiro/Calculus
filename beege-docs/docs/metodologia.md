@@ -1,4 +1,4 @@
-# Metodologia de Trabalho — BeeGe
+# Metodologia de Trabalho: BeeGe
 
 Abordagem metodologica adotada no desenvolvimento do projeto, detalhando o framework de gestao, organizacao de ciclos e praticas de engenharia.
 
@@ -21,7 +21,7 @@ Considerando o cronograma objetivo com entrega final do MVP fixada em **19 de Ou
 |---|---|
 | Product Owner (PO) | Definicao de prioridades do backlog, validacao de requisitos com o publico universitario e aceite das entregas. |
 | Tech Lead / Desenvolvedor | Implementacao da arquitetura cliente-servidor, desenvolvimento do aplicativo mobile/web, modelagem do Supabase e garantia de qualidade de codigo. |
-| Orientador Pedagogico | Revisao da exatidao formal dos enunciados de Calculo 1 e correspondencia com as ementas da UnB e demais universidades. |
+| Orientador Pedagogico | Revisao da exatidao formal dos enunciados de Calculo 1 e correspondencia com as ementas das universidades parceiras. |
 
 ---
 

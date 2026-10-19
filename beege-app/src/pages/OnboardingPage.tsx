@@ -27,7 +27,7 @@ const slides: SlideData[] = [
   },
   {
     title: 'Multi-Universidade',
-    subtitle: 'Ementas alinhadas com UnB, USP e outras instituições para você estudar o que cai na prova.',
+    subtitle: 'Ementas alinhadas com USP, UFMG e outras instituições para você estudar o que cai na prova.',
     btnText: 'Continuar'
   }
 ];

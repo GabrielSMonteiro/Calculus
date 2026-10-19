@@ -10,7 +10,7 @@ import {
 
 // Dados em memória para funcionamento autônomo e fallback
 const MOCK_UNIVERSIDADES: Universidade[] = [
-  { id: '11111111-1111-1111-1111-111111111111', nome: 'Universidade de Brasília', sigla: 'UnB', logo_url: 'https://unb.br/favicon.ico', ativa: true },
+  { id: '11111111-1111-1111-1111-111111111111', nome: 'Universidade Federal do Rio de Janeiro', sigla: 'UFRJ', logo_url: 'https://ufrj.br/favicon.ico', ativa: true },
   { id: '22222222-2222-2222-2222-222222222222', nome: 'Universidade Federal de Minas Gerais', sigla: 'UFMG', logo_url: 'https://ufmg.br/favicon.ico', ativa: true },
   { id: '33333333-3333-3333-3333-333333333333', nome: 'Universidade de São Paulo', sigla: 'USP', logo_url: 'https://usp.br/favicon.ico', ativa: true }
 ];
@@ -29,7 +29,7 @@ $$\\\\lim_{x \\\\to a} f(x) = L$$
 Se pudermos tornar os valores de $f(x)$ arbitrariamente próximos de $L$, tomando $x$ suficientemente próximo de $a$.
 
 ### Limite Fundamental Trigonométrico
-O limite mais cobrado nas provas de Cálculo 1 da UnB:
+O limite mais cobrado nas provas de Cálculo 1:
 
 $$\\\\lim_{x \\\\to 0} \\\\frac{\\\\sin(x)}{x} = 1$$
 
@@ -377,7 +377,7 @@ let localPostagens: Postagem[] = [
     autor_id: 'user1',
     universidade_id: '11111111-1111-1111-1111-111111111111',
     titulo: 'Dúvida na Lista 2 do Prof. Ricardo (Limites com Raiz)',
-    corpo: 'Alguém sabe como resolver o exercício 4 da Lista 2 da UnB? Quando $x \\\\to 4$, a expressão $\\\\frac{\\\\sqrt{x} - 2}{x - 4}$ dá indeterminação!',
+    corpo: 'Alguém sabe como resolver o exercício 4 da Lista 2 de Cálculo 1? Quando $x \\\\to 4$, a expressão $\\\\frac{\\\\sqrt{x} - 2}{x - 4}$ dá indeterminação!',
     status: 'aprovada',
     created_at: new Date(Date.now() - 3600000 * 5).toISOString(),
     profiles: { nome: 'Lucas Ferreira (Ciência da Computação)' }

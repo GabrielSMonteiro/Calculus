@@ -15,11 +15,11 @@ interface AuthContextType {
   toggleMockAdmin: () => void;
 }
 
-const DEFAULT_UNB: Universidade = {
+const DEFAULT_UNIVERSIDADE: Universidade = {
   id: '11111111-1111-1111-1111-111111111111',
-  nome: 'Universidade de Brasília',
-  sigla: 'UnB',
-  logo_url: 'https://unb.br/favicon.ico',
+  nome: 'Universidade Federal do Rio de Janeiro',
+  sigla: 'UFRJ',
+  logo_url: 'https://ufrj.br/favicon.ico',
   ativa: true
 };
 
@@ -28,7 +28,7 @@ const AuthContext = createContext<AuthContextType>({} as AuthContextType);
 export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [user, setUser] = useState<any | null>(null);
   const [profile, setProfile] = useState<Profile | null>(null);
-  const [universidade, setUniversidadeState] = useState<Universidade | null>(DEFAULT_UNB);
+  const [universidade, setUniversidadeState] = useState<Universidade | null>(DEFAULT_UNIVERSIDADE);
   const [loading, setLoading] = useState<boolean>(true);
   const [useMockMode, setUseMockMode] = useState<boolean>(false);
 
@@ -39,7 +39,7 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       try {
         setUniversidadeState(JSON.parse(savedUniv));
       } catch {
-        setUniversidadeState(DEFAULT_UNB);
+        setUniversidadeState(DEFAULT_UNIVERSIDADE);
       }
     }
 
@@ -50,13 +50,13 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       setUseMockMode(true);
       const mockProfile: Profile = {
         id: 'mock-user-id',
-        nome: 'Estudante UnB',
-        email: 'aluno@unb.br',
+        nome: 'Estudante de Cálculo',
+        email: 'estudante@calculus.app',
         role: 'aluno',
-        universidade_id: DEFAULT_UNB.id
+        universidade_id: DEFAULT_UNIVERSIDADE.id
       };
       setProfile(mockProfile);
-      setUser({ id: 'mock-user-id', email: 'aluno@unb.br' });
+      setUser({ id: 'mock-user-id', email: 'estudante@calculus.app' });
       setLoading(false);
       return;
     }
@@ -112,10 +112,10 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
       const isAdminLogin = email.toLowerCase().includes('admin');
       const mockProfile: Profile = {
         id: 'mock-user-id',
-        nome: isAdminLogin ? 'Professor Admin' : 'Lucas (Calouro UnB)',
+        nome: isAdminLogin ? 'Professor Admin' : 'Lucas Ferreira (Aluno)',
         email,
         role: isAdminLogin ? 'admin' : 'aluno',
-        universidade_id: universidade?.id ?? DEFAULT_UNB.id
+        universidade_id: universidade?.id ?? DEFAULT_UNIVERSIDADE.id
       };
       setProfile(mockProfile);
       setUser({ id: 'mock-user-id', email });

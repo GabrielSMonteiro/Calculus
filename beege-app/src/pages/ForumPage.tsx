@@ -121,7 +121,7 @@ export const ForumPage: React.FC = () => {
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '14px', flexWrap: 'wrap', gap: '8px' }}>
             <div>
               <h1 style={{ fontSize: '1.25rem', fontWeight: 800, color: '#1F1926', margin: 0 }}>
-                Fórum Acadêmico • {universidade?.sigla || 'UnB'}
+                Fórum Acadêmico{universidade?.sigla ? ` • ${universidade.sigla}` : ''}
               </h1>
               <p style={{ color: '#78716C', fontSize: '0.82rem', margin: '2px 0 0' }}>
                 Dúvidas conceituais e resoluções com suporte a KaTeX.

@@ -1,4 +1,4 @@
-# Diagramas UML — BeeGe
+# Diagramas UML: BeeGe
 
 Modelagem visual dos casos de uso, classes do dominio, componentes da arquitetura e fluxos de interacao do sistema.
 

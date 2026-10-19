@@ -113,14 +113,14 @@ export const PerfilPage: React.FC = () => {
 
             <div className="perfil-info-section">
               <h2 className="perfil-name">{profile?.nome || 'Estudante de Cálculo'}</h2>
-              <p className="perfil-email">{profile?.email || 'aluno@unb.br'}</p>
+              <p className="perfil-email">{profile?.email || 'aluno@calculus.app'}</p>
               <button
                 className="perfil-uni-tag-btn"
                 onClick={() => navigate('/universidades')}
                 title="Clique para alternar universidade"
               >
                 <IonIcon icon={schoolOutline} />
-                <span>{universidade?.sigla || 'UnB'} — {universidade?.nome || 'Universidade de Brasília'}</span>
+                <span>{universidade?.sigla || 'USP'} ({universidade?.nome || 'Universidade de São Paulo'})</span>
                 <span className="uni-tag-change-hint">Trocar</span>
               </button>
             </div>
@@ -134,8 +134,8 @@ export const PerfilPage: React.FC = () => {
               </div>
               <div className="institution-text">
                 <div className="institution-eyebrow">Instituição & Ementa Ativa</div>
-                <h3 className="institution-name">{universidade?.nome || 'Universidade de Brasília'}</h3>
-                <span className="institution-sigla-badge">{universidade?.sigla || 'UnB'} • Cálculo 1</span>
+                <h3 className="institution-name">{universidade?.nome || 'Universidade de São Paulo'}</h3>
+                <span className="institution-sigla-badge">{universidade?.sigla || 'USP'} • Cálculo 1</span>
               </div>
             </div>
             <p className="institution-desc">

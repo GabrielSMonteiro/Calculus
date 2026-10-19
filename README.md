@@ -1,4 +1,4 @@
-# BeeGe — Plataforma de Revisao de Calculo 1 (Multi-Universidade)
+# BeeGe: Plataforma de Revisao de Calculo 1 (Multi-Universidade)
 
 <p align="center">
   <img src="./mascote.jpg" alt="Limia - Mascote BeeGe" width="140" style="border-radius: 50%; border: 3px solid #f59e0b; box-shadow: 0 4px 15px rgba(245, 158, 11, 0.2);" />
@@ -6,13 +6,15 @@
 
 Aplicativo mobile e web projetado para revisao e pratica de Calculo 1 no ensino superior, com segmentacao de conteudos por universidade e forum academico integrado.
 
+**Repositorio Oficial:** [https://github.com/GabrielSMonteiro/Calculus](https://github.com/GabrielSMonteiro/Calculus)
+
 ---
 
 ## Visao Geral
 
 O **BeeGe** foi concebido para resolver a dispersao de materiais de Calculo 1, permitindo que estudantes tenham acesso a ementas, resumos teoricos e exercicios ajustados as exigencias de suas proprias instituicoes.
 
-A versao inicial foca na ementa da **Universidade de Brasilia (UnB)**, com arquitetura preparada para expansao multi-institucional (UFMG, USP, entre outras). A mascote do projeto e a abelha **Limia**, que orienta os estudantes com notas conceituais e dicas de resolucao ao longo do aplicativo.
+O sistema possui arquitetura estruturada para operacao multi-institucional (com suporte a instituicoes como USP, UFMG, UFRJ, entre outras). A mascote do projeto e a abelha **Limia**, que orienta os estudantes com notas conceituais e dicas de resolucao ao longo do aplicativo.
 
 ---
 

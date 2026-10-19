@@ -1,5 +1,6 @@
 site_name: "BeeGe"
-repo_name: "beege-docs"
+repo_name: "GabrielSMonteiro/Calculus"
+repo_url: "https://github.com/GabrielSMonteiro/Calculus"
 docs_dir: docs
 
 theme:

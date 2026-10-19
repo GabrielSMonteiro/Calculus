@@ -80,7 +80,7 @@ export const DashboardPage: React.FC = () => {
                   letterSpacing: '0.04em'
                 }}
               >
-                {universidade?.sigla || 'UnB'} — Calculo 1
+                {universidade?.sigla ? `${universidade.sigla} • ` : ''}Cálculo 1
               </span>
               <h1 style={{ fontSize: '1.4rem', fontWeight: 800, margin: '10px 0 4px' }}>
                 Ola, {profile?.nome?.split(' ')[0] || 'Estudante'}

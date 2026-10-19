@@ -1,4 +1,4 @@
-# BeeGe — Mobile e Web App
+# BeeGe: Mobile e Web App
 
 Aplicativo multiplataforma (Android, iOS e Web) do **BeeGe**, desenvolvido com **Ionic Framework**, **React 19**, **TypeScript** e encapsulado com **Capacitor**.
 
@@ -11,7 +11,7 @@ Aplicativo multiplataforma (Android, iOS e Web) do **BeeGe**, desenvolvido com *
   - Autenticacao integrada ao Supabase Auth.
   - Modo local de demonstracao com alternancia rápida entre perfis de Aluno e Administrador.
 - **Segmentacao Multi-Universidade (`/universidades`):**
-  - Selecao e alternancia da instituicao de ensino (UnB, UFMG, USP).
+  - Selecao e alternancia da instituicao de ensino (USP, UFMG, UFRJ).
   - Filtragem dinamica de modulos e questoes de acordo com a universidade ativa.
 - **Painel de Modulos de Calculo 1 (`/dashboard`):**
   - Listagem dos topicos da ementa (Limites, Derivadas, Regra da Cadeia, Regra de L'Hopital, Integrais Indefinidas).

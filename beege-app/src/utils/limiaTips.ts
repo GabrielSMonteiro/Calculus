@@ -24,24 +24,24 @@ const tipsPool: Record<TipContext, string[]> = {
     'Que tal resolver pelo menos 5 questões hoje? Consistência é o segredo!',
     'Lembre-se: entender a demonstração ajuda mais do que decorar fórmulas.',
     'Revisão espaçada funciona melhor do que maratonar tudo na véspera da prova!',
-    'Comece pelo tópico que você tem mais dificuldade — o cérebro aprende melhor quando desafiado.',
+    'Comece pelo tópico que você tem mais dificuldade: o cérebro aprende melhor quando desafiado.',
     'Dica de ouro: resolva primeiro sem olhar a explicação, depois confira o passo a passo.'
   ],
   pratica_inicio: [
     'Leia cada questão com atenção. Identifique o tipo de limite/derivada antes de começar a calcular.',
     'Não tenha pressa! Pense na estratégia antes de selecionar a alternativa.',
-    'Tente resolver no papel antes de conferir as opções — isso treina seu raciocínio algébrico.',
+    'Tente resolver no papel antes de conferir as opções, pois isso treina seu raciocínio algébrico.',
     'Fique atento às indeterminações: 0/0, ∞/∞, 0·∞ são as mais comuns em prova.'
   ],
   pratica_acerto: [
     'Parabéns! Resposta correta. Revise o desenvolvimento abaixo para memorizar o método.',
     'Mandou bem! Entender o porquê da resposta é tão importante quanto acertar.',
     'Excelente! Tente agora a mesma técnica em uma questão mais difícil.',
-    'Arrasou! Esse tipo de questão costuma cair na P1 da UnB. Continue praticando!'
+    'Arrasou! Esse tipo de questão costuma cair em provas de Cálculo 1. Continue praticando!'
   ],
   pratica_erro: [
     'Ainda não foi dessa vez. Analise a resolução passo a passo abaixo para entender onde ocorreu o detalhe.',
-    'Errar faz parte! Revise o passo a passo com calma — a próxima vez será diferente.',
+    'Errar faz parte! Revise o passo a passo com calma; a próxima vez será diferente.',
     'Não desanime! Verifique se o erro foi algébrico ou conceitual, isso ajuda muito.',
     'Atenção ao sinal e às simplificações. Muitos erros acontecem na manipulação algébrica.'
   ],
@@ -53,12 +53,12 @@ const tipsPool: Record<TipContext, string[]> = {
   forum: [
     'Use $formula$ para equações na mesma linha ou $$formula$$ para blocos destacados.',
     'Ao postar uma dúvida, inclua o número da questão e a lista. Isso ajuda os colegas a identificarem o exercício.',
-    'Responda dúvidas de colegas — ensinar é uma das melhores formas de aprender!',
+    'Responda dúvidas de colegas: ensinar é uma das melhores formas de aprender!',
     'Pesquise se sua dúvida já foi respondida antes de criar uma nova postagem.'
   ],
   topico_limites: [
     'Observe as definições conceituais e os limites fundamentais antes de tentar resolver os exercícios.',
-    'Limites laterais são essenciais para funções definidas por partes — não esqueça de verificar ambos os lados!',
+    'Limites laterais são essenciais para funções definidas por partes; não esqueça de verificar ambos os lados!',
     'O Teorema do Confronto (Sanduíche) é uma ferramenta poderosa para limites trigonométricos.',
     'Lembre: se substituir e não der indeterminação, o limite é direto!'
   ],
@@ -88,7 +88,7 @@ const tipsPool: Record<TipContext, string[]> = {
   ],
   admin: [
     'Painel administrativo para gestão de tópicos teóricos, cadastro de exercícios com KaTeX e moderação de publicações do fórum.',
-    'Lembre de adicionar explicações detalhadas nas questões — isso ajuda muito os alunos!',
+    'Lembre de adicionar explicações detalhadas nas questões: isso ajuda muito os alunos!',
     'Modere o fórum regularmente para manter a qualidade das discussões.'
   ]
 };

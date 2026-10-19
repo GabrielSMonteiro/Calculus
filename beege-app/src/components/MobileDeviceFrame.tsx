@@ -40,7 +40,7 @@ export const MobileDeviceFrame: React.FC<MobileDeviceFrameProps> = ({ children }
       {isPhoneMode && (
         <div className="desktop-backdrop-hint">
           <div className="desktop-brand-tag">
-            <span className="brand-dot" /> BeeGe Mobile • Cálculo 1 (UnB & Multi-Uni)
+            <span className="brand-dot" /> BeeGe Mobile • Cálculo 1 (Multi-Universidade)
           </div>
         </div>
       )}

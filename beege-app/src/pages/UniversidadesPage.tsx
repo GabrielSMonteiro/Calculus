@@ -61,7 +61,7 @@ export const UniversidadesPage: React.FC = () => {
           <IonSearchbar
             value={busca}
             onIonInput={(e) => setBusca(e.detail.value || '')}
-            placeholder="Buscar por UnB, USP, UFRJ..."
+            placeholder="Buscar por USP, UFMG, UFRJ..."
             style={{
               padding: 0,
               marginBottom: '16px',

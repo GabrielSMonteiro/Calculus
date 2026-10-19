@@ -1,17 +1,17 @@
 -- ==============================================================================
 -- BeeGe - Dados Iniciais (Seed Data)
--- Focado na Universidade de Brasilia (UnB) e expansivel
+-- Suporte multi-universidade expansivel
 -- ==============================================================================
 
 -- 1. Inserir Universidades
 INSERT INTO public.universidades (id, nome, sigla, logo_url, ativa)
 VALUES 
-    ('11111111-1111-1111-1111-111111111111', 'Universidade de Brasilia', 'UnB', 'https://unb.br/favicon.ico', true),
+    ('11111111-1111-1111-1111-111111111111', 'Universidade Federal do Rio de Janeiro', 'UFRJ', 'https://ufrj.br/favicon.ico', true),
     ('22222222-2222-2222-2222-222222222222', 'Universidade Federal de Minas Gerais', 'UFMG', 'https://ufmg.br/favicon.ico', true),
     ('33333333-3333-3333-3333-333333333333', 'Universidade de Sao Paulo', 'USP', 'https://usp.br/favicon.ico', true)
 ON CONFLICT (sigla) DO NOTHING;
 
--- 2. Inserir Topicos de Calculo 1 para a UnB
+-- 2. Inserir Topicos de Calculo 1
 INSERT INTO public.topicos (id, universidade_id, titulo, descricao, ordem, conteudo_latex)
 VALUES
 (
@@ -20,7 +20,7 @@ VALUES
     'Limites Fundamentais e Continuidade',
     'Conceito formal de limite, limites laterais, indeterminacoes e o primeiro limite fundamental.',
     1,
-    E'### O Conceito Intuitivo de Limite\n\nDizemos que o limite de $f(x)$ quando $x$ tende a $a$ e igual a $L$:\n\n$$\\lim_{x \\to a} f(x) = L$$\n\nSe for possivel aproximar os valores de $f(x)$ arbitrariamente proximos de $L$, tomando $x$ suficientemente proximo de $a$ (com $x \\neq a$).\n\n### Limite Fundamental Trigonometrico\n\nO limite trigonometrico classico cobrado na UnB e:\n\n$$\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1$$\n\n> **Observacao pratica:** Para calcular $\\lim_{x \\to 0} \\frac{\\sin(k x)}{x}$, multiplique e divida a fracao pela constante $k$, obtendo $k \\cdot 1 = k$.\n\n### Condicoes de Continuidade\n\nUma funcao $f(x)$ e continua em um ponto $x = c$ quando satisfaz simultaneamente tres condicoes:\n1. $f(c)$ esta definida no dominio.\n2. $\\lim_{x \\to c} f(x)$ existe.\n3. $\\lim_{x \\to c} f(x) = f(c)$.'
+    E'### O Conceito Intuitivo de Limite\n\nDizemos que o limite de $f(x)$ quando $x$ tende a $a$ e igual a $L$:\n\n$$\\lim_{x \\to a} f(x) = L$$\n\nSe for possivel aproximar os valores de $f(x)$ arbitrariamente proximos de $L$, tomando $x$ suficientemente proximo de $a$ (com $x \\neq a$).\n\n### Limite Fundamental Trigonometrico\n\nO limite trigonometrico classico cobrado em Calculo 1 e:\n\n$$\\lim_{x \\to 0} \\frac{\\sin(x)}{x} = 1$$\n\n> **Observacao pratica:** Para calcular $\\lim_{x \\to 0} \\frac{\\sin(k x)}{x}$, multiplique e divida a fracao pela constante $k$, obtendo $k \\cdot 1 = k$.\n\n### Condicoes de Continuidade\n\nUma funcao $f(x)$ e continua em um ponto $x = c$ quando satisfaz simultaneamente tres condicoes:\n1. $f(c)$ esta definida no dominio.\n2. $\\lim_{x \\to c} f(x)$ existe.\n3. $\\lim_{x \\to c} f(x) = f(c)$.'
 ),
 (
     'a2222222-2222-2222-2222-222222222222',
