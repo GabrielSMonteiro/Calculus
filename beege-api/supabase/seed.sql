@@ -1,17 +1,17 @@
 -- ==============================================================================
 -- BeeGe - Dados Iniciais (Seed Data)
--- Suporte multi-universidade expansivel
+-- Focado na Universidade de Brasilia (UnB) e expansivel
 -- ==============================================================================
 
 -- 1. Inserir Universidades
 INSERT INTO public.universidades (id, nome, sigla, logo_url, ativa)
 VALUES 
-    ('11111111-1111-1111-1111-111111111111', 'Universidade Federal do Rio de Janeiro', 'UFRJ', 'https://ufrj.br/favicon.ico', true),
+    ('11111111-1111-1111-1111-111111111111', 'Universidade de Brasilia', 'UnB', 'https://unb.br/favicon.ico', true),
     ('22222222-2222-2222-2222-222222222222', 'Universidade Federal de Minas Gerais', 'UFMG', 'https://ufmg.br/favicon.ico', true),
     ('33333333-3333-3333-3333-333333333333', 'Universidade de Sao Paulo', 'USP', 'https://usp.br/favicon.ico', true)
 ON CONFLICT (sigla) DO NOTHING;
 
--- 2. Inserir Topicos de Calculo 1
+-- 2. Inserir Topicos de Calculo 1 para a UnB
 INSERT INTO public.topicos (id, universidade_id, titulo, descricao, ordem, conteudo_latex)
 VALUES
 (

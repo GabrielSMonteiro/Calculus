@@ -37,7 +37,7 @@ const tipsPool: Record<TipContext, string[]> = {
     'Parabéns! Resposta correta. Revise o desenvolvimento abaixo para memorizar o método.',
     'Mandou bem! Entender o porquê da resposta é tão importante quanto acertar.',
     'Excelente! Tente agora a mesma técnica em uma questão mais difícil.',
-    'Arrasou! Esse tipo de questão costuma cair em provas de Cálculo 1. Continue praticando!'
+    'Arrasou! Esse tipo de questão costuma cair na P1 da UnB. Continue praticando!'
   ],
   pratica_erro: [
     'Ainda não foi dessa vez. Analise a resolução passo a passo abaixo para entender onde ocorreu o detalhe.',

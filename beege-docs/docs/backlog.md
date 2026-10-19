@@ -14,7 +14,7 @@ Organizacao das Historias de Usuario (User Stories) por epicos funcionais, estru
 
 ## Epico 2: Segmentacao Multi-Universidade
 
-- **US04:** Como estudante, desejo selecionar minha universidade (ex: USP, UFMG, UFRJ) para que os modulos e exercicios sejam filtrados de acordo com a minha ementa.
+- **US04:** Como estudante, desejo selecionar minha universidade (ex: UnB, UFMG, USP) para que os modulos e exercicios sejam filtrados de acordo com a minha ementa.
 - **US05:** Como estudante, desejo alternar a universidade ativa para consultar como o mesmo assunto e cobrado em outras instituicoes.
 
 ---

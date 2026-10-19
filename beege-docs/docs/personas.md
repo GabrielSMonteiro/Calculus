@@ -8,14 +8,14 @@ Levantamento dos principais perfis de usuario do sistema, compreendendo calouros
 
 - **Nome:** Lucas Ferreira
 - **Idade:** 18 anos
-- **Instituicao:** Universidade Federal / Estadual (Ciência da Computação, 1º semestre)
-- **Localizacao:** Brasil
+- **Instituicao:** Universidade de Brasilia (UnB) (Ciência da Computação, 1º semestre)
+- **Localizacao:** Brasilia, DF
 
 ### Contexto
-Lucas ingressou recentemente no ensino superior e sentiu um salto de complexidade entre a matematica do ensino medio e a formalidade de Calculo 1 na faculdade. As listas de exercicios contem questoes com demonstracoes de limites fundamentais e continuidade que ele nao domina completamente. Ele recorre a videos na internet, mas percebe que a ordem e o rigor das aulas de sua universidade sao especificos.
+Lucas ingressou recentemente no ensino superior e sentiu um salto de complexidade entre a matematica do ensino medio e a formalidade de Calculo 1 na UnB. As listas de exercicios contem questoes com demonstracoes de limites fundamentais e continuidade que ele nao domina completamente. Ele recorre a videos na internet, mas percebe que a ordem e o rigor das aulas de sua universidade sao especificos.
 
 ### Principais Objetivos
-- Compreender os fundamentos de limites e derivadas de acordo com o ritmo das aulas de sua universidade.
+- Compreender os fundamentos de limites e derivadas de acordo com o ritmo das aulas na UnB.
 - Resolver listas de exercicios similares as que sao cobradas nas avaliacoes da disciplina.
 - Encontrar um canal confiavel para esclarecer duvidas pontuais sem receio de exposicao.
 
@@ -25,7 +25,7 @@ Lucas ingressou recentemente no ensino superior e sentiu um salto de complexidad
 - Grupos de mensagens costumam acumular muitas conversas paralelas, dificultando a localizacao de duvidas respondidas anteriormente.
 
 ### Padrao de Uso no Sistema
-Acessa o aplicativo principalmente pelo smartphone nos dias anteriores as provas, consulta resumos conceituais e submete duvidas no forum academico da instituicao.
+Acessa o aplicativo principalmente pelo smartphone nos dias anteriores as provas, consulta resumos conceituais e submete duvidas no forum da UnB.
 
 ---
 
@@ -58,8 +58,8 @@ Utiliza o simulador de questoes em sessoes curtas, analisa a resolucao comentada
 
 - **Nome:** Rafael Alves
 - **Idade:** 23 anos
-- **Instituicao:** Universidade Federal (Licenciatura em Matematica, 5º semestre)
-- **Localizacao:** Brasil
+- **Instituicao:** Universidade de Brasilia (UnB) (Licenciatura em Matematica, 5º semestre)
+- **Localizacao:** Brasilia, DF
 
 ### Contexto
 Rafael atua como monitor de Calculo 1 e atende turmas semanais de exercicios. Ele produz materiais de revisao e listas resolvidas em LaTeX, mas enfrenta dificuldades para centralizar a distribuicao desses arquivos e responder a duvidas repetidas que chegam por email ou aplicativos de mensagens.

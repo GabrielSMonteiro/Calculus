@@ -39,7 +39,7 @@ Plataforma de revisao de Calculo 1 com segmentacao por universidade (modelo SaaS
 [Cadastro / Autenticacao]
        │
        ▼
-[Selecao da Universidade (ex: USP, UFMG)]
+[Selecao da Universidade (ex: UnB)]
        │
        ▼
 [Navegacao por Topicos da Disciplina]
@@ -88,9 +88,9 @@ Plataforma de revisao de Calculo 1 com segmentacao por universidade (modelo SaaS
 ## 7. Metricas de Sucesso para o MVP
 
 - Registro de pelo menos 10 usuarios de teste no ambiente de homologacao.
-- Disponibilizacao de 4 ou mais topicos essenciais de Calculo 1.
+- Disponibilizacao de 4 ou mais topicos essenciais de Calculo 1 da Universidade de Brasilia (UnB).
 - Inclusao de pelo menos 20 questoes com explicacoes analiticas completas.
-- Publicacao e moderacao bem-sucedida de duvidas no forum academico.
+- Publicacao e moderacao bem-sucedida de duvidas no forum da universidade.
 - Geracao do build do aplicativo para navegadores e pacote Android via Capacitor.
 
 ---

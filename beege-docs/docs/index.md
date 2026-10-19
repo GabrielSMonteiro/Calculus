@@ -16,7 +16,7 @@
 
 ## Apresentacao
 
-O **BeeGe** e uma plataforma mobile e web de revisao e resolucao orientada de exercicios para Calculo 1, estruturada sob a abordagem SaaS multi-universidade. O sistema adapta o conteudo e a sequencia pedagogica as ementas das instituicoes cadastradas.
+O **BeeGe** e uma plataforma mobile e web de revisao e resolucao orientada de exercicios para Calculo 1, estruturada sob a abordagem SaaS multi-universidade. O sistema adapta o conteudo e a sequencia pedagogica as ementas das instituicoes cadastradas (iniciando pela Universidade de Brasilia - UnB).
 
 A mascote do projeto e a abelha **Limia**, caracterizada por seus oculos redondos e gravata borboleta estampada com formulas matematicas, atuando como guia pedagogico em dicas conceituais e explicacoes analiticas de exercicios.
 

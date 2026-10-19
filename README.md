@@ -10,11 +10,41 @@ Aplicativo mobile e web projetado para revisao e pratica de Calculo 1 no ensino 
 
 ---
 
+## Video de Apresentacao
+
+Demonstracao pratica do aplicativo BeeGe em execucao:
+
+> 📺 **Acesse a demonstracao em video:** [https://youtu.be/lCUiceX9FIk](https://youtu.be/lCUiceX9FIk)
+
+<p align="center">
+  <a href="https://youtu.be/lCUiceX9FIk" target="_blank">
+    <img src="https://img.youtube.com/vi/lCUiceX9FIk/maxresdefault.jpg" alt="Video de Apresentacao - BeeGe" width="600" style="border-radius: 12px; box-shadow: 0 4px 20px rgba(0,0,0,0.15);" />
+  </a>
+</p>
+
+---
+
+## Demonstracao Visual do Aplicativo
+
+Registros visuais do aplicativo em execucao:
+
+| Dashboard & Trilhas | Teoria com KaTeX & Limia |
+| :---: | :---: |
+| <img src="./screenshots/01_dashboard.png" width="280" alt="Dashboard" /> | <img src="./screenshots/02_teoria.png" width="280" alt="Teoria" /> |
+
+| Pratica com Resolucao Passo a Passo | Forum Academico |
+| :---: | :---: |
+| <img src="./screenshots/03_pratica.png" width="280" alt="Pratica" /> | <img src="./screenshots/04_forum.png" width="280" alt="Forum" /> |
+
+| Perfil e Nivel do Estudante | Selecao Multi-Universidade |
+| :---: | :---: |
+| <img src="./screenshots/05_perfil.png" width="280" alt="Perfil" /> | <img src="./screenshots/06_universidades.png" width="280" alt="Universidades" /> |
+
 ## Visao Geral
 
 O **BeeGe** foi concebido para resolver a dispersao de materiais de Calculo 1, permitindo que estudantes tenham acesso a ementas, resumos teoricos e exercicios ajustados as exigencias de suas proprias instituicoes.
 
-O sistema possui arquitetura estruturada para operacao multi-institucional (com suporte a instituicoes como USP, UFMG, UFRJ, entre outras). A mascote do projeto e a abelha **Limia**, que orienta os estudantes com notas conceituais e dicas de resolucao ao longo do aplicativo.
+A versao inicial foca na ementa da **Universidade de Brasilia (UnB)**, com arquitetura preparada para expansao multi-institucional (UFMG, USP, entre outras). A mascote do projeto e a abelha **Limia**, que orienta os estudantes com notas conceituais e dicas de resolucao ao longo do aplicativo.
 
 ---
 

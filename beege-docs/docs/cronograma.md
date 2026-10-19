@@ -36,7 +36,7 @@ Planejamento temporal das sprints de desenvolvimento ate a entrega formal do Pro
 - [x] Implementacao do simulador interativo de questoes (`/pratica`) com correcao automatica e resolucao analitica.
 - [x] Desenvolvimento do forum academico (`/forum`) com criacao de topicos, respostas encadeadas e moderacao.
 - [x] Integracao visual e pedagogica da mascote oficial Limia em componentes e alertas de estudo.
-- [x] Carga inicial de dados (`seed.sql`) com topicos e questoes completas de Calculo 1.
+- [x] Carga inicial de dados (`seed.sql`) com topicos e questoes reais da UnB.
 
 ---
 

@@ -5,9 +5,9 @@ describe('DataService & Mock Dataset', () => {
   it('deve carregar a lista de universidades ativas', async () => {
     const unis = await DataService.getUniversidades();
     expect(unis.length).toBeGreaterThanOrEqual(3);
-    const ufrj = unis.find((u) => u.sigla === 'UFRJ');
-    expect(ufrj).toBeDefined();
-    expect(ufrj?.nome).toContain('Rio de Janeiro');
+    const unb = unis.find((u) => u.sigla === 'UnB');
+    expect(unb).toBeDefined();
+    expect(unb?.nome).toContain('Brasília');
   });
 
   it('deve carregar os tópicos teóricos', async () => {

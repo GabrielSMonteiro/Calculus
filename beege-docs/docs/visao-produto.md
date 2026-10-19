@@ -29,7 +29,7 @@ O **BeeGe** e um aplicativo mobile e web focado na revisao e fixacao de Calculo 
 | **O BeeGe e** | Um aplicativo mobile (Android/iOS) e plataforma web. |
 | **Que oferece** | Teoria sintetizada, exercicios corrigidos instantaneamente e canal de duvidas institucional. |
 | **Diferente de** | Cursos longos em video e manuais tradicionais de mais de 800 paginas. |
-| **Nosso diferencial** | Adaptacao da ementa para cada universidade parceira, KaTeX nativo e suporte da mascote Limia. |
+| **Nosso diferencial** | Adaptacao da ementa por universidade (iniciando pela UnB), KaTeX nativo e suporte da mascote Limia. |
 
 ---
 

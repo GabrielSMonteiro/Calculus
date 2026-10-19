@@ -21,7 +21,7 @@ Considerando o cronograma objetivo com entrega final do MVP fixada em **19 de Ou
 |---|---|
 | Product Owner (PO) | Definicao de prioridades do backlog, validacao de requisitos com o publico universitario e aceite das entregas. |
 | Tech Lead / Desenvolvedor | Implementacao da arquitetura cliente-servidor, desenvolvimento do aplicativo mobile/web, modelagem do Supabase e garantia de qualidade de codigo. |
-| Orientador Pedagogico | Revisao da exatidao formal dos enunciados de Calculo 1 e correspondencia com as ementas das universidades parceiras. |
+| Orientador Pedagogico | Revisao da exatidao formal dos enunciados de Calculo 1 e correspondencia com as ementas da UnB e demais universidades. |
 
 ---
 
