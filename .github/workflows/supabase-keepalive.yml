@@ -1,0 +1,36 @@
+name: Supabase Keep Alive
+
+on:
+  schedule:
+    # Executa a cada 4 dias às 12:00 UTC (para garantir margem antes dos 7 dias de inatividade)
+    - cron: '0 12 */4 * *'
+  workflow_dispatch: # Permite disparar manualmente pelo painel do GitHub Actions
+
+jobs:
+  ping-supabase:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping Supabase REST API
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          if [ -z "$SUPABASE_URL" ] || [ -z "$SUPABASE_ANON_KEY" ]; then
+            echo "❌ Erro: Configure os Secrets SUPABASE_URL e SUPABASE_ANON_KEY no repositório do GitHub."
+            exit 1
+          fi
+
+          echo "🚀 Enviando requisição keep-alive ao Supabase..."
+          RESPONSE=$(curl -s -o /dev/null -w "%{http_code}" \
+            -X GET "$SUPABASE_URL/rest/v1/universidades?select=id&limit=1" \
+            -H "apikey: $SUPABASE_ANON_KEY" \
+            -H "Authorization: Bearer $SUPABASE_ANON_KEY")
+
+          echo "Código HTTP retornado: $RESPONSE"
+
+          if [ "$RESPONSE" -ge 200 ] && [ "$RESPONSE" -lt 400 ]; then
+            echo "✅ Supabase ativado com sucesso! Timer de 7 dias reiniciado."
+          else
+            echo "⚠️ Aviso: Resposta inesperada ($RESPONSE), verifique as credenciais."
+            exit 1
+          fi

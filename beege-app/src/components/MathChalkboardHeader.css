@@ -1,0 +1,109 @@
+/* ==============================================================================
+   Math Chalkboard Header — Figma Match
+   ============================================================================== */
+
+.chalkboard-container {
+  position: relative;
+  width: 100%;
+  background: #3B2464;
+  background: linear-gradient(170deg, #38215E 0%, #462A77 60%, #351F5B 100%);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.chalkboard-container.login {
+  height: 290px;
+}
+
+.chalkboard-container.signup {
+  height: 220px;
+}
+
+.chalkboard-container.compact {
+  height: 160px;
+}
+
+/* Mobile Status Bar */
+.mobile-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 24px 0;
+  width: 100%;
+  z-index: 10;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Roboto', sans-serif;
+}
+
+.mobile-status-bar.light {
+  color: #FFFFFF;
+}
+
+.mobile-status-bar.dark {
+  color: #1F1926;
+}
+
+.status-time {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: -0.02em;
+}
+
+.status-icons {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+/* Chalkboard background formulas */
+.chalkboard-math-svg {
+  position: absolute;
+  top: 36px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 36px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Limia Mascot if shown */
+.chalkboard-mascot-wrapper {
+  position: absolute;
+  top: 75px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 4;
+}
+
+.chalkboard-mascot-img {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid rgba(255, 255, 255, 0.4);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.25);
+  animation: mascot-wiggle 4s ease-in-out infinite alternate;
+}
+
+@keyframes mascot-wiggle {
+  0% { transform: translateY(0) rotate(-1deg); }
+  50% { transform: translateY(-4px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(-1deg); }
+}
+
+/* Wave divider connecting to cream background */
+.chalkboard-wave {
+  position: relative;
+  width: 100%;
+  height: 52px;
+  z-index: 3;
+  margin-top: auto;
+  line-height: 0;
+}
+
+.chalkboard-wave svg {
+  width: 100%;
+  height: 100%;
+  display: block;
+}

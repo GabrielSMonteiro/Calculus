@@ -1,0 +1,166 @@
+/* ==============================================================================
+   Onboarding Screen — Figma Exact Match
+   ============================================================================== */
+
+.onboarding-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  min-height: 100dvh;
+  background: #FAF5EE;
+  padding: 0 28px 24px;
+  box-sizing: border-box;
+  text-align: center;
+  user-select: none;
+}
+
+/* Status Bar */
+.onboarding-status-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 0 0;
+  width: 100%;
+  color: #1F1926;
+  font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Text', 'Roboto', sans-serif;
+}
+
+/* Mascot Area */
+.onboarding-mascot-hero {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px 0 10px;
+}
+
+.onboarding-mascot-img {
+  width: 210px;
+  height: 210px;
+  object-fit: contain;
+  animation: float-mascot 3.5s ease-in-out infinite alternate;
+  filter: drop-shadow(0 14px 20px rgba(0, 0, 0, 0.08));
+}
+
+@keyframes float-mascot {
+  0% {
+    transform: translateY(0px) rotate(-1deg);
+  }
+  100% {
+    transform: translateY(-8px) rotate(2deg);
+  }
+}
+
+/* Bottom Card Container */
+.onboarding-bottom-card {
+  width: 100%;
+  max-width: 360px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Text Content */
+.onboarding-text-block {
+  margin-bottom: 24px;
+}
+
+.onboarding-title {
+  font-size: 1.55rem;
+  font-weight: 800;
+  color: #1F1926;
+  margin: 0 0 10px;
+  line-height: 1.25;
+  letter-spacing: -0.015em;
+}
+
+.onboarding-subtitle {
+  font-size: 0.95rem;
+  color: #736B63;
+  line-height: 1.48;
+  margin: 0;
+  font-weight: 500;
+  padding: 0 6px;
+}
+
+/* Pagination Dots */
+.onboarding-dots-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 26px;
+}
+
+.onboarding-dot-pill {
+  width: 8px;
+  height: 8px;
+  border-radius: 9999px;
+  background: #E5DFD7;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.onboarding-dot-pill.active {
+  background: #6D28D9;
+  width: 10px;
+  height: 10px;
+}
+
+/* Purple Pill Button */
+.onboarding-main-btn {
+  width: 100%;
+  height: 52px;
+  background: #5B299D;
+  background: linear-gradient(135deg, #6A32B8 0%, #4D2189 100%);
+  color: #FFFFFF;
+  border: none;
+  border-radius: 9999px;
+  font-size: 1.05rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(91, 41, 157, 0.28);
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  letter-spacing: 0.01em;
+}
+
+.onboarding-main-btn:active {
+  transform: scale(0.98);
+  box-shadow: 0 3px 10px rgba(91, 41, 157, 0.2);
+}
+
+/* Back Link */
+.onboarding-back-wrapper {
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 6px;
+}
+
+.onboarding-back-link {
+  background: none;
+  border: none;
+  color: #8C8680;
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  padding: 6px 14px;
+  font-family: inherit;
+  transition: color 0.15s;
+}
+
+.onboarding-back-link:hover {
+  color: #5B299D;
+}
+
+.onboarding-back-placeholder {
+  visibility: hidden;
+}

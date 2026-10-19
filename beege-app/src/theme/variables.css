@@ -1,0 +1,226 @@
+/* ==============================================================================
+   BeeGe Theme — Identidade Visual baseada no Figma
+   Paleta: Creme/Bege (#FAF5EE) + Roxo (#7C3AED) + Detalhes Dourados
+   ============================================================================== */
+
+@import 'katex/dist/katex.min.css';
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap');
+
+:root {
+  --ion-font-family: 'Nunito', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+
+  /* Primary (Roxo BeeGe) */
+  --ion-color-primary: #7C3AED;
+  --ion-color-primary-rgb: 124, 58, 237;
+  --ion-color-primary-contrast: #ffffff;
+  --ion-color-primary-contrast-rgb: 255, 255, 255;
+  --ion-color-primary-shade: #6D28D9;
+  --ion-color-primary-tint: #8B5CF6;
+
+  /* Secondary (Creme Escuro) */
+  --ion-color-secondary: #E8DDD0;
+  --ion-color-secondary-rgb: 232, 221, 208;
+  --ion-color-secondary-contrast: #2D2A26;
+  --ion-color-secondary-contrast-rgb: 45, 42, 38;
+  --ion-color-secondary-shade: #D4C9BB;
+  --ion-color-secondary-tint: #F0E8DD;
+
+  /* Tertiary (Dourado suave) */
+  --ion-color-tertiary: #D4A843;
+  --ion-color-tertiary-rgb: 212, 168, 67;
+  --ion-color-tertiary-contrast: #2D2A26;
+  --ion-color-tertiary-contrast-rgb: 45, 42, 38;
+  --ion-color-tertiary-shade: #B8923A;
+  --ion-color-tertiary-tint: #DCBA5E;
+
+  /* Success */
+  --ion-color-success: #10b981;
+  --ion-color-success-rgb: 16, 185, 129;
+  --ion-color-success-contrast: #ffffff;
+  --ion-color-success-contrast-rgb: 255, 255, 255;
+  --ion-color-success-shade: #059669;
+  --ion-color-success-tint: #34d399;
+
+  /* Warning */
+  --ion-color-warning: #f59e0b;
+  --ion-color-warning-rgb: 245, 158, 11;
+  --ion-color-warning-contrast: #000000;
+  --ion-color-warning-contrast-rgb: 0, 0, 0;
+  --ion-color-warning-shade: #d97706;
+  --ion-color-warning-tint: #fbbf24;
+
+  /* Danger */
+  --ion-color-danger: #ef4444;
+  --ion-color-danger-rgb: 239, 68, 68;
+  --ion-color-danger-contrast: #ffffff;
+  --ion-color-danger-contrast-rgb: 255, 255, 255;
+  --ion-color-danger-shade: #dc2626;
+  --ion-color-danger-tint: #f87171;
+
+  /* Backgrounds & surfaces */
+  --ion-background-color: #FAF5EE;
+  --ion-background-color-rgb: 250, 245, 238;
+  --ion-text-color: #2D2A26;
+  --ion-text-color-rgb: 45, 42, 38;
+  --ion-toolbar-background: #FAF5EE;
+  --ion-item-background: #FFFFFF;
+  --ion-card-background: #FFFFFF;
+
+  /* Custom App Globals */
+  --beege-cream: #FAF5EE;
+  --beege-cream-dark: #F0E8DD;
+  --beege-purple: #7C3AED;
+  --beege-purple-dark: #6D28D9;
+  --beege-purple-light: #EDE9FE;
+  --beege-purple-soft: rgba(124, 58, 237, 0.08);
+  --beege-text: #2D2A26;
+  --beege-text-muted: #8C8680;
+  --beege-card-bg: #FFFFFF;
+  --beege-border: #E8DDD0;
+  --beege-math-bg: #6D28D9;
+}
+
+/* Utility class for badge */
+.beege-badge {
+  background: linear-gradient(135deg, #7C3AED, #6D28D9);
+  color: #ffffff;
+  font-weight: 700;
+  padding: 4px 10px;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  letter-spacing: 0.03em;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* KaTeX display */
+.katex-display {
+  overflow-x: auto;
+  overflow-y: hidden;
+  padding: 8px 0;
+  margin: 12px 0;
+}
+
+/* Global overrides */
+ion-content {
+  --background: var(--beege-cream);
+}
+
+ion-card {
+  border-radius: 16px !important;
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04) !important;
+}
+
+ion-button {
+  --border-radius: 14px;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+  text-transform: none;
+}
+
+/* Scroll smooth & mobile bottom bar clearance */
+ion-content::part(scroll) {
+  scroll-behavior: smooth;
+  padding-bottom: 74px;
+}
+
+/* Safe area handling for mobile */
+ion-page {
+  --ion-safe-area-top: env(safe-area-inset-top);
+  --ion-safe-area-bottom: env(safe-area-inset-bottom);
+}
+
+/* ==============================================================================
+   MathRenderer — Markdown elements styling
+   ============================================================================== */
+
+.beege-math-content .beege-heading {
+  color: #1F1926;
+  margin: 0;
+  line-height: 1.4;
+}
+
+.beege-math-content .beege-h1 {
+  font-size: 1.35rem;
+  font-weight: 800;
+  margin: 18px 0 8px;
+  color: #6D28D9;
+}
+
+.beege-math-content .beege-h2 {
+  font-size: 1.15rem;
+  font-weight: 800;
+  margin: 16px 0 6px;
+  color: #6D28D9;
+}
+
+.beege-math-content .beege-h3 {
+  font-size: 1.02rem;
+  font-weight: 700;
+  margin: 14px 0 4px;
+  color: #7C3AED;
+}
+
+.beege-math-content .beege-paragraph {
+  margin: 4px 0;
+  line-height: 1.6;
+  color: #2D2A26;
+}
+
+.beege-math-content .beege-list {
+  margin: 6px 0;
+  padding-left: 20px;
+  list-style: none;
+}
+
+.beege-math-content .beege-list li {
+  position: relative;
+  padding: 3px 0 3px 8px;
+  line-height: 1.55;
+  color: #2D2A26;
+}
+
+.beege-math-content .beege-list li::before {
+  content: '';
+  position: absolute;
+  left: -12px;
+  top: 11px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #7C3AED;
+}
+
+.beege-math-content .beege-blockquote {
+  margin: 10px 0;
+  padding: 10px 14px;
+  border-left: 3px solid #7C3AED;
+  background: rgba(124, 58, 237, 0.06);
+  border-radius: 0 10px 10px 0;
+  font-size: 0.92rem;
+  color: #453E3B;
+  line-height: 1.55;
+}
+
+.beege-math-content .beege-hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, #E8DDD0, transparent);
+  margin: 14px 0;
+}
+
+.beege-math-content .beege-spacer {
+  height: 8px;
+}
+
+.beege-math-content .beege-inline-code {
+  background: rgba(124, 58, 237, 0.08);
+  color: #6D28D9;
+  padding: 1px 6px;
+  border-radius: 4px;
+  font-family: 'Fira Code', 'Consolas', monospace;
+  font-size: 0.88em;
+}
+

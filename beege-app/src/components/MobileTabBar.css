@@ -1,0 +1,98 @@
+/* ==============================================================================
+   Mobile Bottom Tab Bar — iOS/Android Ergonomics
+   ============================================================================== */
+
+.mobile-tab-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  height: 62px;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-top: 1px solid rgba(109, 40, 217, 0.12);
+  box-shadow: 0 -4px 24px rgba(0, 0, 0, 0.06);
+  z-index: 999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.mobile-tab-bar-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  width: 100%;
+  max-width: 440px;
+  height: 100%;
+  padding: 0 4px 6px;
+  box-sizing: border-box;
+}
+
+.mobile-tab-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 4px 0;
+  color: #8C8680;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  font-family: inherit;
+  position: relative;
+}
+
+.tab-icon-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 24px;
+}
+
+.tab-icon {
+  font-size: 1.35rem;
+  transition: transform 0.2s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s;
+}
+
+.tab-label {
+  font-size: 0.68rem;
+  font-weight: 600;
+  margin-top: 2px;
+  letter-spacing: -0.01em;
+  transition: color 0.2s, font-weight 0.2s;
+}
+
+/* Active State */
+.mobile-tab-item.active {
+  color: #6D28D9;
+}
+
+.mobile-tab-item.active .tab-icon {
+  transform: translateY(-2px) scale(1.08);
+  color: #6D28D9;
+}
+
+.mobile-tab-item.active .tab-label {
+  font-weight: 800;
+  color: #6D28D9;
+}
+
+.tab-active-glow {
+  position: absolute;
+  bottom: -3px;
+  width: 4px;
+  height: 4px;
+  background: #6D28D9;
+  border-radius: 50%;
+}
+
+.mobile-tab-item:active {
+  transform: scale(0.92);
+}

@@ -1,0 +1,40 @@
+site_name: "BeeGe"
+repo_name: "beege-docs"
+docs_dir: docs
+
+theme:
+  name: material
+  language: pt
+  palette:
+    - scheme: default
+      primary: light blue
+      accent: amber
+      toggle:
+        icon: material/brightness-7
+        name: Mudar para modo escuro
+    - scheme: slate
+      primary: light blue
+      accent: amber
+      toggle:
+        icon: material/brightness-4
+        name: Mudar para modo claro
+
+nav:
+  - Home: index.md
+  - Planejamento:
+    - Visão do Produto: visao-produto.md
+    - Canvas MVP: canvas-mvp.md
+    - Personas: personas.md
+    - Cronograma e Roadmap: cronograma.md
+    - Metodologia: metodologia.md
+    - Plano de Riscos: riscos.md
+    - Plano de Qualidade: qualidade.md
+  - Requisitos e Modelagem:
+    - Requisitos (RF/RNF): requisitos.md
+    - Backlog do Produto: backlog.md
+    - Diagramas UML: diagramas-uml.md
+  - Arquitetura:
+    - Documento de Arquitetura: arquitetura.md
+  - Padrões:
+    - Guia de Contribuição: guia-contribuicao.md
+    - Código de Conduta: codigo-de-conduta.md
