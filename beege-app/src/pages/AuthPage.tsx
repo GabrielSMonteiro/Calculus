@@ -32,12 +32,18 @@ export const AuthPage: React.FC = () => {
     e.preventDefault();
     setErrorMsg('');
     setLoading(true);
-    const res = await login(email, senha);
-    setLoading(false);
-    if (res.error) {
-      setErrorMsg(res.error);
-    } else {
-      navigate('/dashboard');
+    try {
+      const res = await login(email, senha);
+      if (res.error) {
+        setErrorMsg(res.error);
+        setLoading(false);
+      } else {
+        setLoading(false);
+        navigate('/dashboard');
+      }
+    } catch (err: any) {
+      setErrorMsg(err?.message || 'Erro ao realizar login.');
+      setLoading(false);
     }
   };
 
@@ -49,12 +55,18 @@ export const AuthPage: React.FC = () => {
       return;
     }
     setLoading(true);
-    const res = await signup(email, senha, nome);
-    setLoading(false);
-    if (res.error) {
-      setErrorMsg(res.error);
-    } else {
-      navigate('/dashboard');
+    try {
+      const res = await signup(email, senha, nome);
+      if (res.error) {
+        setErrorMsg(res.error);
+        setLoading(false);
+      } else {
+        setLoading(false);
+        navigate('/dashboard');
+      }
+    } catch (err: any) {
+      setErrorMsg(err?.message || 'Erro ao realizar cadastro.');
+      setLoading(false);
     }
   };
 
@@ -62,8 +74,8 @@ export const AuthPage: React.FC = () => {
     <IonPage>
       <IonContent scrollY={true}>
         <div className="auth-mobile-page">
-          {/* Top Math Chalkboard Header with status bar & wave curve */}
-          <MathChalkboardHeader variant={mode === 'login' ? 'login' : 'signup'} />
+          {/* Top Math Chalkboard Header com a mascote Limia em destaque */}
+          <MathChalkboardHeader variant={mode === 'login' ? 'login' : 'signup'} showMascot={true} />
 
           {/* Form Content Area with Cream Background */}
           <div className="auth-body-container">
@@ -83,12 +95,13 @@ export const AuthPage: React.FC = () => {
                 <div className="auth-pill-field">
                   <IonIcon icon={mailOutline} className="auth-pill-icon" />
                   <input
-                    type="email"
+                    type="text"
                     placeholder="email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                     required
-                    autoComplete="email"
+                    autoCapitalize="none"
+                    autoCorrect="off"
                     id="input-login-email"
                   />
                 </div>

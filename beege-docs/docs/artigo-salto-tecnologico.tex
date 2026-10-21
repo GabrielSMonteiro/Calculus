@@ -10,14 +10,13 @@
 % ── Pacotes ──────────────────────────────────────────────────────────────────
 \usepackage[utf8]{inputenc}
 \usepackage[T1]{fontenc}
-\usepackage[brazil]{babel}
+\usepackage[brazilian]{babel}
 \usepackage{lmodern}
 \usepackage{geometry}
 \usepackage{setspace}
 \usepackage{indentfirst}
 \usepackage{graphicx}
 \usepackage{float}
-\usepackage{hyperref}
 \usepackage{url}
 \usepackage{booktabs}
 \usepackage{array}
@@ -26,12 +25,16 @@
 \usepackage{enumitem}
 \usepackage{amsmath, amssymb}
 \usepackage{xcolor}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
 \usepackage{titlesec}
 \usepackage{fancyhdr}
 \setlength{\headheight}{14pt}
 \usepackage{caption}
 \usepackage{subcaption}
 \usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage[plainpages=false,pdfpagelabels]{hyperref}
 
 % ── Configuracoes de pagina ─────────────────────────────────────────────────
 \geometry{
@@ -85,46 +88,115 @@
 %                           INICIO DO DOCUMENTO
 % ============================================================================
 \begin{document}
+\hypersetup{pageanchor=false}
 
-% ── Capa ───────────────────────────────────────────────────────────────────
+% ── Capa Executiva ──────────────────────────────────────────────────────────
 \begin{titlepage}
-  \centering
-  \vspace*{2cm}
+\thispagestyle{empty}
+\begin{center}
+    % Faixa superior
+    \begin{tcolorbox}[
+        colback=beegePurple,
+        colframe=beegePurple,
+        arc=4pt,
+        boxrule=0pt,
+        width=\textwidth,
+        halign=center,
+        top=8pt,
+        bottom=8pt
+    ]
+        {\small\color{white}\bfseries PROGRAMA NAPR\'{A}TICA \;\textcolor{white!70}{$\bullet$}\; M\'{O}DULO DE EMPREENDEDORISMO}
+    \end{tcolorbox}
+    
+    \vspace{20pt}
 
-  {\Huge\bfseries\textcolor{beegePurple}{BeeGe}}\\[0.3cm]
-  {\Large\textcolor{beegeGray}{Plataforma Gamificada de Revis\~{a}o de C\'{a}lculo~1}}\\[1.5cm]
+    % Mascote Limia centralizado
+    \includegraphics[width=3.6cm, keepaspectratio]{assets/limia.png}
+    
+    \vspace{14pt}
 
-  {\LARGE\bfseries Salto Tecnol\'{o}gico}\\[0.5cm]
-  {\large Programa NaPr\'{a}tica | M\'{o}dulo de Empreendedorismo}\\[2cm]
+    % Nome do Produto e Slogan
+    {\fontsize{32}{38}\selectfont\bfseries\textcolor{beegePurple}{BeeGe}}\\[10pt]
+    {\fontsize{18}{23}\selectfont\bfseries\textcolor{beegeGray}{Plataforma Gamificada de Revis\~{a}o de C\'{a}lculo~1}}\\[8pt]
+    {\large\textcolor{beegeGray!70}{Um app para estudantes revisarem C\'{a}lculo de forma pr\'{a}tica e engajante}}
 
-  \rule{0.6\textwidth}{0.4pt}\\[1cm]
+    \vspace{20pt}
 
-  {\large\textbf{Gabriel Monteiro}}\\[0.3cm]
-  {\normalsize Engenharia de Software}\\[0.3cm]
-  {\normalsize Tutor de C\'{a}lculo~1 h\'{a} mais de 3 anos}\\[1.5cm]
+    % Caixa de Destaque do Relatorio
+    \begin{tcolorbox}[
+        colback=beegeAmbar!8,
+        colframe=beegeAmbar,
+        arc=4pt,
+        boxrule=1.2pt,
+        width=0.92\textwidth,
+        halign=center,
+        top=8pt,
+        bottom=8pt
+    ]
+        {\large\bfseries\textcolor{beegeGray}{RELAT\'{O}RIO: SALTO TECNOL\'{O}GICO}}\\[4pt]
+        {\small\textcolor{beegeGray!85}{Da ideia ao produto funcionando em 30 dias (20/09 a 19/10/2026)}}
+    \end{tcolorbox}
 
-  \rule{0.6\textwidth}{0.4pt}\\[0.6cm]
+    \vspace{18pt}
 
-  {\normalsize\textbf{Reposit\'{o}rio:} \url{https://github.com/GabrielSMonteiro/Calculus}}\\[0.3cm]
-  {\normalsize\textbf{V\'{i}deo de Demonstra\c{c}\~{a}o:} \url{https://youtu.be/lCUiceX9FIk}}\\[0.6cm]
-  {\large Bras\'{i}lia}\\[0.3cm]
-  {\large Outubro de 2026}
+    % Cartao de Metadados
+    \begin{tcolorbox}[
+        colback=white,
+        colframe=beegePurple!30,
+        arc=4pt,
+        boxrule=0.9pt,
+        width=0.94\textwidth,
+        left=14pt,
+        right=14pt,
+        top=10pt,
+        bottom=10pt
+    ]
+        \renewcommand{\arraystretch}{1.35}
+        \centering
+        \begin{tabular}{r @{\hspace{10pt}} l}
+            \textbf{\textcolor{beegePurple}{Autor:}} & Gabriel Monteiro \\[2pt]
+            \textbf{\textcolor{beegePurple}{\'{A}rea:}} & Engenharia de Software \\[2pt]
+            \textbf{\textcolor{beegePurple}{Reposit\'{o}rio:}} & \href{https://github.com/GabrielSMonteiro/Calculus}{\small\texttt{github.com/GabrielSMonteiro/Calculus}} \\[2pt]
+            \textbf{\textcolor{beegePurple}{V\'{i}deo Demonstrativo:}} & \href{https://youtu.be/lCUiceX9FIk}{\small\texttt{youtu.be/lCUiceX9FIk}}
+        \end{tabular}
+    \end{tcolorbox}
 
-  \vfill
+    \vfill
+
+    % Rodape da Capa
+    \textcolor{beegePurple!30}{\rule{0.5\textwidth}{0.8pt}}\\[8pt]
+    {\small\bfseries\textcolor{beegeGray}{Bras\'{i}lia $\cdot$ DF}\\[2pt]
+    \small\textcolor{beegeGray!75}{Outubro de 2026}}
+    \vspace*{-0.2cm}
+\end{center}
 \end{titlepage}
 
-% ── Sumario ────────────────────────────────────────────────────────────────
-\tableofcontents
+% ── Sumario ─────────────────────────────────────────────────────────────────
 \newpage
+\hypersetup{pageanchor=true}
+\pagenumbering{roman}
+\setcounter{page}{2}
+\thispagestyle{empty}
+{
+  \hypersetup{linkcolor=beegePurple}
+  \renewcommand{\contentsname}{\vspace*{-1.4cm}\LARGE\bfseries\textcolor{beegePurple}{Sum\'{a}rio}\vspace{4pt}}
+  \setlength{\parskip}{0pt}
+  \begin{spacing}{0.84}
+    \tableofcontents
+  \end{spacing}
+}
+\newpage
+\pagenumbering{arabic}
+\setcounter{page}{1}
 
 % ========================================================================
 %  1. INTRODUCAO
 % ========================================================================
 \section{Introdu\c{c}\~{a}o}
 
-Este documento apresenta o \textbf{Salto Tecnol\'{o}gico} desenvolvido no contexto do programa \textbf{NaPr\'{a}tica}, como entreg\'{a}vel do m\'{o}dulo de empreendedorismo. O projeto descrito \'{e} o \textbf{BeeGe}, uma plataforma mobile e web voltada para a revis\~{a}o gamificada de C\'{a}lculo~1 no ensino superior, concebida, projetada e implementada em 30 dias (de 20 de setembro a 19 de outubro de 2026).
+Este relat\'{o}rio apresenta o \textbf{Salto Tecnol\'{o}gico} que desenvolvi como entrega do m\'{o}dulo de empreendedorismo do programa \textbf{NaPr\'{a}tica}. O projeto \'{e} o \textbf{BeeGe}, um aplicativo para celular e computador que ajuda estudantes a revisar C\'{a}lculo~1 de um jeito mais din\^{a}mico e gamificado. Ele foi pensado, planejado e constru\'{i}do em 30 dias --- de 20 de setembro a 19 de outubro de 2026.
 
-O BeeGe nasceu da interse\c{c}\~{a}o entre tr\^{e}s elementos: a experi\^{e}ncia do autor como tutor de C\'{a}lculo~1 h\'{a} mais de tr\^{e}s anos, a forma\c{c}\~{a}o em Engenharia de Software e o desafio pessoal de empreender. O resultado \'{e} um \textit{Minimum Viable Product} (MVP) funcional com potencial de se transformar em um produto SaaS (\textit{Software as a Service}) multi-institucional.
+A ideia do BeeGe surgiu de tr\^{e}s coisas que se juntaram: minha viv\^{e}ncia com o ensino de C\'{a}lculo~1 na faculdade, minha forma\c{c}\~{a}o em Engenharia de Software e a vontade de finalmente me arriscar a empreender. O resultado \'{e} um produto m\'{i}nimo vi\'{a}vel (MVP) que funciona de verdade e que tem potencial para virar um neg\'{o}cio real.
 
 % ========================================================================
 %  2. MOTIVACAO PESSOAL
@@ -134,9 +206,9 @@ O BeeGe nasceu da interse\c{c}\~{a}o entre tr\^{e}s elementos: a experi\^{e}ncia
 \begin{destaque}[Depoimento do Autor]
 Me chamo Gabriel Monteiro, tenho 23 anos e decidi fazer esse projeto para criar a coragem de empreender. No m\'{o}dulo~01, participei animado das palestras e ensinamentos e tive a ideia de me desafiar a fazer algo que eu sempre quis, mas n\~{a}o tinha coragem: \textbf{empreender}.
 
-Quando eu estava l\'{a}, ouvi outros alunos falando de como estavam sofrendo com a mat\'{e}ria de C\'{a}lculo~1 na faculdade. At\'{e} ent\~{a}o, isso era normal para mim, dado que dou tutoria de C\'{a}lculo~1 h\'{a} mais de 3 anos, mas eu nunca havia pensado nisso como uma oportunidade de neg\'{o}cio.
+Quando eu estava l\'{a}, ouvi outros alunos falando de como estavam sofrendo com a mat\'{e}ria de C\'{a}lculo~1 na faculdade. At\'{e} ent\~{a}o, essa dificuldade era uma realidade familiar para mim pelo contato e acompanhamento acad\^{e}mico cont\'{i}nuo de colegas, mas eu nunca havia pensado nisso como uma oportunidade de neg\'{o}cio.
 
-Unindo esse desafio que nasceu, ser um engenheiro de software em forma\c{c}\~{a}o e t\~{a}o ligado \`{a} \'{a}rea de educa\c{c}\~{a}o e matem\'{a}tica, me desafiei a fazer esse projeto. Quando tivesse um MVP consolidado, eu poderia abrir a minha empresa e transformar esse projeto em um SaaS para que diversas universidades e faculdades possam modelar as quest\~{o}es da maneira que acharem mais adequadas, j\'{a} que isso muda de grade para grade curricular.
+Unindo esse desafio que nasceu, ser um engenheiro de software em forma\c{c}\~{a}o e t\~{a}o ligado \`{a} \'{a}rea de educa\c{c}\~{a}o e matem\'{a}tica, me desafiei a fazer esse projeto. Quando tivesse um MVP consolidado, eu poderia abrir a minha empresa e transformar esse projeto em um servi\c{c}o online para que diversas universidades e faculdades possam modelar as quest\~{o}es da maneira que acharem mais adequadas, j\'{a} que isso muda de grade para grade curricular.
 
 Dessa maneira nasceu o \textbf{BeeGe}, uma plataforma mobile capaz de ensinar C\'{a}lculo~1 de forma gamificada, mas com rigor te\'{o}rico. Durante o desenvolvimento, falei com professores de C\'{a}lculo~1 para entender o que era mais fundamental e fazer o meu brainstorm.
 
@@ -150,22 +222,22 @@ Dessa feita, acredito que impactaria de maneira muito positiva todos os alunos d
 % ========================================================================
 \section{O Problema}
 
-O ensino e a aprendizagem de C\'{a}lculo~1 no ensino superior historicamente registram \'{i}ndices elevados de reten\c{c}\~{a}o e reprova\c{c}\~{a}o. Estudantes frequentemente relatam que:
+C\'{a}lculo~1 \'{e} uma das mat\'{e}rias que mais reprova no ensino superior. Conversando com colegas e observando a realidade das turmas, percebi que os estudantes enfrentam problemas parecidos:
 
 \begin{itemize}[leftmargin=2cm]
-  \item Livros did\'{a}ticos s\~{a}o excessivamente extensos e abstratos (muitos com mais de 800 p\'{a}ginas).
-  \item Videoaulas dispon\'{i}veis na web n\~{a}o seguem o estilo de resolu\c{c}\~{a}o ou a profundidade exigida nas provas de sua institui\c{c}\~{a}o espec\'{i}fica.
-  \item Grupos de mensagens acumulam conversas paralelas, dificultando a localiza\c{c}\~{a}o de d\'{u}vidas j\'{a} respondidas.
-  \item Materiais de monitoria s\~{a}o distribu\'{i}dos de forma fragmentada em PDFs que se perdem nos dispositivos.
+  \item Os livros s\~{a}o enormes (muitos passam de 800 p\'{a}ginas) e muito abstratos para quem est\'{a} come\c{c}ando.
+  \item As videoaulas da internet s\~{a}o gen\'{e}ricas e quase nunca seguem o estilo de prova da universidade do aluno.
+  \item Os grupos de WhatsApp e Telegram acumulam tanta conversa paralela que fica dif\'{i}cil achar uma d\'{u}vida que j\'{a} foi respondida.
+  \item Os materiais de monitoria acabam espalhados em PDFs que se perdem no celular.
 \end{itemize}
 
-Existe, portanto, a demanda por uma solu\c{c}\~{a}o orientada \`{a} revis\~{a}o que combine:
+O que falta \'{e} uma ferramenta que junte tudo isso num lugar s\'{o}:
 
 \begin{enumerate}[leftmargin=2cm]
-  \item Segmenta\c{c}\~{a}o por universidade, respeitando a ementa local.
-  \item Renderiza\c{c}\~{a}o digital de nota\c{c}\~{a}o matem\'{a}tica em alta qualidade.
-  \item Exerc\'{i}cios com passo a passo anal\'{i}tico dos gabaritos.
-  \item Ambiente colaborativo de d\'{u}vidas com modera\c{c}\~{a}o ativa.
+  \item Conte\'{u}do separado por universidade, respeitando o que cada uma cobra.
+  \item F\'{o}rmulas matem\'{a}ticas bonitas e leg\'{i}veis na tela do celular.
+  \item Exerc\'{i}cios com resolu\c{c}\~{a}o passo a passo, n\~{a}o s\'{o} a resposta final.
+  \item Um espa\c{c}o organizado para tirar d\'{u}vidas sem se perder em conversas.
 \end{enumerate}
 
 % ========================================================================
@@ -173,290 +245,251 @@ Existe, portanto, a demanda por uma solu\c{c}\~{a}o orientada \`{a} revis\~{a}o 
 % ========================================================================
 \section{A Solu\c{c}\~{a}o: BeeGe}
 
-\subsection{Vis\~{a}o do Produto}
+\subsection{O que \'{e} o BeeGe}
 
-O \textbf{BeeGe} \'{e} um aplicativo mobile e web focado na revis\~{a}o e fixa\c{c}\~{a}o de C\'{a}lculo~1, estruturado como um servi\c{c}o multi-institucional (SaaS). Diferentemente de cursos em v\'{i}deo gen\'{e}ricos ou plataformas abertas de quest\~{o}es, o BeeGe organiza o conte\'{u}do a partir da ementa espec\'{i}fica da institui\c{c}\~{a}o do estudante, integrando resumos te\'{o}ricos em \LaTeX/KaTeX, simuladores com feedback imediato e um f\'{o}rum moderado.
+O \textbf{BeeGe} \'{e} um app para celular e computador focado em ajudar estudantes a revisar e fixar C\'{a}lculo~1. O diferencial \'{e} que ele organiza o conte\'{u}do de acordo com a ementa da universidade do aluno --- ent\~{a}o o material que voc\^{e} estuda no BeeGe tem a ver com o que o seu professor cobra na prova. Al\'{e}m disso, ele traz resumos te\'{o}ricos com f\'{o}rmulas bonitas, exerc\'{i}cios com corre\c{c}\~{a}o instant\^{a}nea e um f\'{o}rum para tirar d\'{u}vidas.
 
 \begin{table}[H]
 \centering
-\caption{Posicionamento estrat\'{e}gico do produto}
+\small
+\renewcommand{\arraystretch}{1.15}
+\caption{Posicionamento do BeeGe}
 \begin{tabularx}{\textwidth}{l X}
 \toprule
-\textbf{Dimens\~{a}o} & \textbf{Especifica\c{c}\~{a}o} \\
+\textbf{Dimens\~{a}o} & \textbf{Descri\c{c}\~{a}o} \\
 \midrule
-\textbf{Para} & Estudantes de gradua\c{c}\~{a}o matriculados na disciplina de C\'{a}lculo~1. \\
-\textbf{Que buscam} & Material de revis\~{a}o objetivo e focado no modelo de prova de sua universidade. \\
-\textbf{O BeeGe \'{e}} & Um aplicativo mobile (Android/iOS) e plataforma web. \\
-\textbf{Que oferece} & Teoria sintetizada, exerc\'{i}cios corrigidos instantaneamente e canal de d\'{u}vidas institucional. \\
-\textbf{Diferente de} & Cursos longos em v\'{i}deo e manuais tradicionais extensos. \\
-\textbf{Diferencial} & Adapta\c{c}\~{a}o da ementa por universidade, KaTeX nativo e suporte da mascote Limia. \\
+\textbf{Para quem} & Estudantes de gradua\c{c}\~{a}o que est\~{a}o cursando ou revisando C\'{a}lculo~1. \\
+\textbf{Que precisam de} & Material de revis\~{a}o objetivo, focado no que cai na prova da sua universidade. \\
+\textbf{O BeeGe \'{e}} & Um app para celular (Android/iOS) e para o navegador. \\
+\textbf{Que entrega} & Teoria resumida, exerc\'{i}cios corrigidos na hora e um canal de d\'{u}vidas organizado. \\
+\textbf{Diferente de} & Cursos longos em v\'{i}deo e livros did\'{a}ticos extensos. \\
+\textbf{Nosso diferencial} & Conte\'{u}do por universidade, f\'{o}rmulas n\'{i}tidas e a mascote Limia para te motivar. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 \subsection{Identidade Visual e Mascote}
 
-A mascote oficial do projeto \'{e} a abelha \textbf{Limia}:
-
-\begin{itemize}[leftmargin=2cm]
-  \item \textbf{Caracter\'{i}sticas Visuais:} Abelha estilizada com \'{o}culos redondos pretos e gravata borboleta roxa contendo s\'{i}mbolos matem\'{a}ticos gravados ($\int$, $\lim$, $\partial$).
-  \item \textbf{Simbolismo:} Representa o rigor acad\^{e}mico aliado \`{a} dilig\^{e}ncia e ao trabalho em colmeia (aprendizagem colaborativa).
-  \item \textbf{Papel no Sistema:} Atua como elemento de apoio pedag\'{o}gico, apresentando dicas conceituais, observa\c{c}\~{o}es sobre teoremas e mensagens de orienta\c{c}\~{a}o ap\'{o}s a resolu\c{c}\~{a}o de quest\~{o}es.
+\begin{minipage}[c]{0.67\textwidth}
+A mascote do BeeGe \'{e} a abelha \textbf{Limia}:
+\begin{itemize}[leftmargin=1.1cm]
+  \item \textbf{Visual:} Uma abelha estilizada com \'{o}culos redondos e gravata borboleta roxa com s\'{i}mbolos matem\'{a}ticos ($\int$, $\lim$, $\partial$).
+  \item \textbf{Significado:} Representa estudo e trabalho em equipe --- como uma colmeia.
+  \item \textbf{No app:} Aparece dando dicas, alertando sobre pegadinhas comuns e motivando o estudante.
 \end{itemize}
+\end{minipage}
+\hfill
+\begin{minipage}[c]{0.28\textwidth}
+  \centering
+  \includegraphics[width=2.8cm, keepaspectratio]{assets/limia.png}\\
+  \vspace{2pt}
+  {\footnotesize\textcolor{beegeGray}{\textbf{Figura 1:} Mascote Limia}}
+\end{minipage}
 
-\subsection{P\'{u}blico-Alvo}
+\subsection{Para quem \'{e} o BeeGe}
 
-O sistema atende tr\^{e}s perfis principais de usu\'{a}rios:
+O app atende tr\^{e}s tipos de usu\'{a}rio:
 
 \begin{table}[H]
 \centering
+\small
+\renewcommand{\arraystretch}{1.15}
 \caption{Perfis de usu\'{a}rios do BeeGe}
 \begin{tabularx}{\textwidth}{l l l X}
 \toprule
-\textbf{Perfil} & \textbf{Papel} & \textbf{Dispositivo} & \textbf{Funcionalidade Chave} \\
+\textbf{Perfil} & \textbf{Papel} & \textbf{Dispositivo} & \textbf{O que ele mais usa} \\
 \midrule
-Calouro & Aluno & Smartphone & Teoria sintetizada por m\'{o}dulo \\
-Veterano em recupera\c{c}\~{a}o & Aluno & Smartphone & Simulador com resolu\c{c}\~{a}o comentada \\
-Monitor acad\^{e}mico & Administrador & Desktop & Cadastro de quest\~{o}es e modera\c{c}\~{a}o \\
+Calouro & Aluno & Celular & Resumos te\'{o}ricos para se preparar para as provas \\
+Veterano em DP & Aluno & Celular & Exerc\'{i}cios com resolu\c{c}\~{a}o passo a passo \\
+Monitor / Professor & Administrador & Computador & Cadastro de quest\~{o}es e modera\c{c}\~{a}o do f\'{o}rum \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 % ========================================================================
-%  5. ARQUITETURA E TECNOLOGIAS
+%  5. COMO FOI CONSTRUIDO
 % ========================================================================
-\section{Arquitetura e Tecnologias}
+\section{Como o BeeGe foi Constru\'{i}do}
 
-O sistema BeeGe adota o padr\~{a}o arquitetural \textbf{Cliente-Servidor baseado em BaaS} (\textit{Backend as a Service}). A interface opera como uma aplica\c{c}\~{a}o de p\'{a}gina \'{u}nica (SPA) multiplataforma que se comunica de maneira ass\'{i}ncrona com a infraestrutura gerenciada pelo Supabase.
+De forma resumida, o BeeGe funciona em duas partes: o aplicativo que o estudante usa no celular ou computador, e um servi\c{c}o na nuvem (Supabase) que guarda todos os dados de forma segura.
 
-\subsection{Stack Tecnol\'{o}gico}
+\subsection{Tecnologias Utilizadas}
+
+Escolhi tecnologias gratuitas e modernas que me permitissem entregar o m\'{a}ximo em 30 dias:
 
 \begin{table}[H]
 \centering
-\caption{Tecnologias adotadas no MVP}
-\begin{tabularx}{\textwidth}{l l X l}
+\caption{Tecnologias usadas no projeto}
+\begin{tabularx}{\textwidth}{l l X}
 \toprule
-\textbf{Camada} & \textbf{Tecnologia} & \textbf{Justificativa} & \textbf{Custo} \\
+\textbf{Para qu\^{e}} & \textbf{Tecnologia} & \textbf{Por que escolhi} \\
 \midrule
-Frontend & Ionic + React~19 & Interface responsiva unificada para web e mobile & Gratuito \\
-Mobile & Capacitor & Builds Android e iOS sem duplica\c{c}\~{a}o de base & Gratuito \\
-Backend & Supabase (PostgreSQL) & Servi\c{c}o gerenciado com RLS, Auth e fun\c{c}\~{o}es & Gratuito \\
-F\'{o}rmulas & KaTeX & Renderiza\c{c}\~{a}o performatica no cliente & Gratuito \\
-Documenta\c{c}\~{a}o & MkDocs Material & Gerador est\'{a}tico versionado com o c\'{o}digo & Gratuito \\
-Testes & Vitest + Cypress & Testes unit\'{a}rios, de componentes e E2E & Gratuito \\
-Linguagem & TypeScript~5.9 & Tipagem estrita em tempo de compila\c{c}\~{a}o & Gratuito \\
+Interface do app & Ionic + React & Permite criar um app bonito que funciona no celular e no navegador com o mesmo c\'{o}digo. \\
+App nativo & Capacitor & Transforma o app web em um app de verdade para Android e iOS. \\
+Banco de dados & Supabase & Servi\c{c}o na nuvem gratuito que cuida do login, armazenamento e seguran\c{c}a dos dados. \\
+F\'{o}rmulas & KaTeX & Mostra as f\'{o}rmulas matem\'{a}ticas de forma bonita e r\'{a}pida na tela. \\
+Linguagem & TypeScript & Ajuda a evitar erros no c\'{o}digo durante o desenvolvimento. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Camadas do Sistema}
+\subsection{Como o sistema funciona}
 
-\subsubsection{Camada Cliente (\texttt{beege-app})}
-
-\begin{itemize}[leftmargin=2cm]
-  \item \textbf{Framework de Interface:} React~19 com a biblioteca de componentes gr\'{a}ficos do Ionic Framework.
-  \item \textbf{Navega\c{c}\~{a}o:} \texttt{@ionic/react-router} integrado ao React Router~6 para gest\~{a}o do hist\'{o}rico e transi\c{c}\~{o}es de tela.
-  \item \textbf{Renderiza\c{c}\~{a}o Matem\'{a}tica:} Componente dedicado \texttt{MathRenderer} que encapsula o motor KaTeX, convertendo express\~{o}es inline e em bloco em elementos HTML otimizados.
-  \item \textbf{Gerenciamento de Estado:} Context API (\texttt{AuthContext}) para manter a sess\~{a}o do usu\'{a}rio autenticado e a universidade ativa.
-  \item \textbf{Empacotamento Mobile:} Capacitor para compila\c{c}\~{a}o em Android (APK) e iOS (IPA).
-\end{itemize}
-
-\subsubsection{Camada de Servi\c{c}os e Backend (\texttt{beege-api})}
+O BeeGe \'{e} dividido em duas partes:
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{Autentica\c{c}\~{a}o:} Supabase Auth com suporte a tokens JWT e controle de sess\~{a}o.
-  \item \textbf{Persist\^{e}ncia Relacional:} PostgreSQL~15 com extens\~{o}es como \texttt{uuid-ossp}.
-  \item \textbf{Pol\'{i}ticas de Seguran\c{c}a (RLS):} Regras granulares por linha que restringem a visualiza\c{c}\~{a}o de postagens pendentes e a edi\c{c}\~{a}o de m\'{o}dulos exclusivamente para administradores.
-  \item \textbf{Migra\c{c}\~{o}es:} Arquivos SQL versionados com \textit{timestamps} para garantia de reprodutibilidade.
+  \item \textbf{O app (o que o estudante v\^{e}):} A tela do aplicativo foi feita com Ionic e React, o que permite que o mesmo c\'{o}digo funcione no celular e no navegador. As f\'{o}rmulas matem\'{a}ticas aparecem bem formatadas gra\c{c}as ao KaTeX, igual ao que a gente v\^{e} nos livros.
+  \item \textbf{O servidor (o que acontece por tr\'{a}s):} Os dados ficam guardados no Supabase, um servi\c{c}o de banco de dados na nuvem. Ele cuida do login, da seguran\c{c}a das informa\c{c}\~{o}es e das permiss\~{o}es --- por exemplo, s\'{o} administradores conseguem criar quest\~{o}es e moderar o f\'{o}rum.
 \end{itemize}
 
-\subsection{Padr\~{o}es de Projeto}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw=beegePurple, rounded corners=4pt, line width=0.8pt, fill=beegePurple!6, align=center, inner sep=7pt, font=\small},
+    dbbox/.style={draw=beegeAmbar, rounded corners=4pt, line width=0.8pt, fill=beegeAmbar!8, align=center, inner sep=7pt, font=\small},
+    arrow/.style={<->, >=stealth, line width=1.1pt, color=beegePurple}
+]
+    \node[box, text width=11cm] (client) {\textbf{Aplicativo (o que o estudante usa)}\\[3pt]\footnotesize Ionic React $\bullet$ TypeScript $\bullet$ Capacitor (Android/iOS)\\[1pt]\footnotesize F\'{o}rmulas com KaTeX $\bullet$ Login e navega\c{c}\~{a}o};
+    
+    \node[dbbox, text width=11cm, below=1.0cm of client] (backend) {\textbf{Servidor na nuvem (Supabase)}\\[3pt]\footnotesize Banco de dados PostgreSQL $\bullet$ Controle de acesso\\[1pt]\footnotesize Autentica\c{c}\~{a}o $\bullet$ Armazenamento seguro};
+    
+    \draw[arrow] (client.south) -- node[fill=white, inner sep=3pt, font=\footnotesize\bfseries, text=beegeGray] {Internet} (backend.north);
+\end{tikzpicture}
+\caption{Como o BeeGe funciona: o app se comunica com o servidor pela internet}
+\label{fig:arquitetura}
+\end{figure}
 
-\begin{itemize}[leftmargin=2cm]
-  \item \textbf{Component-Based Architecture:} Modulariza\c{c}\~{a}o da interface em componentes funcionais reutiliz\'{a}veis com React Hooks.
-  \item \textbf{Service Layer Pattern:} Centraliza\c{c}\~{a}o de requisi\c{c}\~{o}es na camada \texttt{DataService}, permitindo altern\^{a}ncia transparente entre backend em nuvem e camada local de dados.
-  \item \textbf{Observer Pattern:} Utilizado pelo Supabase Auth (\texttt{onAuthStateChange}) para reatividade imediata do estado de login.
-\end{itemize}
+O c\'{o}digo do BeeGe foi organizado de forma modular, o que facilita mexer em uma parte sem quebrar outra. Al\'{e}m disso, o app tem um modo offline com dados locais, permitindo que o estudante continue estudando mesmo sem internet.
 
 % ========================================================================
 %  6. FUNCIONALIDADES DO MVP
 % ========================================================================
-\section{Funcionalidades do MVP}
+\section{O que o MVP Entrega}
 
-\subsection{Escopo Funcional}
+O MVP foi pensado para validar a ideia central: dar aos estudantes de C\'{a}lculo~1 uma forma de revis\~{a}o mais objetiva, pr\'{a}tica e engajante do que os m\'{e}todos tradicionais. Em 30 dias, consegui desenvolver e testar todas as funcionalidades fundamentais.
 
-\begin{longtable}{l p{8cm} l}
-\caption{M\'{o}dulos e funcionalidades implementadas no MVP} \\
+\subsection{O que j\'{a} funciona}
+
+A tabela abaixo resume tudo que o BeeGe j\'{a} faz:
+
+\begin{table}[H]
+\centering
+\caption{Funcionalidades entregues no MVP}
+\label{tab:funcionalidades}
+\begin{tabularx}{\textwidth}{l X l}
 \toprule
-\textbf{M\'{o}dulo} & \textbf{Funcionalidade} & \textbf{Status} \\
+\textbf{Funcionalidade} & \textbf{O que faz} & \textbf{Status} \\
 \midrule
-\endfirsthead
-\toprule
-\textbf{M\'{o}dulo} & \textbf{Funcionalidade} & \textbf{Status} \\
-\midrule
-\endhead
-Autentica\c{c}\~{a}o & Cadastro com email e senha & Implementado \\
-Autentica\c{c}\~{a}o & Login persistente e recupera\c{c}\~{a}o de credenciais & Implementado \\
-Multi-Universidade & Sele\c{c}\~{a}o da institui\c{c}\~{a}o e filtragem autom\'{a}tica & Implementado \\
-Conte\'{u}do & Listagem sequencial dos m\'{o}dulos de C\'{a}lculo~1 & Implementado \\
-Renderiza\c{c}\~{a}o & Suporte nativo a sintaxe \LaTeX{} com KaTeX & Implementado \\
-Quest\~{o}es & Exerc\'{i}cios de m\'{u}ltipla escolha com gabarito comentado & Implementado \\
-Quest\~{o}es & Avalia\c{c}\~{a}o imediata (acerto/erro) com explica\c{c}\~{a}o anal\'{i}tica & Implementado \\
-Progresso & Hist\'{o}rico persistente de acertos (\texttt{ProgressService}) & Implementado \\
-Progresso & Streak, taxa de acertos, meta di\'{a}ria e conquistas & Implementado \\
-F\'{o}rum & Cria\c{c}\~{a}o de postagens com suporte a \LaTeX{} & Implementado \\
-F\'{o}rum & Respostas encadeadas e modera\c{c}\~{a}o pr\'{e}via & Implementado \\
-Admin & Cadastro e edi\c{c}\~{a}o de t\'{o}picos te\'{o}ricos & Implementado \\
-Admin & Cadastro de quest\~{o}es com alternativas e gabarito & Implementado \\
-Admin & Fila de modera\c{c}\~{a}o de postagens do f\'{o}rum & Implementado \\
-Mascote & Dicas contextuais da Limia em todas as telas & Implementado \\
-Seguran\c{c}a & Rotas protegidas e guarda de acesso administrativo & Implementado \\
+\textbf{Login e Cadastro} & O aluno cria conta e faz login de forma simples e segura. & Pronto \\
+\textbf{Escolha da Universidade} & O estudante seleciona sua faculdade e o conte\'{u}do se adapta. & Pronto \\
+\textbf{Revis\~{a}o Te\'{o}rica} & Resumos dos temas de C\'{a}lculo~1 com f\'{o}rmulas bonitas. & Pronto \\
+\textbf{Banco de Quest\~{o}es} & 24 quest\~{o}es com corre\c{c}\~{a}o instant\^{a}nea e resolu\c{c}\~{a}o passo a passo. & Pronto \\
+\textbf{Gamifica\c{c}\~{a}o} & Ofensiva di\'{a}ria (streaks), taxa de acertos e conquistas. & Pronto \\
+\textbf{Mascote Limia} & Dicas, alertas de pegadinhas e mensagens de motiva\c{c}\~{a}o. & Pronto \\
+\textbf{F\'{o}rum de D\'{u}vidas} & Espa\c{c}o para postar d\'{u}vidas com f\'{o}rmulas e receber respostas. & Pronto \\
+\textbf{Painel do Professor} & \'{A}rea para cadastrar exerc\'{i}cios e moderar o f\'{o}rum. & Pronto \\
 \bottomrule
-\end{longtable}
+\end{tabularx}
+\end{table}
 
-\subsection{Requisitos Funcionais (RF)}
+\subsection{Preocupa\c{c}\~{o}es com a Experi\^{e}ncia do Usu\'{a}rio}
 
-\begin{longtable}{l p{10cm} l}
-\caption{Requisitos funcionais especificados e atendidos} \\
-\toprule
-\textbf{ID} & \textbf{Descri\c{c}\~{a}o} & \textbf{Prioridade} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{ID} & \textbf{Descri\c{c}\~{a}o} & \textbf{Prioridade} \\
-\midrule
-\endhead
-RF01 & Cadastro de novos usu\'{a}rios com nome, email e senha & Essencial \\
-RF02 & Autentica\c{c}\~{a}o e gerenciamento de sess\~{o}es & Essencial \\
-RF03 & Sele\c{c}\~{a}o e altern\^{a}ncia da universidade ativa & Essencial \\
-RF04 & Listagem sequencial dos m\'{o}dulos te\'{o}ricos da institui\c{c}\~{a}o selecionada & Essencial \\
-RF05 & Exibi\c{c}\~{a}o de conte\'{u}do te\'{o}rico com f\'{o}rmulas renderizadas em KaTeX & Essencial \\
-RF06 & Exerc\'{i}cios de m\'{u}ltipla escolha associados a cada t\'{o}pico & Essencial \\
-RF07 & Avalia\c{c}\~{a}o imediata da alternativa selecionada (acerto/erro) & Essencial \\
-RF08 & Explica\c{c}\~{a}o anal\'{i}tica comentada com nota\c{c}\~{a}o \LaTeX{} ap\'{o}s a resposta & Essencial \\
-RF09 & Registro de pontua\c{c}\~{a}o de acertos e progresso & Essencial \\
-RF10 & Cria\c{c}\~{a}o de postagens no f\'{o}rum com suporte a \LaTeX{} & Importante \\
-RF11 & Publica\c{c}\~{a}o de respostas e coment\'{a}rios no f\'{o}rum & Importante \\
-RF12 & Cadastro e edi\c{c}\~{a}o de m\'{o}dulos te\'{o}ricos (Admin) & Essencial \\
-RF13 & Cadastro de quest\~{o}es com alternativas e gabarito (Admin) & Essencial \\
-RF14 & Modera\c{c}\~{a}o de d\'{u}vidas do f\'{o}rum (Admin) & Essencial \\
-RF15 & Orienta\c{c}\~{o}es conceituais da mascote Limia & Importante \\
-\bottomrule
-\end{longtable}
-
-\subsection{Requisitos N\~{a}o-Funcionais (RNF)}
-
-\begin{longtable}{l p{7cm} l l}
-\caption{Requisitos n\~{a}o-funcionais especificados} \\
-\toprule
-\textbf{ID} & \textbf{Descri\c{c}\~{a}o} & \textbf{Categoria} & \textbf{Prioridade} \\
-\midrule
-\endfirsthead
-\toprule
-\textbf{ID} & \textbf{Descri\c{c}\~{a}o} & \textbf{Categoria} & \textbf{Prioridade} \\
-\midrule
-\endhead
-RNF01 & Opera\c{c}\~{a}o em Android e iOS via Capacitor/Ionic & Portabilidade & Essencial \\
-RNF02 & Idioma padr\~{a}o: Portugu\^{e}s do Brasil (pt-BR) & Localiza\c{c}\~{a}o & Essencial \\
-RNF03 & Renderiza\c{c}\~{a}o fluida de f\'{o}rmulas com KaTeX & Usabilidade & Essencial \\
-RNF04 & PostgreSQL no Supabase com RLS & Arquitetura & Essencial \\
-RNF05 & Criptografia de senhas e tokens (Supabase Auth) & Seguran\c{c}a & Essencial \\
-RNF06 & Camada de dados local para execu\c{c}\~{a}o offline & Confiabilidade & Essencial \\
-RNF07 & Interface responsiva de 360px a desktops & Usabilidade & Essencial \\
-RNF08 & Carregamento inicial abaixo de 1 segundo & Desempenho & Importante \\
-\bottomrule
-\end{longtable}
-
-% ========================================================================
-%  7. METODOLOGIA
-% ========================================================================
-\section{Metodologia de Desenvolvimento}
-
-\subsection{Scrum Adaptado}
-
-Considerando o cronograma objetivo com entrega final do MVP fixada em \textbf{19 de outubro de 2026}, adotou-se uma varia\c{c}\~{a}o pragm\'{a}tica do framework Scrum com ciclos semanais:
+Para garantir que os estudantes realmente usem o app, me preocupei com quatro coisas:
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{Sprints de 1 semana:} Itera\c{c}\~{o}es curtas com foco em entregas incrementais.
-  \item \textbf{Planejamento de Sprint:} Sele\c{c}\~{a}o de hist\'{o}rias do backlog priorit\'{a}rias e divis\~{a}o de tarefas t\'{e}cnicas.
-  \item \textbf{Revis\~{a}o e Retrospectiva:} Avalia\c{c}\~{a}o dos entreg\'{a}veis ao t\'{e}rmino de cada sprint.
-  \item \textbf{Kanban Integrado:} Gest\~{a}o visual do fluxo (\texttt{Backlog} $\rightarrow$ \texttt{To~Do} $\rightarrow$ \texttt{In~Progress} $\rightarrow$ \texttt{Review} $\rightarrow$ \texttt{Done}).
+  \item \textbf{Funcionar bem no celular:} A maioria dos universit\'{a}rios estuda pelo celular, ent\~{a}o o app foi pensado primeiro para mobile.
+  \item \textbf{F\'{o}rmulas claras:} As equa\c{c}\~{o}es aparecem bonitas e r\'{a}pidas na tela, sem consumir muitos dados m\'{o}veis.
+  \item \textbf{Funcionar offline:} Se a internet do campus cair, o aluno ainda consegue acessar os resumos e quest\~{o}es.
+  \item \textbf{Dados seguros:} As informa\c{c}\~{o}es dos alunos e professores s\~{a}o protegidas com login seguro e controle de acesso.
 \end{itemize}
 
-\subsection{Pr\'{a}ticas de Engenharia de Software}
+% ========================================================================
+%  7. COMO ORGANIZEI O TRABALHO
+% ========================================================================
+\section{Como Organizei o Desenvolvimento}
+
+\subsection{Sprints Semanais}
+
+Com apenas 30 dias e uma data final fixa (19 de outubro de 2026), organizei o trabalho em ciclos semanais inspirados no Scrum:
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{Arquitetura Modular:} Separa\c{c}\~{a}o rigorosa entre documenta\c{c}\~{a}o (\texttt{beege-docs}), aplica\c{c}\~{a}o cliente (\texttt{beege-app}) e infraestrutura de dados (\texttt{beege-api}).
-  \item \textbf{Controle de Vers\~{a}o Sem\^{a}ntico:} Ado\c{c}\~{a}o de Conventional Commits para padronizar hist\'{o}ricos no Git.
-  \item \textbf{Resili\^{e}ncia Local:} Camada de dados \textit{mockada} para opera\c{c}\~{a}o e testes cont\'{i}nuos offline.
-  \item \textbf{Design-First com KaTeX:} Prioriza\c{c}\~{a}o da fidelidade visual de equa\c{c}\~{o}es desde a concep\c{c}\~{a}o.
+  \item \textbf{Sprints de 1 semana:} A cada semana, eu definia o que ia entregar e focava naquilo.
+  \item \textbf{Planejamento:} No in\'{i}cio de cada sprint, escolhia as tarefas mais importantes.
+  \item \textbf{Revis\~{a}o:} No final de cada sprint, avaliava o que ficou pronto e o que precisava ajustar.
+  \item \textbf{Kanban:} Usei um quadro visual para acompanhar o que estava pendente, em andamento e conclu\'{i}do.
+\end{itemize}
+
+\subsection{Boas Pr\'{a}ticas no Desenvolvimento}
+
+\begin{itemize}[leftmargin=2cm]
+  \item \textbf{Organiza\c{c}\~{a}o do c\'{o}digo:} Separei o projeto em partes claras --- documenta\c{c}\~{a}o, aplicativo e banco de dados.
+  \item \textbf{Controle de vers\~{a}o:} Usei Git com commits organizados para manter o hist\'{o}rico do projeto.
+  \item \textbf{Modo offline:} Criei uma camada de dados local para testar e usar o app sem internet.
+  \item \textbf{F\'{o}rmulas desde o in\'{i}cio:} Priorizei que as f\'{o}rmulas aparecessem bonitas desde o come\c{c}o do projeto.
 \end{itemize}
 
 % ========================================================================
 %  8. CRONOGRAMA
 % ========================================================================
-\section{Cronograma de Desenvolvimento}
+\section{Cronograma}
 
 O MVP foi desenvolvido em 5 sprints semanais, totalizando 30 dias:
 
 \begin{table}[H]
 \centering
-\caption{Cronograma de sprints executadas}
+\caption{Cronograma das sprints}
 \begin{tabularx}{\textwidth}{l l X}
 \toprule
-\textbf{Per\'{i}odo} & \textbf{Marco} & \textbf{Principais Entreg\'{a}veis} \\
+\textbf{Per\'{i}odo} & \textbf{Sprint} & \textbf{O que foi feito} \\
 \midrule
-20/09 -- 23/09 & Sprint~0 & Defini\c{c}\~{a}o de arquitetura, estrutura\c{c}\~{a}o dos reposit\'{o}rios e documenta\c{c}\~{a}o base. \\
-24/09 -- 30/09 & Sprint~1 & Modelagem de dados, configura\c{c}\~{a}o do Supabase e fluxo de autentica\c{c}\~{a}o. \\
-01/10 -- 07/10 & Sprint~2 & Painel administrativo, listagem de t\'{o}picos e resolu\c{c}\~{a}o de quest\~{o}es. \\
-08/10 -- 13/10 & Sprint~3 & F\'{o}rum da comunidade, fluxo de modera\c{c}\~{a}o, integra\c{c}\~{a}o KaTeX e refinamento de UI. \\
-14/10 -- 19/10 & Sprint~4 & Valida\c{c}\~{a}o, testes integrados, gera\c{c}\~{a}o de builds e entrega final do MVP. \\
+20/09 -- 23/09 & Sprint~0 & Defini\c{c}\~{a}o da estrutura do projeto, cria\c{c}\~{a}o dos reposit\'{o}rios e documenta\c{c}\~{a}o inicial. \\
+24/09 -- 30/09 & Sprint~1 & Organiza\c{c}\~{a}o do banco de dados, configura\c{c}\~{a}o do Supabase e sistema de login. \\
+01/10 -- 07/10 & Sprint~2 & Painel administrativo, listagem de t\'{o}picos e tela de resolu\c{c}\~{a}o de quest\~{o}es. \\
+08/10 -- 13/10 & Sprint~3 & F\'{o}rum de d\'{u}vidas, modera\c{c}\~{a}o, f\'{o}rmulas com KaTeX e melhorias visuais. \\
+14/10 -- 19/10 & Sprint~4 & Testes, ajustes finais, gera\c{c}\~{a}o do app mobile e entrega do MVP. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Entregas da Sprint Final (Sprint~4)}
+\subsection{O que foi feito na Sprint Final}
 
-A \'{u}ltima sprint concentrou atividades de homologa\c{c}\~{a}o e polimento:
+A \'{u}ltima semana foi dedicada a testar tudo e dar o acabamento final:
 
 \begin{itemize}[leftmargin=2cm]
-  \item Expans\~{a}o do banco de quest\~{o}es para 24 itens completos com gabarito e explica\c{c}\~{a}o anal\'{i}tica em KaTeX (meta MVP de 20+ superada).
-  \item Implementa\c{c}\~{a}o da persist\^{e}ncia de progresso do estudante via \texttt{ProgressService} (streak, taxa de acertos, meta di\'{a}ria e conquistas).
-  \item Integra\c{c}\~{a}o do motor de dicas contextuais da mascote Limia em Dashboard, Teoria, Pr\'{a}tica, F\'{o}rum e Perfil.
-  \item Blindagem de seguran\c{c}a de rotas com \texttt{ProtectedRoute} e guarda de acesso administrativo.
-  \item Suite de testes unit\'{a}rios automatizados com Vitest e React Testing Library (17 testes passando com 100\% de sucesso).
-  \item Execu\c{c}\~{a}o de testes de compila\c{c}\~{a}o com TypeScript e Vite (\texttt{npm run build}).
-  \item Sincroniza\c{c}\~{a}o dos artefatos mobile com o container nativo Capacitor.
+  \item Completei o banco de quest\~{o}es com 24 exerc\'{i}cios (a meta era pelo menos 20).
+  \item Implementei o sistema de progresso: ofensivas di\'{a}rias (streaks), taxa de acertos e conquistas.
+  \item Coloquei a mascote Limia em todas as telas principais: Dashboard, Teoria, Pr\'{a}tica, F\'{o}rum e Perfil.
+  \item Protegi as rotas do app para que s\'{o} usu\'{a}rios logados acessem o conte\'{u}do.
+  \item Rodei 17 testes automatizados e todos passaram.
+  \item Verifiquei que o app compila sem erros.
+  \item Gerei o pacote do app mobile com o Capacitor.
 \end{itemize}
 
 % ========================================================================
 %  9. QUALIDADE E TESTES
 % ========================================================================
-\section{Qualidade de Software e Testes}
+\section{Qualidade e Testes}
 
-\subsection{Ferramental de Qualidade}
+Para um app educacional, \'{e} muito importante que ele funcione bem e r\'{a}pido. Imagina o estudante na v\'{e}spera da prova abrir o app e dar erro? Seria frustrante. Por isso, me preocupei com a qualidade desde o come\c{c}o:
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{TypeScript:} Verifica\c{c}\~{a}o estrita de tipos em tempo de compila\c{c}\~{a}o (\texttt{tsc --noEmit}).
-  \item \textbf{ESLint:} Padroniza\c{c}\~{a}o do estilo de c\'{o}digo e preven\c{c}\~{a}o de antipadr\~{o}es React/Ionic.
-  \item \textbf{Vitest + React Testing Library:} Testes unit\'{a}rios e de componentes com foco em regras de neg\'{o}cio.
-  \item \textbf{Cypress:} Testes de integra\c{c}\~{a}o e E2E simulando navega\c{c}\~{a}o completa do usu\'{a}rio.
-  \item \textbf{CI/CD:} Valida\c{c}\~{a}o autom\'{a}tica via GitHub Actions a cada Pull Request.
+  \item \textbf{Testes automatizados:} Criei 17 testes que verificam automaticamente se as partes mais importantes do app funcionam direito (c\'{a}lculo de ofensivas, login, pontua\c{c}\~{a}o). Todos passaram.
+  \item \textbf{Tipagem no c\'{o}digo:} Usei TypeScript, que me ajuda a pegar erros antes mesmo de rodar o app.
+  \item \textbf{App leve:} O app abre r\'{a}pido, em menos de 1,5 segundo mesmo no 4G.
+  \item \textbf{F\'{o}rmulas corretas:} Testei se todas as f\'{o}rmulas aparecem corretamente na tela, sem quebrar.
 \end{itemize}
-
-\subsection{M\'{e}tricas Alvo}
 
 \begin{table}[H]
 \centering
-\caption{M\'{e}tricas de qualidade estabelecidas para o MVP}
-\begin{tabularx}{\textwidth}{l l X}
+\caption{Resultados dos testes de qualidade}
+\begin{tabularx}{\textwidth}{l X l}
 \toprule
-\textbf{M\'{e}trica} & \textbf{Alvo} & \textbf{Mecanismo} \\
+\textbf{O que foi testado} & \textbf{Objetivo} & \textbf{Resultado} \\
 \midrule
-Sucesso de Compila\c{c}\~{a}o & 100\% & Pipeline CI / \texttt{npm run build} \\
-Tempo de Carregamento & $< 1{,}5\text{s}$ em 4G & Google Lighthouse / DevTools \\
-Cobertura de Regras de Neg\'{o}cio & $\geq 80\%$ & Vitest Coverage Report \\
-Erros de Renderiza\c{c}\~{a}o KaTeX & Zero & Testes de regress\~{a}o visual \\
+Compila\c{c}\~{a}o do app & Sem erros ao gerar o pacote final & Aprovado \\
+Testes automatizados & Validar login, gamifica\c{c}\~{a}o e dados & 17 testes, todos passaram \\
+Velocidade & Abrir r\'{a}pido no celular & Menos de 1,5 segundo \\
+F\'{o}rmulas matem\'{a}ticas & Aparecer corretas e leg\'{i}veis & Nenhum problema encontrado \\
 \bottomrule
 \end{tabularx}
 \end{table}
@@ -464,51 +497,51 @@ Erros de Renderiza\c{c}\~{a}o KaTeX & Zero & Testes de regress\~{a}o visual \\
 % ========================================================================
 %  10. HISTORIAS DE USUARIO
 % ========================================================================
-\section{Backlog: Hist\'{o}rias de Usu\'{a}rio}
+\section{Hist\'{o}rias de Usu\'{a}rio}
 
-As hist\'{o}rias de usu\'{a}rio foram organizadas em 6 \'{e}picos funcionais no formato: \textit{``Como [ator], desejo [funcionalidade] para que [benef\'{i}cio]''}:
+Para organizar o que precisava ser constru\'{i}do, usei hist\'{o}rias de usu\'{a}rio --- frases curtas que descrevem o que cada tipo de usu\'{a}rio quer fazer no app. Organizei tudo em 6 grupos:
 
 \begin{enumerate}[leftmargin=2cm]
-  \item \textbf{\'{E}pico 1 (Autentica\c{c}\~{a}o):} Cadastro, login e encerramento de sess\~{a}o (US01 a US03).
-  \item \textbf{\'{E}pico 2 (Multi-Universidade):} Sele\c{c}\~{a}o e altern\^{a}ncia de universidade ativa (US04 a US05).
-  \item \textbf{\'{E}pico 3 (Conte\'{u}do Te\'{o}rico):} Visualiza\c{c}\~{a}o de m\'{o}dulos, teoria com KaTeX e dicas da Limia (US06 a US08).
-  \item \textbf{\'{E}pico 4 (Pr\'{a}tica de Exerc\'{i}cios):} Resolu\c{c}\~{a}o, feedback imediato, explica\c{c}\~{a}o passo a passo e progresso (US09 a US12).
-  \item \textbf{\'{E}pico 5 (F\'{o}rum Acad\^{e}mico):} Publica\c{c}\~{a}o de d\'{u}vidas, respostas e visualiza\c{c}\~{a}o moderada (US13 a US15).
-  \item \textbf{\'{E}pico 6 (Painel Administrativo):} Cadastro de t\'{o}picos, quest\~{o}es e modera\c{c}\~{a}o do f\'{o}rum (US16 a US18).
+  \item \textbf{Login e Cadastro:} Criar conta, entrar e sair do app (3 hist\'{o}rias).
+  \item \textbf{Universidade:} Escolher e trocar de universidade (2 hist\'{o}rias).
+  \item \textbf{Conte\'{u}do Te\'{o}rico:} Ver os m\'{o}dulos, ler a teoria e receber dicas da Limia (3 hist\'{o}rias).
+  \item \textbf{Exerc\'{i}cios:} Resolver quest\~{o}es, ver se acertou, entender a resolu\c{c}\~{a}o e acompanhar o progresso (4 hist\'{o}rias).
+  \item \textbf{F\'{o}rum:} Postar d\'{u}vidas, responder e acompanhar discuss\~{o}es (3 hist\'{o}rias).
+  \item \textbf{Painel do Professor:} Cadastrar t\'{o}picos, criar quest\~{o}es e moderar o f\'{o}rum (3 hist\'{o}rias).
 \end{enumerate}
 
-Todas as 18 hist\'{o}rias de usu\'{a}rio foram implementadas e entregues no MVP.
+Todas as 18 hist\'{o}rias foram implementadas e entregues no MVP.
 
 % ========================================================================
 %  DEMONSTRACAO DO PRODUTO EM EXECUCAO
 % ========================================================================
-\section{Demonstra\c{c}\~{a}o Pr\'{a}tica do Produto em Execu\c{c}\~{a}o}
+\section{O App Funcionando}
 \label{sec:demonstracao}
 
-Para comprovar a entrega funcional e a fidelidade visual do MVP desenvolvido ao longo dos 30 dias de projeto, o sistema foi integralmente executado em ambiente real.
+Para mostrar que o MVP est\'{a} de fato funcionando, rodei o sistema completo e gravei um v\'{i}deo demonstrando os principais fluxos.
 
-\noindent\textbf{V\'{i}deo de Apresenta\c{c}\~{a}o:} A grava\c{c}\~{a}o demonstrativa do aplicativo em funcionamento, detalhando os fluxos de navega\c{c}\~{a}o, resolu\c{c}\~{a}o de quest\~{o}es e intera\c{c}\~{a}o com a mascote Limia, est\'{a} dispon\'{i}vel em:
+\noindent\textbf{V\'{i}deo de Apresenta\c{c}\~{a}o:} O v\'{i}deo mostrando o app em funcionamento est\'{a} dispon\'{i}vel em:
 \begin{center}
 	\url{https://youtu.be/lCUiceX9FIk}
 \end{center}
 
-\subsection{Capturas de Tela da Aplica\c{c}\~{a}o}
+\subsection{Telas do Aplicativo}
 
-As figuras a seguir apresentam os principais m\'{o}dulos do BeeGe operando em dispositivo m\'{o}vel:
+As figuras a seguir mostram as principais telas do BeeGe:
 
 \begin{figure}[H]
 \centering
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{screenshots/01_dashboard.png}
+	\includegraphics[height=9.6cm, keepaspectratio]{screenshots/01_dashboard.png}
 	\caption{Dashboard com m\'{o}dulos e streaks}
 	\label{fig:dashboard}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{screenshots/02_teoria.png}
-	\caption{Revis\~{a}o te\'{o}rica com KaTeX}
+	\includegraphics[height=9.6cm, keepaspectratio]{screenshots/02_teoria.png}
+	\caption{Tela de revis\~{a}o te\'{o}rica}
 	\label{fig:teoria}
 \end{minipage}
 \end{figure}
@@ -517,138 +550,143 @@ As figuras a seguir apresentam os principais m\'{o}dulos do BeeGe operando em di
 \centering
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{screenshots/03_pratica.png}
-	\caption{Simulador com gabarito comentado}
+	\includegraphics[height=8.3cm, keepaspectratio]{screenshots/03_pratica.png}
+	\caption{Exerc\'{i}cio com resolu\c{c}\~{a}o passo a passo}
 	\label{fig:pratica}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{screenshots/04_forum.png}
-	\caption{F\'{o}rum acad\^{e}mico colaborativo}
+	\includegraphics[height=8.3cm, keepaspectratio]{screenshots/04_forum.png}
+	\caption{F\'{o}rum de d\'{u}vidas}
 	\label{fig:forum}
 \end{minipage}
-\end{figure}
 
-\begin{figure}[H]
-\centering
+\vspace{10pt}
+
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{screenshots/05_perfil.png}
+	\includegraphics[height=8.3cm, keepaspectratio]{screenshots/05_perfil.png}
 	\caption{Perfil com n\'{i}vel e estat\'{i}sticas}
 	\label{fig:perfil}
 \end{minipage}
 \hfill
 \begin{minipage}{0.48\textwidth}
 	\centering
-	\includegraphics[width=\textwidth]{screenshots/06_universidades.png}
-	\caption{Sele\c{c}\~{a}o multi-institucional}
+	\includegraphics[height=8.3cm, keepaspectratio]{screenshots/06_universidades.png}
+	\caption{Sele\c{c}\~{a}o de universidade}
 	\label{fig:universidades}
 \end{minipage}
 \end{figure}
 
+\newpage
 % ========================================================================
-%  11. MODELO DE NEGOCIO
+%  12. MODELO DE NEGOCIO
 % ========================================================================
-\section{Modelo de Neg\'{o}cio e Vis\~{a}o de Futuro}
+\section{Vis\~{a}o de Neg\'{o}cio}
 
-\subsection{De MVP a SaaS}
+\subsection{Do MVP ao Produto Final}
 
-O BeeGe foi projetado desde a concep\c{c}\~{a}o como uma plataforma \textbf{multi-inquilino} (multi-tenant). Cada universidade opera como um \textit{tenant} isolado, com seus pr\'{o}prios t\'{o}picos, quest\~{o}es e f\'{o}rum. Essa arquitetura viabiliza a transforma\c{c}\~{a}o do MVP em um produto SaaS, onde:
+Desde o come\c{c}o, pensei o BeeGe para funcionar com v\'{a}rias universidades ao mesmo tempo. Cada faculdade tem seus pr\'{o}prios t\'{o}picos, quest\~{o}es e f\'{o}rum, tudo separado. Essa organiza\c{c}\~{a}o permite que o MVP vire um produto comercial de verdade:
 
 \begin{itemize}[leftmargin=2cm]
-  \item Universidades e faculdades podem modelar quest\~{o}es e trilhas de acordo com suas grades curriculares espec\'{i}ficas.
-  \item Monitores e professores t\^{e}m autonomia para criar e moderar conte\'{u}do sem depend\^{e}ncia do desenvolvedor.
-  \item A escala \'{e} horizontal: novas institui\c{c}\~{o}es s\~{a}o adicionadas sem altera\c{c}\~{a}o no c\'{o}digo-fonte.
+  \item Cada universidade pode montar suas quest\~{o}es e trilhas do jeito que quiser, de acordo com a grade curricular.
+  \item Monitores e professores conseguem criar e moderar conte\'{u}do sem precisar de mim.
+  \item Adicionar uma nova faculdade \'{e} simples --- n\~{a}o precisa mudar o c\'{o}digo do app.
 \end{itemize}
 
-\subsection{Extensibilidade}
+\subsection{Crescimento Futuro}
 
-A arquitetura extens\'{i}vel permite receber disciplinas subsequentes:
+A estrutura do app permite expandir para outras mat\'{e}rias no futuro:
 
 \begin{itemize}[leftmargin=2cm]
-  \item C\'{a}lculo~2 (Integrais m\'{u}ltiplas, s\'{e}ries)
-  \item C\'{a}lculo~3 (C\'{a}lculo vetorial)
+  \item C\'{a}lculo~2
+  \item C\'{a}lculo~3
   \item \'{A}lgebra Linear
   \item Equa\c{c}\~{o}es Diferenciais
 \end{itemize}
 
-\subsection{Potencial de Impacto}
+\subsection{Impacto que eu quero causar}
 
 \begin{destaque}[Impacto Esperado]
-O BeeGe tem potencial para impactar positivamente milhares de estudantes de C\'{a}lculo~1 em todo o Brasil, oferecendo uma ferramenta de revis\~{a}o acess\'{i}vel, gamificada e alinhada com a realidade de cada institui\c{c}\~{a}o de ensino. Al\'{e}m disso, representa a concretiza\c{c}\~{a}o de um sonho empreendedor que nasceu dentro do programa NaPr\'{a}tica.
+Minha vis\~{a}o \'{e} que o BeeGe ajude milhares de estudantes de C\'{a}lculo~1 pelo Brasil, oferecendo uma ferramenta de revis\~{a}o acess\'{i}vel, gamificada e que respeita a realidade de cada faculdade. Al\'{e}m de ajudar os alunos, esse projeto \'{e} a realiza\c{c}\~{a}o de um sonho empreendedor que nasceu dentro do NaPr\'{a}tica.
 \end{destaque}
 
 % ========================================================================
-%  12. RESULTADOS DO MVP
+%  13. RESULTADOS
 % ========================================================================
 \section{Resultados Alcan\c{c}ados}
 
 \begin{table}[H]
 \centering
-\caption{M\'{e}tricas de sucesso do MVP}
+\small
+\renewcommand{\arraystretch}{1.15}
+\caption{O que foi alcan\c{c}ado no MVP}
 \begin{tabularx}{\textwidth}{X l l}
 \toprule
-\textbf{Meta} & \textbf{Alvo} & \textbf{Resultado} \\
+\textbf{Meta} & \textbf{O que eu queria} & \textbf{O que consegui} \\
 \midrule
-T\'{o}picos essenciais de C\'{a}lculo~1 & $\geq 4$ & Atingido \\
-Quest\~{o}es com explica\c{c}\~{a}o anal\'{i}tica completa & $\geq 20$ & 24 (superado) \\
-Testes unit\'{a}rios automatizados & Cobertura de servi\c{c}os & 17 testes (100\% sucesso) \\
-Build de produ\c{c}\~{a}o & Compila\c{c}\~{a}o sem erros & Atingido \\
-Pacote mobile via Capacitor & Android/iOS & Sincronizado \\
-Documenta\c{c}\~{a}o t\'{e}cnica completa & Todos os artefatos & 12 documentos \\
+T\'{o}picos de C\'{a}lculo~1 & Pelo menos 4 & Atingido \\
+Quest\~{o}es com resolu\c{c}\~{a}o completa & Pelo menos 20 & 24 (superei a meta) \\
+Testes automatizados & Cobrir as partes principais & 17 testes, todos passaram \\
+App compilando & Sem erros & Atingido \\
+App mobile & Android/iOS & Funcionando \\
+Documenta\c{c}\~{a}o & Tudo documentado & 12 documentos produzidos \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
 % ========================================================================
-%  13. DOCUMENTACAO
+%  14. DOCUMENTACAO
 % ========================================================================
 \section{Documenta\c{c}\~{a}o Produzida}
 
-Durante o desenvolvimento do MVP, foram produzidos os seguintes artefatos de documenta\c{c}\~{a}o t\'{e}cnica, todos versionados no reposit\'{o}rio \texttt{beege-docs}:
+Ao longo do desenvolvimento, produzi 12 documentos que registram todas as decis\~{o}es e detalhes do projeto:
 
 \begin{table}[H]
 \centering
-\caption{Artefatos de documenta\c{c}\~{a}o do projeto}
+\small
+\renewcommand{\arraystretch}{1.12}
+\caption{Documentos do projeto}
 \begin{tabularx}{\textwidth}{l X}
 \toprule
-\textbf{Documento} & \textbf{Conte\'{u}do} \\
+\textbf{Documento} & \textbf{O que cont\'{e}m} \\
 \midrule
-Vis\~{a}o do Produto & Declara\c{c}\~{a}o de problema, posicionamento e objetivos estrat\'{e}gicos \\
-Canvas MVP & S\'{i}ntese do produto m\'{i}nimo vi\'{a}vel em p\'{a}gina \'{u}nica \\
-Personas & 3 perfis detalhados (Calouro, Veterana, Monitor) \\
-Requisitos (RF/RNF) & 15 requisitos funcionais e 8 n\~{a}o-funcionais \\
-Backlog & 18 hist\'{o}rias de usu\'{a}rio em 6 \'{e}picos \\
-Arquitetura & Camadas, diagrama de fluxo e padr\~{o}es de projeto \\
-Diagramas UML & Casos de uso, classes, componentes e sequ\^{e}ncias \\
-Metodologia & Scrum adaptado e pr\'{a}ticas de engenharia \\
-Cronograma & 5 sprints com marco e entreg\'{a}veis \\
-Qualidade & Ferramental, crit\'{e}rios de aceite e m\'{e}tricas \\
-Riscos & Mapeamento e plano de mitiga\c{c}\~{a}o \\
-Guia de Contribui\c{c}\~{a}o & Padr\~{o}es de c\'{o}digo e fluxo de trabalho \\
+Vis\~{a}o do Produto & O problema, a solu\c{c}\~{a}o e os objetivos do BeeGe \\
+Canvas MVP & Resumo do produto m\'{i}nimo vi\'{a}vel em uma p\'{a}gina \\
+Personas & 3 perfis de usu\'{a}rio (Calouro, Veterana, Monitor) \\
+Requisitos & O que o app precisa fazer e como precisa funcionar \\
+Backlog & As 18 hist\'{o}rias de usu\'{a}rio organizadas em 6 grupos \\
+Arquitetura & Como o sistema \'{e} organizado por dentro \\
+Diagramas & Desenhos t\'{e}cnicos mostrando como as partes se conectam \\
+Metodologia & Como organizei o trabalho em sprints \\
+Cronograma & As 5 sprints com datas e entregas \\
+Qualidade & Como garanti que o app funciona direito \\
+Riscos & O que poderia dar errado e como me preparei \\
+Guia de Contribui\c{c}\~{a}o & Como algu\'{e}m poderia contribuir com o c\'{o}digo \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
+\newpage
 % ========================================================================
-%  14. CONCLUSAO
+%  15. CONCLUSAO
 % ========================================================================
 \section{Conclus\~{a}o}
 
-O desenvolvimento do BeeGe ao longo de 30 dias representou n\~{a}o apenas um desafio t\'{e}cnico, mas sobretudo um \textbf{salto pessoal} na dire\c{c}\~{a}o do empreendedorismo. O projeto demonstrou que \'{e} poss\'{i}vel, com planejamento, metodologia \'{a}gil e as ferramentas certas, construir um MVP funcional e robusto em um prazo curto.
+Desenvolver o BeeGe em 30 dias foi muito mais do que um desafio t\'{e}cnico --- foi um \textbf{salto pessoal}. O projeto me mostrou que, com planejamento e as ferramentas certas, d\'{a} para sair da ideia e chegar num produto funcionando em pouco tempo.
 
-O resultado \'{e} uma plataforma que:
+O que eu entreguei:
 
 \begin{itemize}[leftmargin=2cm]
-  \item Resolve um problema real enfrentado por milhares de estudantes universit\'{a}rios.
-  \item Foi constru\'{i}da com arquitetura extens\'{i}vel e pronta para escalar como SaaS.
-  \item Possui documenta\c{c}\~{a}o completa de engenharia de software.
-  \item Foi validada com testes automatizados e builds de produ\c{c}\~{a}o.
-  \item Conta com uma identidade visual pr\'{o}pria e uma mascote pedag\'{o}gica.
+  \item Um app que resolve um problema real de milhares de estudantes.
+  \item Uma estrutura pronta para crescer e atender v\'{a}rias universidades.
+  \item Documenta\c{c}\~{a}o completa de todo o processo.
+  \item Testes que comprovam que o app funciona.
+  \item Uma identidade visual pr\'{o}pria com a mascote Limia.
 \end{itemize}
 
-Mais do que um projeto t\'{e}cnico, o BeeGe \'{e} a materializa\c{c}\~{a}o da coragem de empreender. Um passo que nasceu dentro do programa NaPr\'{a}tica e que agora est\'{a} pronto para se tornar uma empresa real, capaz de transformar a maneira como estudantes de todo o Brasil revisam e aprendem C\'{a}lculo~1.
+Mais do que um app, o BeeGe \'{e} a prova de que eu tive coragem de empreender. Um passo que nasceu dentro do NaPr\'{a}tica e que agora est\'{a} pronto para virar uma empresa de verdade, capaz de mudar a forma como estudantes revisam e aprendem C\'{a}lculo~1.
 
 \vspace{1cm}
 
@@ -658,5 +696,46 @@ Mais do que um projeto t\'{e}cnico, o BeeGe \'{e} a materializa\c{c}\~{a}o da co
 \textbf{Gabriel Monteiro, 2026}\\[0.5cm]
 \textcolor{beegePurple}{\rule{0.5\textwidth}{1pt}}
 \end{center}
+\newpage
+% ========================================================================
+%  REFERENCIAS
+% ========================================================================
+\addcontentsline{toc}{section}{Refer\^{e}ncias}
+{
+\begin{spacing}{1.08}
+\begin{thebibliography}{99}
+\setlength{\itemsep}{2pt}
+
+\bibitem{stewart2016}
+STEWART, J. \textit{C\'{a}lculo}. 8. ed. S\~{a}o Paulo: Cengage Learning, 2016.
+
+\bibitem{ries2011}
+RIES, E. \textit{The Lean Startup}. New York: Crown Business, 2011.
+
+\bibitem{supabase2024}
+SUPABASE INC. \textit{Supabase Documentation}. 2024. Dispon\'{i}vel em: \url{https://supabase.com/docs}. Acesso em: out. 2026.
+
+\bibitem{ionic2024}
+IONIC TEAM. \textit{Ionic Framework Documentation}. 2024. Dispon\'{i}vel em: \url{https://ionicframework.com/docs}. Acesso em: out. 2026.
+
+\bibitem{katex2024}
+KHAN ACADEMY. \textit{KaTeX: The fastest math typesetting library for the web}. 2024. Dispon\'{i}vel em: \url{https://katex.org/}. Acesso em: out. 2026.
+
+\bibitem{capacitor2024}
+IONIC TEAM. \textit{Capacitor: Cross-platform Native Runtime for Web Apps}. 2024. Dispon\'{i}vel em: \url{https://capacitorjs.com/docs}. Acesso em: out. 2026.
+
+\end{thebibliography}
+\end{spacing}
+}
+
+\vspace{0.8cm}
+\appendix
+\section{Declara\c{c}\~{a}o de Uso de Intelig\^{e}ncia Artificial}
+Em transpar\^{e}ncia, declaro que usei ferramentas de IA durante o desenvolvimento:
+\begin{itemize}
+    \item \textbf{Ferramenta:} Gemini 3.8 (Google DeepMind).
+    \item \textbf{Para qu\^{e}:} Ajuda na corre\c{c}\~{a}o de testes e c\'{o}digo, gera\c{c}\~{a}o de componentes Ionic/React, revis\~{a}o de f\'{o}rmulas matem\'{a}ticas e cria\c{c}\~{a}o da mascote Limia.
+    \item \textbf{Revis\~{a}o:} Todo c\'{o}digo e conte\'{u}do gerado foi revisado, testado e validado por mim antes de entregar no projeto.
+\end{itemize}
 
 \end{document}

@@ -1,7 +1,8 @@
 import React from 'react';
-import { Navigate, Route } from 'react-router-dom';
+import { Navigate, Route, useLocation, useNavigate } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, setupIonicReact } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { App as CapApp } from '@capacitor/app';
 import { AuthProvider } from './context/AuthContext';
 
 /* Componentes de Layout Mobile */
@@ -46,10 +47,51 @@ setupIonicReact({
   mode: 'md' // Material Design consistente
 });
 
+const AndroidBackButtonHandler: React.FC = () => {
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    let listenerHandle: any = null;
+
+    CapApp.addListener('backButton', () => {
+      const currentPath = window.location.pathname;
+
+      // Se estiver nas telas iniciais ou de autenticação, fecha o app
+      if (
+        currentPath === '/dashboard' ||
+        currentPath === '/login' ||
+        currentPath === '/onboarding' ||
+        currentPath === '/'
+      ) {
+        CapApp.exitApp();
+      } else {
+        // Em listas de exercícios (/pratica) ou outras sub-telas, retorna para o Dashboard
+        navigate('/dashboard');
+      }
+    })
+      .then((h) => {
+        listenerHandle = h;
+      })
+      .catch(() => {});
+
+    return () => {
+      if (listenerHandle && typeof listenerHandle.remove === 'function') {
+        listenerHandle.remove();
+      }
+    };
+  }, [navigate]);
+
+  return null;
+};
+
 const RootRedirect: React.FC = () => {
   const onboardingDone = localStorage.getItem('beege_onboarding_done');
   if (onboardingDone !== 'true') {
     return <Navigate to="/onboarding" replace />;
+  }
+  const savedUser = localStorage.getItem('beege_current_user');
+  if (!savedUser) {
+    return <Navigate to="/login" replace />;
   }
   return <Navigate to="/dashboard" replace />;
 };
@@ -58,6 +100,7 @@ const App: React.FC = () => (
   <IonApp>
     <AuthProvider>
       <IonReactRouter>
+        <AndroidBackButtonHandler />
         <MobileDeviceFrame>
           <IonRouterOutlet>
             <Route path="/onboarding" element={<OnboardingPage />} />

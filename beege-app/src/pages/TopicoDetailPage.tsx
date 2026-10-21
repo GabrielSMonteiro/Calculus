@@ -45,8 +45,13 @@ export const TopicoDetailPage: React.FC = () => {
             <IonButton
               fill="clear"
               color="primary"
-              onClick={() => navigate('/dashboard')}
+              type="button"
+              onClick={(e) => {
+                e.preventDefault();
+                navigate('/dashboard');
+              }}
               style={{ fontWeight: 700, padding: 0 }}
+              id="btn-voltar-topico"
             >
               <IonIcon slot="start" icon={arrowBackOutline} />
               Voltar
@@ -135,8 +140,14 @@ export const TopicoDetailPage: React.FC = () => {
             </div>
           ) : (
             <div style={{ textAlign: 'center', padding: '40px 20px' }}>
-              <p style={{ color: '#736B63' }}>Tópico não encontrado.</p>
-              <IonButton color="primary" onClick={() => navigate('/dashboard')}>
+              <IonButton
+                color="primary"
+                type="button"
+                onClick={(e) => {
+                  e.preventDefault();
+                  navigate('/dashboard');
+                }}
+              >
                 Voltar ao Início
               </IonButton>
             </div>

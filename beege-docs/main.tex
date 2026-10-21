@@ -1,51 +1,56 @@
-\documentclass[a4paper, 12pt]{article}
+% ============================================================================
+% Artigo: Salto Tecnologico: BeeGe
+% Autor: Gabriel Monteiro
+% Programa: NaPratica (Modulo de Empreendedorismo)
+% Para compilar: pdflatex ou Overleaf (engine: pdfLaTeX)
+% ============================================================================
 
-\usepackage[brazilian]{babel}
+\documentclass[12pt, a4paper]{article}
+
+% ── Pacotes ──────────────────────────────────────────────────────────────────
 \usepackage[utf8]{inputenc}
-\usepackage{amsmath, amssymb}
+\usepackage[T1]{fontenc}
+\usepackage[brazil]{babel}
+\usepackage{lmodern}
+\usepackage{geometry}
+\usepackage{setspace}
 \usepackage{indentfirst}
 \usepackage{graphicx}
-\usepackage{multicol}
-\usepackage{url}
-\usepackage{hyperref}
-\usepackage{booktabs}
-\usepackage{longtable}
-\usepackage{tabularx}
-\usepackage{enumitem}
 \usepackage{float}
+\usepackage{url}
+\usepackage{booktabs}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{amsmath, amssymb}
 \usepackage{xcolor}
-\usepackage{tcolorbox}
-\usepackage{setspace}
+\usepackage{tikz}
+\usetikzlibrary{positioning}
+\usepackage{titlesec}
 \usepackage{fancyhdr}
 \setlength{\headheight}{14pt}
-\usepackage{titlesec}
-\usepackage[top=2.0cm, bottom=2.0cm, left=2.5cm, right=2.0cm]{geometry}
+\usepackage{caption}
+\usepackage{subcaption}
+\usepackage{tcolorbox}
+\tcbuselibrary{skins}
+\usepackage{hyperref}
+
+% ── Configuracoes de pagina ─────────────────────────────────────────────────
+\geometry{
+  top=3cm,
+  bottom=2cm,
+  left=3cm,
+  right=2cm
+}
+\setstretch{1.5}
 
 % ── Cores do projeto ────────────────────────────────────────────────────────
 \definecolor{beegeAmbar}{HTML}{F59E0B}
 \definecolor{beegePurple}{HTML}{7C3AED}
 \definecolor{beegeGray}{HTML}{374151}
 
-% ── Caixa de destaque ──────────────────────────────────────────────────────
-\newtcolorbox{destaque}[1][]{
-  colback=beegeAmbar!8,
-  colframe=beegeAmbar!80!black,
-  fonttitle=\bfseries,
-  title={#1},
-  arc=3pt,
-  boxrule=0.8pt
-}
-
-\hypersetup{
-    colorlinks=true,
-    linkcolor=beegePurple,
-    citecolor=beegePurple,
-    urlcolor=beegePurple
-}
-
-\setstretch{1.5}
-
-% ── Cabecalho e rodape ─────────────────────────────────────────────────────
+% ── Estilo de cabecalho e rodape ────────────────────────────────────────────
 \pagestyle{fancy}
 \fancyhf{}
 \fancyhead[L]{\small\textcolor{beegeGray}{BeeGe | Salto Tecnol\'{o}gico}}
@@ -53,108 +58,150 @@
 \fancyfoot[C]{\thepage}
 \renewcommand{\headrulewidth}{0.4pt}
 
+% ── Estilo de secoes ───────────────────────────────────────────────────────
+\titleformat{\section}
+  {\Large\bfseries\color{beegePurple}}{\thesection}{1em}{}
+\titleformat{\subsection}
+  {\large\bfseries\color{beegeGray}}{\thesubsection}{1em}{}
+\titleformat{\subsubsection}
+  {\normalsize\bfseries\color{beegeGray}}{\thesubsubsection}{1em}{}
+
+% ── Caixa de destaque ──────────────────────────────────────────────────────
+\newtcolorbox{destaque}[1][]{
+  colback=beegeAmbar!10,
+  colframe=beegeAmbar,
+  fonttitle=\bfseries,
+  title={#1},
+  arc=3pt,
+  boxrule=0.8pt
+}
+
+% ── Hyperlinks ─────────────────────────────────────────────────────────────
+\hypersetup{
+  colorlinks=true,
+  linkcolor=beegePurple,
+  urlcolor=beegePurple,
+  citecolor=beegePurple
+}
+
+% ============================================================================
+%                           INICIO DO DOCUMENTO
+% ============================================================================
 \begin{document}
-\hypersetup{pageanchor=false}
 
-% % % % % % % % % % % % % % % CAPA % % % % % % % % % % % % % % %
+% ── Capa Executiva ──────────────────────────────────────────────────────────
 \begin{titlepage}
-	\begin{center}
-		\large PROGRAMA NaPr\'{a}tica | M\'{O}DULO DE EMPREENDEDORISMO\\
-		\vspace{35pt}
-		
-		\textbf{\large GABRIEL MONTEIRO}\\
-		\vspace{6pt}
-		{\normalsize
-		Engenheiro de Software em Forma\c{c}\~{a}o $\cdot$ Tutor de C\'{a}lculo~1
-		}
-		
-		\vspace{70pt}
-		
-		\textbf{\LARGE{SALTO TECNOL\'{O}GICO: BeeGe}}\\
-		\vspace{12pt}
-		\textbf{\Large{Plataforma Mobile Gamificada de Revis\~{a}o de C\'{a}lculo~1 com Arquitetura SaaS Multi-Institucional}}\\
-		
-		\vspace{\fill}
-		
-		Bras\'{i}lia, Outubro de 2026
-	\end{center}
-\end{titlepage}
-
-% % % % % % % % % % % % % FOLHA DE ROSTO % % % % % % % % % % % %
-\begin{titlepage}
-	\begin{center}
-		\vspace{35pt}
-		
-		\textbf{\large GABRIEL MONTEIRO}\\
-		\vspace{6pt}
-		{\normalsize
-		23 anos $\cdot$ Tutor de C\'{a}lculo~1 h\'{a} mais de 3 anos
-		}
-		
-		\vspace{50pt}
-		
-		\textbf{\LARGE{SALTO TECNOL\'{O}GICO: BeeGe}}\\
-		\vspace{12pt}
-		\textbf{\Large{Plataforma Mobile Gamificada de Revis\~{a}o de C\'{a}lculo~1 com Arquitetura SaaS Multi-Institucional}}\\
-	\end{center}
-	
-	\vspace{30pt}
-	
-	\begin{flushright}
-		\begin{minipage}{0.58\textwidth}
-			\small
-			Documento de apresenta\c{c}\~{a}o do \textbf{Salto Tecnol\'{o}gico} desenvolvido como entreg\'{a}vel do programa \textbf{NaPr\'{a}tica, M\'{o}dulo de Empreendedorismo}. O projeto consiste no desenvolvimento de um MVP (\textit{Minimum Viable Product}) de uma plataforma mobile e web para revis\~{a}o gamificada de C\'{a}lculo~1, concebido em 30 dias com potencial de transforma\c{c}\~{a}o em produto SaaS.
-			\vspace{10pt}
-			
-			\textbf{Autor:} Gabriel Monteiro\\
-			\textbf{Produto:} BeeGe | Plataforma de Revis\~{a}o de C\'{a}lculo~1\\
-			\textbf{Per\'{i}odo:} 20 de Setembro a 19 de Outubro de 2026\\
-			\textbf{Reposit\'{o}rio:} \url{https://github.com/GabrielSMonteiro/Calculus}\\
-			\textbf{V\'{i}deo de Demonstra\c{c}\~{a}o:} \url{https://youtu.be/lCUiceX9FIk}
-		\end{minipage}
-	\end{flushright}
-	
-	\vspace{\fill}
-	
-	\begin{center}
-		Bras\'{i}lia, 2026
-	\end{center}
-\end{titlepage}
-
-\tableofcontents
 \thispagestyle{empty}
+\begin{center}
+    % Faixa superior sofisticada
+    \begin{tcolorbox}[
+        colback=beegePurple,
+        colframe=beegePurple,
+        arc=4pt,
+        boxrule=0pt,
+        width=\textwidth,
+        halign=center,
+        top=8pt,
+        bottom=8pt
+    ]
+        {\small\color{white}\bfseries PROGRAMA NaPr\'{A}TICA \;\textcolor{white!70}{$\bullet$}\; M\'{O}DULO DE EMPREENDEDORISMO}
+    \end{tcolorbox}
+    
+    \vspace{20pt}
 
+    % Mascote Limia centralizado
+    \includegraphics[width=3.6cm, keepaspectratio]{assets/limia.png}
+    
+    \vspace{14pt}
+
+    % Nome do Produto e Slogan
+    {\fontsize{32}{38}\selectfont\bfseries\textcolor{beegePurple}{BeeGe}}\\[10pt]
+    {\fontsize{18}{23}\selectfont\bfseries\textcolor{beegeGray}{Plataforma Gamificada de Revis\~{a}o de C\'{a}lculo~1}}\\[8pt]
+    {\large\textcolor{beegeGray!70}{Arquitetura SaaS Multi-Institucional para o Ensino Superior}}
+
+    \vspace{20pt}
+
+    % Caixa de Destaque do Relatorio
+    \begin{tcolorbox}[
+        colback=beegeAmbar!8,
+        colframe=beegeAmbar,
+        arc=4pt,
+        boxrule=1.2pt,
+        width=0.92\textwidth,
+        halign=center,
+        top=8pt,
+        bottom=8pt
+    ]
+        {\large\bfseries\textcolor{beegeGray}{RELAT\'{O}RIO T\'{E}CNICO: SALTO TECNOL\'{O}GICO}}\\[4pt]
+        {\small\textcolor{beegeGray!85}{Concep\c{c}\~{a}o, Implementa\c{c}\~{a}o e Valida\c{c}\~{a}o de MVP em 30 Dias (20/09 a 19/10/2026)}}
+    \end{tcolorbox}
+
+    \vspace{18pt}
+
+    % Cartao de Metadados
+    \begin{tcolorbox}[
+        colback=white,
+        colframe=beegePurple!30,
+        arc=4pt,
+        boxrule=0.9pt,
+        width=0.92\textwidth,
+        left=20pt,
+        right=20pt,
+        top=10pt,
+        bottom=10pt
+    ]
+        \renewcommand{\arraystretch}{1.35}
+        \centering
+        \begin{tabular}{r @{\hspace{12pt}} l}
+            \textbf{\textcolor{beegePurple}{Autor:}} & Gabriel Monteiro \\[2pt]
+            \textbf{\textcolor{beegePurple}{\'{A}rea:}} & Engenharia de Software \\[2pt]
+            \textbf{\textcolor{beegePurple}{Reposit\'{o}rio Oficial:}} & \href{https://github.com/GabrielSMonteiro/Calculus}{\texttt{github.com/GabrielSMonteiro/Calculus}} \\[2pt]
+            \textbf{\textcolor{beegePurple}{V\'{i}deo Demonstrativo:}} & \href{https://youtu.be/lCUiceX9FIk}{\texttt{youtu.be/lCUiceX9FIk}}
+        \end{tabular}
+    \end{tcolorbox}
+
+    \vfill
+
+    % Rodape da Capa
+    \textcolor{beegePurple!30}{\rule{0.5\textwidth}{0.8pt}}\\[8pt]
+    {\small\bfseries\textcolor{beegeGray}{Bras\'{i}lia $\cdot$ DF}\\[2pt]
+    \small\textcolor{beegeGray!75}{Outubro de 2026}}
+    \vspace*{-0.2cm}
+\end{center}
+\end{titlepage}
+
+% ── Sumario Executivo ───────────────────────────────────────────────────────
 \newpage
-\hypersetup{pageanchor=true}
+\thispagestyle{empty}
+{
+  \hypersetup{linkcolor=beegePurple}
+  \renewcommand{\contentsname}{\vspace*{-1.2cm}\LARGE\bfseries\textcolor{beegePurple}{Sum\'{a}rio}\vspace{4pt}}
+  \setlength{\parskip}{0pt}
+  \begin{spacing}{0.95}
+    \tableofcontents
+  \end{spacing}
+}
+\newpage
 \pagenumbering{arabic}
 
-% % % % % % % % % % % % SE\c{C}\~{O}ES DO ARTIGO % % % % % % % % % % %
-\section{Resumo}
-Este trabalho apresenta o \textbf{BeeGe}, uma plataforma mobile e web voltada para a revis\~{a}o gamificada de C\'{a}lculo~1 no ensino superior, desenvolvida como Salto Tecnol\'{o}gico no programa NaPr\'{a}tica. O projeto foi concebido, projetado e implementado em 30 dias por Gabriel Monteiro, estudante de Engenharia de Software e tutor de C\'{a}lculo~1 h\'{a} mais de tr\^{e}s anos. O BeeGe organiza conte\'{u}dos por universidade (modelo SaaS multi-institucional), integra renderiza\c{c}\~{a}o de f\'{o}rmulas matem\'{a}ticas via KaTeX, oferece exerc\'{i}cios com resolu\c{c}\~{a}o anal\'{i}tica passo a passo e conta com um f\'{o}rum acad\^{e}mico moderado. O MVP entregue contempla 15 requisitos funcionais, 8 n\~{a}o-funcionais, 18 hist\'{o}rias de usu\'{a}rio implementadas, 24 quest\~{o}es com gabarito comentado e 12 documentos de engenharia de software. A arquitetura adota Ionic Framework com React~19, Supabase (PostgreSQL com RLS) e Capacitor para compila\c{c}\~{a}o nativa, operando em Android, iOS e web a partir de base \'{u}nica de c\'{o}digo.
-
-\vspace{8pt}
-\noindent\textbf{Palavras-chave:} Empreendedorismo, EdTech, C\'{a}lculo~1, SaaS, MVP, Ionic, Supabase, KaTeX, Gamifica\c{c}\~{a}o.
-
-% ================================================================
+% ========================================================================
+%  1. INTRODUCAO
+% ========================================================================
 \section{Introdu\c{c}\~{a}o}
-\label{sec:introducao}
 
-O ensino e a aprendizagem de C\'{a}lculo~1 no ensino superior historicamente registram \'{i}ndices elevados de reten\c{c}\~{a}o e reprova\c{c}\~{a}o em universidades de todo o Brasil. Estudantes frequentemente relatam que livros did\'{a}ticos s\~{a}o excessivamente extensos (muitos com mais de 800 p\'{a}ginas \cite{stewart2016}) e que videoaulas dispon\'{i}veis na internet n\~{a}o seguem o estilo de resolu\c{c}\~{a}o ou a profundidade exigida nas provas de sua institui\c{c}\~{a}o espec\'{i}fica.
+Este documento apresenta o \textbf{Salto Tecnol\'{o}gico} desenvolvido no contexto do programa \textbf{NaPr\'{a}tica}, como entreg\'{a}vel do m\'{o}dulo de empreendedorismo. O projeto descrito \'{e} o \textbf{BeeGe}, uma plataforma mobile e web voltada para a revis\~{a}o gamificada de C\'{a}lculo~1 no ensino superior, concebida, projetada e implementada em 30 dias (de 20 de setembro a 19 de outubro de 2026).
 
-Diante dessa realidade, nasceu o \textbf{BeeGe}: uma plataforma mobile e web focada na revis\~{a}o e fixa\c{c}\~{a}o de C\'{a}lculo~1, estruturada como um servi\c{c}o multi-institucional (SaaS). O projeto foi desenvolvido como \textbf{Salto Tecnol\'{o}gico} no programa NaPr\'{a}tica, unindo tr\^{e}s vertentes: a experi\^{e}ncia do autor como tutor de C\'{a}lculo~1 h\'{a} mais de tr\^{e}s anos, a forma\c{c}\~{a}o em Engenharia de Software e o desafio pessoal de empreender.
+O BeeGe nasceu da interse\c{c}\~{a}o entre tr\^{e}s elementos: a viv\^{e}ncia pr\'{a}tica com o ensino de C\'{a}lculo~1 no ensino superior, a forma\c{c}\~{a}o em Engenharia de Software e o desafio pessoal de empreender. O resultado \'{e} um \textit{Minimum Viable Product} (MVP) funcional com potencial de se transformar em um produto SaaS (\textit{Software as a Service}) multi-institucional.
 
-O resultado \'{e} um \textit{Minimum Viable Product} (MVP) \cite{ries2011} funcional, desenvolvido em 30 dias (de 20 de setembro a 19 de outubro de 2026), com potencial de se transformar em um produto SaaS capaz de atender universidades e faculdades em todo o pa\'{i}s.
-
-\textbf{Estrutura do artigo.} A Se\c{c}\~{a}o~\ref{sec:motivacao} apresenta a motiva\c{c}\~{a}o pessoal e o contexto; a Se\c{c}\~{a}o~\ref{sec:problema} detalha o problema identificado; a Se\c{c}\~{a}o~\ref{sec:solucao} descreve a solu\c{c}\~{a}o proposta; a Se\c{c}\~{a}o~\ref{sec:arquitetura} apresenta a arquitetura t\'{e}cnica; a Se\c{c}\~{a}o~\ref{sec:funcionalidades} enumera as funcionalidades implementadas; a Se\c{c}\~{a}o~\ref{sec:metodologia} descreve a metodologia adotada; a Se\c{c}\~{a}o~\ref{sec:cronograma} detalha o cronograma de desenvolvimento; a Se\c{c}\~{a}o~\ref{sec:qualidade} aborda qualidade e testes; a Se\c{c}\~{a}o~\ref{sec:backlog} apresenta o backlog; a Se\c{c}\~{a}o~\ref{sec:negocio} discute o modelo de neg\'{o}cio; a Se\c{c}\~{a}o~\ref{sec:resultados} consolida os resultados; a Se\c{c}\~{a}o~\ref{sec:documentacao} lista a documenta\c{c}\~{a}o produzida; e a Se\c{c}\~{a}o~\ref{sec:conclusao} re\'{u}ne as conclus\~{o}es.
-
-% ================================================================
+% ========================================================================
+%  2. MOTIVACAO PESSOAL
+% ========================================================================
 \section{Motiva\c{c}\~{a}o Pessoal e Contexto}
-\label{sec:motivacao}
 
 \begin{destaque}[Depoimento do Autor]
 Me chamo Gabriel Monteiro, tenho 23 anos e decidi fazer esse projeto para criar a coragem de empreender. No m\'{o}dulo~01, participei animado das palestras e ensinamentos e tive a ideia de me desafiar a fazer algo que eu sempre quis, mas n\~{a}o tinha coragem: \textbf{empreender}.
 
-Quando eu estava l\'{a}, ouvi outros alunos falando de como estavam sofrendo com a mat\'{e}ria de C\'{a}lculo~1 na faculdade. At\'{e} ent\~{a}o, isso era normal para mim, dado que dou tutoria de C\'{a}lculo~1 h\'{a} mais de 3 anos, mas eu nunca havia pensado nisso como uma oportunidade de neg\'{o}cio.
+Quando eu estava l\'{a}, ouvi outros alunos falando de como estavam sofrendo com a mat\'{e}ria de C\'{a}lculo~1 na faculdade. At\'{e} ent\~{a}o, essa dificuldade era uma realidade familiar para mim pelo contato e acompanhamento acad\^{e}mico cont\'{i}nuo de colegas, mas eu nunca havia pensado nisso como uma oportunidade de neg\'{o}cio.
 
 Unindo esse desafio que nasceu, ser um engenheiro de software em forma\c{c}\~{a}o e t\~{a}o ligado \`{a} \'{a}rea de educa\c{c}\~{a}o e matem\'{a}tica, me desafiei a fazer esse projeto. Quando tivesse um MVP consolidado, eu poderia abrir a minha empresa e transformar esse projeto em um SaaS para que diversas universidades e faculdades possam modelar as quest\~{o}es da maneira que acharem mais adequadas, j\'{a} que isso muda de grade para grade curricular.
 
@@ -165,35 +212,41 @@ A ideia, por ter apenas 30 dias, era criar um MVP capaz de fazer as funcionalida
 Dessa feita, acredito que impactaria de maneira muito positiva todos os alunos de C\'{a}lculo~1, ou que quisessem revisar a base matem\'{a}tica, e ainda estaria entrando no mundo de empreendedorismo que sempre tive medo de arriscar.
 \end{destaque}
 
-% ================================================================
+% ========================================================================
+%  3. O PROBLEMA
+% ========================================================================
 \section{O Problema}
-\label{sec:problema}
 
-O ensino de C\'{a}lculo~1 apresenta desafios estruturais que afetam estudantes em todo o pa\'{i}s. As principais dificuldades relatadas s\~{a}o:
+O ensino e a aprendizagem de C\'{a}lculo~1 no ensino superior historicamente registram \'{i}ndices elevados de reten\c{c}\~{a}o e reprova\c{c}\~{a}o. Estudantes frequentemente relatam que:
 
 \begin{itemize}[leftmargin=2cm]
-  \item Livros did\'{a}ticos excessivamente extensos e abstratos, com abordagens generalistas que n\~{a}o refletem o estilo de cobran\c{c}a de cada institui\c{c}\~{a}o.
-  \item Videoaulas dispon\'{i}veis na web que n\~{a}o seguem a profundidade exigida nas provas da universidade espec\'{i}fica do estudante.
-  \item Grupos de mensagens que acumulam conversas paralelas, dificultando a localiza\c{c}\~{a}o de d\'{u}vidas j\'{a} respondidas.
-  \item Materiais de monitoria distribu\'{i}dos de forma fragmentada em PDFs que se perdem nos dispositivos.
+  \item Livros did\'{a}ticos s\~{a}o excessivamente extensos e abstratos (muitos com mais de 800 p\'{a}ginas).
+  \item Videoaulas dispon\'{i}veis na web n\~{a}o seguem o estilo de resolu\c{c}\~{a}o ou a profundidade exigida nas provas de sua institui\c{c}\~{a}o espec\'{i}fica.
+  \item Grupos de mensagens acumulam conversas paralelas, dificultando a localiza\c{c}\~{a}o de d\'{u}vidas j\'{a} respondidas.
+  \item Materiais de monitoria s\~{a}o distribu\'{i}dos de forma fragmentada em PDFs que se perdem nos dispositivos.
 \end{itemize}
 
-Existe, portanto, a demanda por uma solu\c{c}\~{a}o orientada \`{a} revis\~{a}o que combine: (1)~segmenta\c{c}\~{a}o por universidade, respeitando a ementa local; (2)~renderiza\c{c}\~{a}o digital de nota\c{c}\~{a}o matem\'{a}tica em alta qualidade; (3)~exerc\'{i}cios com passo a passo anal\'{i}tico dos gabaritos; e (4)~ambiente colaborativo de d\'{u}vidas com modera\c{c}\~{a}o ativa.
+Existe, portanto, a demanda por uma solu\c{c}\~{a}o orientada \`{a} revis\~{a}o que combine:
 
-% ================================================================
+\begin{enumerate}[leftmargin=2cm]
+  \item Segmenta\c{c}\~{a}o por universidade, respeitando a ementa local.
+  \item Renderiza\c{c}\~{a}o digital de nota\c{c}\~{a}o matem\'{a}tica em alta qualidade.
+  \item Exerc\'{i}cios com passo a passo anal\'{i}tico dos gabaritos.
+  \item Ambiente colaborativo de d\'{u}vidas com modera\c{c}\~{a}o ativa.
+\end{enumerate}
+
+% ========================================================================
+%  4. A SOLUCAO: BEEGE
+% ========================================================================
 \section{A Solu\c{c}\~{a}o: BeeGe}
-\label{sec:solucao}
 
 \subsection{Vis\~{a}o do Produto}
 
-O \textbf{BeeGe} \'{e} um aplicativo mobile e web focado na revis\~{a}o e fixa\c{c}\~{a}o de C\'{a}lculo~1, estruturado como um servi\c{c}o multi-institucional (SaaS). Diferentemente de cursos em v\'{i}deo gen\'{e}ricos ou plataformas abertas de quest\~{o}es, o BeeGe organiza o conte\'{u}do a partir da ementa espec\'{i}fica da institui\c{c}\~{a}o do estudante.
+O \textbf{BeeGe} \'{e} um aplicativo mobile e web focado na revis\~{a}o e fixa\c{c}\~{a}o de C\'{a}lculo~1, estruturado como um servi\c{c}o multi-institucional (SaaS). Diferentemente de cursos em v\'{i}deo gen\'{e}ricos ou plataformas abertas de quest\~{o}es, o BeeGe organiza o conte\'{u}do a partir da ementa espec\'{i}fica da institui\c{c}\~{a}o do estudante, integrando resumos te\'{o}ricos em \LaTeX/KaTeX, simuladores com feedback imediato e um f\'{o}rum moderado.
 
 \begin{table}[H]
 \centering
 \caption{Posicionamento estrat\'{e}gico do produto}
-\label{tab:posicionamento}
-\vspace{4pt}
-\small
 \begin{tabularx}{\textwidth}{l X}
 \toprule
 \textbf{Dimens\~{a}o} & \textbf{Especifica\c{c}\~{a}o} \\
@@ -201,66 +254,68 @@ O \textbf{BeeGe} \'{e} um aplicativo mobile e web focado na revis\~{a}o e fixa\c
 \textbf{Para} & Estudantes de gradua\c{c}\~{a}o matriculados na disciplina de C\'{a}lculo~1. \\
 \textbf{Que buscam} & Material de revis\~{a}o objetivo e focado no modelo de prova de sua universidade. \\
 \textbf{O BeeGe \'{e}} & Um aplicativo mobile (Android/iOS) e plataforma web. \\
-\textbf{Que oferece} & Teoria sintetizada, exerc\'{i}cios corrigidos instantaneamente e canal de d\'{u}vidas. \\
+\textbf{Que oferece} & Teoria sintetizada, exerc\'{i}cios corrigidos instantaneamente e canal de d\'{u}vidas institucional. \\
 \textbf{Diferente de} & Cursos longos em v\'{i}deo e manuais tradicionais extensos. \\
-\textbf{Diferencial} & Adapta\c{c}\~{a}o por universidade, KaTeX nativo e suporte da mascote Limia. \\
+\textbf{Diferencial} & Adapta\c{c}\~{a}o da ementa por universidade, KaTeX nativo e suporte da mascote Limia. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Identidade Visual e Mascote (Limia)}
+\subsection{Identidade Visual e Mascote}
 
 A mascote oficial do projeto \'{e} a abelha \textbf{Limia}:
 
 \begin{itemize}[leftmargin=2cm]
   \item \textbf{Caracter\'{i}sticas Visuais:} Abelha estilizada com \'{o}culos redondos pretos e gravata borboleta roxa contendo s\'{i}mbolos matem\'{a}ticos gravados ($\int$, $\lim$, $\partial$).
   \item \textbf{Simbolismo:} Representa o rigor acad\^{e}mico aliado \`{a} dilig\^{e}ncia e ao trabalho em colmeia (aprendizagem colaborativa).
-  \item \textbf{Papel no Sistema:} Atua como elemento de apoio pedag\'{o}gico, apresentando dicas conceituais, observa\c{c}\~{o}es sobre teoremas e mensagens de orienta\c{c}\~{a}o.
+  \item \textbf{Papel no Sistema:} Atua como elemento de apoio pedag\'{o}gico, apresentando dicas conceituais, observa\c{c}\~{o}es sobre teoremas e mensagens de orienta\c{c}\~{a}o ap\'{o}s a resolu\c{c}\~{a}o de quest\~{o}es.
 \end{itemize}
 
-\subsection{P\'{u}blico-Alvo (Personas)}
+\begin{figure}[H]
+\centering
+\includegraphics[width=4.5cm, keepaspectratio]{assets/limia.png}
+\caption{Limia: Mascote pedag\'{o}gica oficial do ecossistema BeeGe}
+\label{fig:mascote-limia}
+\end{figure}
 
-O sistema atende tr\^{e}s perfis principais de usu\'{a}rios, levantados durante a fase de pesquisa:
+\subsection{P\'{u}blico-Alvo}
+
+O sistema atende tr\^{e}s perfis principais de usu\'{a}rios:
 
 \begin{table}[H]
 \centering
 \caption{Perfis de usu\'{a}rios do BeeGe}
-\label{tab:personas}
-\vspace{4pt}
-\small
-\begin{tabularx}{\textwidth}{l l l l X}
+\begin{tabularx}{\textwidth}{l l l X}
 \toprule
-\textbf{Persona} & \textbf{Idade} & \textbf{Papel} & \textbf{Dispositivo} & \textbf{Necessidade Principal} \\
+\textbf{Perfil} & \textbf{Papel} & \textbf{Dispositivo} & \textbf{Funcionalidade Chave} \\
 \midrule
-Lucas (Calouro) & 18 & Aluno & Smartphone & Compreender limites e derivadas no ritmo da sua universidade \\
-Mariana (Veterana) & 21 & Aluno & Smartphone & Revis\~{a}o r\'{a}pida e pr\'{a}tica para recupera\c{c}\~{a}o \\
-Rafael (Monitor) & 23 & Admin & Desktop & Centralizar exerc\'{i}cios e moderar d\'{u}vidas \\
+Calouro & Aluno & Smartphone & Teoria sintetizada por m\'{o}dulo \\
+Veterano em recupera\c{c}\~{a}o & Aluno & Smartphone & Simulador com resolu\c{c}\~{a}o comentada \\
+Monitor acad\^{e}mico & Administrador & Desktop & Cadastro de quest\~{o}es e modera\c{c}\~{a}o \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-% ================================================================
+% ========================================================================
+%  5. ARQUITETURA E TECNOLOGIAS
+% ========================================================================
 \section{Arquitetura e Tecnologias}
-\label{sec:arquitetura}
 
-O sistema BeeGe adota o padr\~{a}o arquitetural \textbf{Cliente-Servidor baseado em BaaS} (\textit{Backend as a Service}) \cite{supabase2024}. A interface opera como uma aplica\c{c}\~{a}o de p\'{a}gina \'{u}nica (SPA) multiplataforma que se comunica de maneira ass\'{i}ncrona com a infraestrutura gerenciada pelo Supabase.
+O sistema BeeGe adota o padr\~{a}o arquitetural \textbf{Cliente-Servidor baseado em BaaS} (\textit{Backend as a Service}). A interface opera como uma aplica\c{c}\~{a}o de p\'{a}gina \'{u}nica (SPA) multiplataforma que se comunica de maneira ass\'{i}ncrona com a infraestrutura gerenciada pelo Supabase.
 
 \subsection{Stack Tecnol\'{o}gico}
 
 \begin{table}[H]
 \centering
 \caption{Tecnologias adotadas no MVP}
-\label{tab:tecnologias}
-\vspace{4pt}
-\small
 \begin{tabularx}{\textwidth}{l l X l}
 \toprule
 \textbf{Camada} & \textbf{Tecnologia} & \textbf{Justificativa} & \textbf{Custo} \\
 \midrule
-Frontend & Ionic + React~19 & Interface responsiva unificada para web e mobile \cite{ionic2024} & Gratuito \\
-Mobile & Capacitor & Builds Android e iOS sem duplica\c{c}\~{a}o de base \cite{capacitor2024} & Gratuito \\
-Backend & Supabase (PostgreSQL) & Servi\c{c}o gerenciado com RLS, Auth e fun\c{c}\~{o}es \cite{supabase2024} & Gratuito \\
-F\'{o}rmulas & KaTeX & Renderiza\c{c}\~{a}o performatica no cliente \cite{katex2024} & Gratuito \\
+Frontend & Ionic + React~19 & Interface responsiva unificada para web e mobile & Gratuito \\
+Mobile & Capacitor & Builds Android e iOS sem duplica\c{c}\~{a}o de base & Gratuito \\
+Backend & Supabase (PostgreSQL) & Servi\c{c}o gerenciado com RLS, Auth e fun\c{c}\~{o}es & Gratuito \\
+F\'{o}rmulas & KaTeX & Renderiza\c{c}\~{a}o performatica no cliente & Gratuito \\
 Documenta\c{c}\~{a}o & MkDocs Material & Gerador est\'{a}tico versionado com o c\'{o}digo & Gratuito \\
 Testes & Vitest + Cypress & Testes unit\'{a}rios, de componentes e E2E & Gratuito \\
 Linguagem & TypeScript~5.9 & Tipagem estrita em tempo de compila\c{c}\~{a}o & Gratuito \\
@@ -268,38 +323,58 @@ Linguagem & TypeScript~5.9 & Tipagem estrita em tempo de compila\c{c}\~{a}o & Gr
 \end{tabularx}
 \end{table}
 
-\subsection{Camada Cliente (\texttt{beege-app})}
+\subsection{Camadas do Sistema}
+
+\subsubsection{Camada Cliente (\texttt{beege-app})}
 
 \begin{itemize}[leftmargin=2cm]
   \item \textbf{Framework de Interface:} React~19 com a biblioteca de componentes gr\'{a}ficos do Ionic Framework.
-  \item \textbf{Navega\c{c}\~{a}o:} \texttt{@ionic/react-router} integrado ao React Router~6.
-  \item \textbf{Renderiza\c{c}\~{a}o Matem\'{a}tica:} Componente dedicado \texttt{MathRenderer} que encapsula o motor KaTeX.
-  \item \textbf{Gerenciamento de Estado:} Context API (\texttt{AuthContext}) para sess\~{a}o e universidade ativa.
+  \item \textbf{Navega\c{c}\~{a}o:} \texttt{@ionic/react-router} integrado ao React Router~6 para gest\~{a}o do hist\'{o}rico e transi\c{c}\~{o}es de tela.
+  \item \textbf{Renderiza\c{c}\~{a}o Matem\'{a}tica:} Componente dedicado \texttt{MathRenderer} que encapsula o motor KaTeX, convertendo express\~{o}es inline e em bloco em elementos HTML otimizados.
+  \item \textbf{Gerenciamento de Estado:} Context API (\texttt{AuthContext}) para manter a sess\~{a}o do usu\'{a}rio autenticado e a universidade ativa.
   \item \textbf{Empacotamento Mobile:} Capacitor para compila\c{c}\~{a}o em Android (APK) e iOS (IPA).
 \end{itemize}
 
-\subsection{Camada Backend (\texttt{beege-api})}
+\subsubsection{Camada de Servi\c{c}os e Backend (\texttt{beege-api})}
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{Autentica\c{c}\~{a}o:} Supabase Auth com tokens JWT e controle de sess\~{a}o.
-  \item \textbf{Persist\^{e}ncia:} PostgreSQL~15 com extens\~{o}es como \texttt{uuid-ossp}.
-  \item \textbf{Seguran\c{c}a (RLS):} Regras granulares por linha para isolamento de dados.
-  \item \textbf{Migra\c{c}\~{o}es:} Arquivos SQL versionados com \textit{timestamps}.
+  \item \textbf{Autentica\c{c}\~{a}o:} Supabase Auth com suporte a tokens JWT e controle de sess\~{a}o.
+  \item \textbf{Persist\^{e}ncia Relacional:} PostgreSQL~15 com extens\~{o}es como \texttt{uuid-ossp}.
+  \item \textbf{Pol\'{i}ticas de Seguran\c{c}a (RLS):} Regras granulares por linha que restringem a visualiza\c{c}\~{a}o de postagens pendentes e a edi\c{c}\~{a}o de m\'{o}dulos exclusivamente para administradores.
+  \item \textbf{Migra\c{c}\~{o}es:} Arquivos SQL versionados com \textit{timestamps} para garantia de reprodutibilidade.
 \end{itemize}
 
-\subsection{Padr\~{o}es de Projeto Utilizados}
+\begin{figure}[H]
+\centering
+\begin{tikzpicture}[
+    box/.style={draw=beegePurple, rounded corners=4pt, line width=0.8pt, fill=beegePurple!6, align=center, inner sep=7pt, font=\small},
+    dbbox/.style={draw=beegeAmbar, rounded corners=4pt, line width=0.8pt, fill=beegeAmbar!8, align=center, inner sep=7pt, font=\small},
+    arrow/.style={<->, >=stealth, line width=1.1pt, color=beegePurple}
+]
+    \node[box, text width=11cm] (client) {\textbf{Camada Cliente (Frontend Multiplataforma)}\\\footnotesize \textbf{Ionic React 19} $\bullet$ \textbf{TypeScript} $\bullet$ \textbf{Capacitor (Android/iOS)}\\\footnotesize Renderiza\c{c}\~{a}o KaTeX $\bullet$ AuthContext \& State Manager};
+    
+    \node[dbbox, text width=11cm, below=1.0cm of client] (backend) {\textbf{Camada de Servi\c{c}os e Persist\^{e}ncia (Supabase BaaS)}\\\footnotesize \textbf{PostgreSQL 15} $\bullet$ \textbf{Row Level Security (RLS)}\\\footnotesize Supabase Auth (JWT) $\bullet$ PostgREST API};
+    
+    \draw[arrow] (client.south) -- node[fill=white, inner sep=3pt, font=\footnotesize\bfseries, text=beegeGray] {HTTPS / REST / WebSocket} (backend.north);
+\end{tikzpicture}
+\caption{Diagrama de arquitetura cliente-servidor BaaS do BeeGe}
+\label{fig:arquitetura}
+\end{figure}
+
+\subsection{Padr\~{o}es de Projeto}
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{Component-Based Architecture:} Modulariza\c{c}\~{a}o em componentes funcionais reutiliz\'{a}veis com React Hooks \cite{pressman2021}.
-  \item \textbf{Service Layer Pattern:} Centraliza\c{c}\~{a}o de requisi\c{c}\~{o}es na camada \texttt{DataService}.
-  \item \textbf{Observer Pattern:} \texttt{onAuthStateChange} do Supabase Auth para reatividade do estado de login.
+  \item \textbf{Component-Based Architecture:} Modulariza\c{c}\~{a}o da interface em componentes funcionais reutiliz\'{a}veis com React Hooks.
+  \item \textbf{Service Layer Pattern:} Centraliza\c{c}\~{a}o de requisi\c{c}\~{o}es na camada \texttt{DataService}, permitindo altern\^{a}ncia transparente entre backend em nuvem e camada local de dados.
+  \item \textbf{Observer Pattern:} Utilizado pelo Supabase Auth (\texttt{onAuthStateChange}) para reatividade imediata do estado de login.
 \end{itemize}
 
-% ================================================================
+% ========================================================================
+%  6. FUNCIONALIDADES DO MVP
+% ========================================================================
 \section{Funcionalidades do MVP}
-\label{sec:funcionalidades}
 
-\subsection{Escopo Funcional Implementado}
+\subsection{Escopo Funcional}
 
 \begin{longtable}{l p{8cm} l}
 \caption{M\'{o}dulos e funcionalidades implementadas no MVP} \\
@@ -317,8 +392,8 @@ Multi-Universidade & Sele\c{c}\~{a}o da institui\c{c}\~{a}o e filtragem autom\'{
 Conte\'{u}do & Listagem sequencial dos m\'{o}dulos de C\'{a}lculo~1 & Implementado \\
 Renderiza\c{c}\~{a}o & Suporte nativo a sintaxe \LaTeX{} com KaTeX & Implementado \\
 Quest\~{o}es & Exerc\'{i}cios de m\'{u}ltipla escolha com gabarito comentado & Implementado \\
-Quest\~{o}es & Avalia\c{c}\~{a}o imediata com explica\c{c}\~{a}o anal\'{i}tica & Implementado \\
-Progresso & Hist\'{o}rico persistente via \texttt{ProgressService} & Implementado \\
+Quest\~{o}es & Avalia\c{c}\~{a}o imediata (acerto/erro) com explica\c{c}\~{a}o anal\'{i}tica & Implementado \\
+Progresso & Hist\'{o}rico persistente de acertos (\texttt{ProgressService}) & Implementado \\
 Progresso & Streak, taxa de acertos, meta di\'{a}ria e conquistas & Implementado \\
 F\'{o}rum & Cria\c{c}\~{a}o de postagens com suporte a \LaTeX{} & Implementado \\
 F\'{o}rum & Respostas encadeadas e modera\c{c}\~{a}o pr\'{e}via & Implementado \\
@@ -332,7 +407,7 @@ Seguran\c{c}a & Rotas protegidas e guarda de acesso administrativo & Implementad
 
 \subsection{Requisitos Funcionais (RF)}
 
-\begin{longtable}{l p{9cm} l}
+\begin{longtable}{l p{10cm} l}
 \caption{Requisitos funcionais especificados e atendidos} \\
 \toprule
 \textbf{ID} & \textbf{Descri\c{c}\~{a}o} & \textbf{Prioridade} \\
@@ -345,16 +420,16 @@ Seguran\c{c}a & Rotas protegidas e guarda de acesso administrativo & Implementad
 RF01 & Cadastro de novos usu\'{a}rios com nome, email e senha & Essencial \\
 RF02 & Autentica\c{c}\~{a}o e gerenciamento de sess\~{o}es & Essencial \\
 RF03 & Sele\c{c}\~{a}o e altern\^{a}ncia da universidade ativa & Essencial \\
-RF04 & Listagem sequencial dos m\'{o}dulos te\'{o}ricos & Essencial \\
-RF05 & Exibi\c{c}\~{a}o de conte\'{u}do te\'{o}rico com f\'{o}rmulas em KaTeX & Essencial \\
-RF06 & Exerc\'{i}cios de m\'{u}ltipla escolha por t\'{o}pico & Essencial \\
-RF07 & Avalia\c{c}\~{a}o imediata (acerto/erro) & Essencial \\
-RF08 & Explica\c{c}\~{a}o anal\'{i}tica com nota\c{c}\~{a}o \LaTeX{} ap\'{o}s resposta & Essencial \\
-RF09 & Registro de pontua\c{c}\~{a}o e progresso & Essencial \\
-RF10 & Postagens no f\'{o}rum com suporte a \LaTeX{} & Importante \\
-RF11 & Respostas e coment\'{a}rios no f\'{o}rum & Importante \\
+RF04 & Listagem sequencial dos m\'{o}dulos te\'{o}ricos da institui\c{c}\~{a}o selecionada & Essencial \\
+RF05 & Exibi\c{c}\~{a}o de conte\'{u}do te\'{o}rico com f\'{o}rmulas renderizadas em KaTeX & Essencial \\
+RF06 & Exerc\'{i}cios de m\'{u}ltipla escolha associados a cada t\'{o}pico & Essencial \\
+RF07 & Avalia\c{c}\~{a}o imediata da alternativa selecionada (acerto/erro) & Essencial \\
+RF08 & Explica\c{c}\~{a}o anal\'{i}tica comentada com nota\c{c}\~{a}o \LaTeX{} ap\'{o}s a resposta & Essencial \\
+RF09 & Registro de pontua\c{c}\~{a}o de acertos e progresso & Essencial \\
+RF10 & Cria\c{c}\~{a}o de postagens no f\'{o}rum com suporte a \LaTeX{} & Importante \\
+RF11 & Publica\c{c}\~{a}o de respostas e coment\'{a}rios no f\'{o}rum & Importante \\
 RF12 & Cadastro e edi\c{c}\~{a}o de m\'{o}dulos te\'{o}ricos (Admin) & Essencial \\
-RF13 & Cadastro de quest\~{o}es com gabarito (Admin) & Essencial \\
+RF13 & Cadastro de quest\~{o}es com alternativas e gabarito (Admin) & Essencial \\
 RF14 & Modera\c{c}\~{a}o de d\'{u}vidas do f\'{o}rum (Admin) & Essencial \\
 RF15 & Orienta\c{c}\~{o}es conceituais da mascote Limia & Importante \\
 \bottomrule
@@ -362,99 +437,101 @@ RF15 & Orienta\c{c}\~{o}es conceituais da mascote Limia & Importante \\
 
 \subsection{Requisitos N\~{a}o-Funcionais (RNF)}
 
-\begin{table}[H]
-\centering
-\caption{Requisitos n\~{a}o-funcionais especificados}
-\label{tab:rnf}
-\vspace{4pt}
-\footnotesize
-\begin{tabular}{l p{6cm} l l}
+\begin{longtable}{l p{7cm} l l}
+\caption{Requisitos n\~{a}o-funcionais especificados} \\
 \toprule
 \textbf{ID} & \textbf{Descri\c{c}\~{a}o} & \textbf{Categoria} & \textbf{Prioridade} \\
 \midrule
+\endfirsthead
+\toprule
+\textbf{ID} & \textbf{Descri\c{c}\~{a}o} & \textbf{Categoria} & \textbf{Prioridade} \\
+\midrule
+\endhead
 RNF01 & Opera\c{c}\~{a}o em Android e iOS via Capacitor/Ionic & Portabilidade & Essencial \\
 RNF02 & Idioma padr\~{a}o: Portugu\^{e}s do Brasil (pt-BR) & Localiza\c{c}\~{a}o & Essencial \\
 RNF03 & Renderiza\c{c}\~{a}o fluida de f\'{o}rmulas com KaTeX & Usabilidade & Essencial \\
 RNF04 & PostgreSQL no Supabase com RLS & Arquitetura & Essencial \\
-RNF05 & Criptografia de senhas e tokens & Seguran\c{c}a & Essencial \\
+RNF05 & Criptografia de senhas e tokens (Supabase Auth) & Seguran\c{c}a & Essencial \\
 RNF06 & Camada de dados local para execu\c{c}\~{a}o offline & Confiabilidade & Essencial \\
 RNF07 & Interface responsiva de 360px a desktops & Usabilidade & Essencial \\
 RNF08 & Carregamento inicial abaixo de 1 segundo & Desempenho & Importante \\
 \bottomrule
-\end{tabular}
-\end{table}
+\end{longtable}
 
-% ================================================================
+% ========================================================================
+%  7. METODOLOGIA
+% ========================================================================
 \section{Metodologia de Desenvolvimento}
-\label{sec:metodologia}
 
 \subsection{Scrum Adaptado}
 
-Adotou-se uma varia\c{c}\~{a}o pragm\'{a}tica do framework Scrum \cite{schwaber2020} com ciclos semanais, adequada ao prazo de 30 dias:
+Considerando o cronograma objetivo com entrega final do MVP fixada em \textbf{19 de outubro de 2026}, adotou-se uma varia\c{c}\~{a}o pragm\'{a}tica do framework Scrum com ciclos semanais:
 
 \begin{itemize}[leftmargin=2cm]
   \item \textbf{Sprints de 1 semana:} Itera\c{c}\~{o}es curtas com foco em entregas incrementais.
-  \item \textbf{Planejamento de Sprint:} Sele\c{c}\~{a}o de hist\'{o}rias do backlog priorit\'{a}rias.
+  \item \textbf{Planejamento de Sprint:} Sele\c{c}\~{a}o de hist\'{o}rias do backlog priorit\'{a}rias e divis\~{a}o de tarefas t\'{e}cnicas.
   \item \textbf{Revis\~{a}o e Retrospectiva:} Avalia\c{c}\~{a}o dos entreg\'{a}veis ao t\'{e}rmino de cada sprint.
-  \item \textbf{Kanban Integrado:} Gest\~{a}o visual: \texttt{Backlog} $\rightarrow$ \texttt{To~Do} $\rightarrow$ \texttt{In~Progress} $\rightarrow$ \texttt{Review} $\rightarrow$ \texttt{Done}.
+  \item \textbf{Kanban Integrado:} Gest\~{a}o visual do fluxo (\texttt{Backlog} $\rightarrow$ \texttt{To~Do} $\rightarrow$ \texttt{In~Progress} $\rightarrow$ \texttt{Review} $\rightarrow$ \texttt{Done}).
 \end{itemize}
 
 \subsection{Pr\'{a}ticas de Engenharia de Software}
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{Arquitetura Modular:} Separa\c{c}\~{a}o entre \texttt{beege-docs}, \texttt{beege-app} e \texttt{beege-api} \cite{pressman2021}.
-  \item \textbf{Conventional Commits:} Padroniza\c{c}\~{a}o do hist\'{o}rico no Git.
-  \item \textbf{Resili\^{e}ncia Local:} Camada de dados \textit{mockada} para opera\c{c}\~{a}o offline.
-  \item \textbf{Design-First com KaTeX:} Fidelidade visual de equa\c{c}\~{o}es desde a concep\c{c}\~{a}o.
+  \item \textbf{Arquitetura Modular:} Separa\c{c}\~{a}o rigorosa entre documenta\c{c}\~{a}o (\texttt{beege-docs}), aplica\c{c}\~{a}o cliente (\texttt{beege-app}) e infraestrutura de dados (\texttt{beege-api}).
+  \item \textbf{Controle de Vers\~{a}o Sem\^{a}ntico:} Ado\c{c}\~{a}o de Conventional Commits para padronizar hist\'{o}ricos no Git.
+  \item \textbf{Resili\^{e}ncia Local:} Camada de dados \textit{mockada} para opera\c{c}\~{a}o e testes cont\'{i}nuos offline.
+  \item \textbf{Design-First com KaTeX:} Prioriza\c{c}\~{a}o da fidelidade visual de equa\c{c}\~{o}es desde a concep\c{c}\~{a}o.
 \end{itemize}
 
-% ================================================================
+% ========================================================================
+%  8. CRONOGRAMA
+% ========================================================================
 \section{Cronograma de Desenvolvimento}
-\label{sec:cronograma}
 
 O MVP foi desenvolvido em 5 sprints semanais, totalizando 30 dias:
 
 \begin{table}[H]
 \centering
 \caption{Cronograma de sprints executadas}
-\label{tab:cronograma}
-\vspace{4pt}
-\small
 \begin{tabularx}{\textwidth}{l l X}
 \toprule
 \textbf{Per\'{i}odo} & \textbf{Marco} & \textbf{Principais Entreg\'{a}veis} \\
 \midrule
-20/09 a 23/09 & Sprint~0 & Defini\c{c}\~{a}o de arquitetura, reposit\'{o}rios e documenta\c{c}\~{a}o base \\
-24/09 a 30/09 & Sprint~1 & Modelagem de dados, Supabase e fluxo de autentica\c{c}\~{a}o \\
-01/10 a 07/10 & Sprint~2 & Painel administrativo, t\'{o}picos e resolu\c{c}\~{a}o de quest\~{o}es \\
-08/10 a 13/10 & Sprint~3 & F\'{o}rum, modera\c{c}\~{a}o, integra\c{c}\~{a}o KaTeX e refinamento de UI \\
-14/10 a 19/10 & Sprint~4 & Valida\c{c}\~{a}o, testes, builds e entrega final do MVP \\
+20/09 -- 23/09 & Sprint~0 & Defini\c{c}\~{a}o de arquitetura, estrutura\c{c}\~{a}o dos reposit\'{o}rios e documenta\c{c}\~{a}o base. \\
+24/09 -- 30/09 & Sprint~1 & Modelagem de dados, configura\c{c}\~{a}o do Supabase e fluxo de autentica\c{c}\~{a}o. \\
+01/10 -- 07/10 & Sprint~2 & Painel administrativo, listagem de t\'{o}picos e resolu\c{c}\~{a}o de quest\~{o}es. \\
+08/10 -- 13/10 & Sprint~3 & F\'{o}rum da comunidade, fluxo de modera\c{c}\~{a}o, integra\c{c}\~{a}o KaTeX e refinamento de UI. \\
+14/10 -- 19/10 & Sprint~4 & Valida\c{c}\~{a}o, testes integrados, gera\c{c}\~{a}o de builds e entrega final do MVP. \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-\subsection{Destaques da Sprint Final (Sprint~4)}
+\subsection{Entregas da Sprint Final (Sprint~4)}
+
+A \'{u}ltima sprint concentrou atividades de homologa\c{c}\~{a}o e polimento:
 
 \begin{itemize}[leftmargin=2cm]
-  \item Expans\~{a}o para 24 quest\~{o}es com gabarito e explica\c{c}\~{a}o anal\'{i}tica em KaTeX (meta de 20+ superada).
-  \item Persist\^{e}ncia de progresso via \texttt{ProgressService} (streak, taxa de acertos, meta di\'{a}ria e conquistas).
-  \item Dicas contextuais da mascote Limia em Dashboard, Teoria, Pr\'{a}tica, F\'{o}rum e Perfil.
-  \item Seguran\c{c}a de rotas com \texttt{ProtectedRoute} e guarda de acesso administrativo.
-  \item 17 testes unit\'{a}rios automatizados com 100\% de sucesso.
-  \item Build de produ\c{c}\~{a}o bem-sucedido e sincroniza\c{c}\~{a}o com Capacitor.
+  \item Expans\~{a}o do banco de quest\~{o}es para 24 itens completos com gabarito e explica\c{c}\~{a}o anal\'{i}tica em KaTeX (meta MVP de 20+ superada).
+  \item Implementa\c{c}\~{a}o da persist\^{e}ncia de progresso do estudante via \texttt{ProgressService} (streak, taxa de acertos, meta di\'{a}ria e conquistas).
+  \item Integra\c{c}\~{a}o do motor de dicas contextuais da mascote Limia em Dashboard, Teoria, Pr\'{a}tica, F\'{o}rum e Perfil.
+  \item Blindagem de seguran\c{c}a de rotas com \texttt{ProtectedRoute} e guarda de acesso administrativo.
+  \item Suite de testes unit\'{a}rios automatizados com Vitest e React Testing Library (17 testes passando com 100\% de sucesso).
+  \item Execu\c{c}\~{a}o de testes de compila\c{c}\~{a}o com TypeScript e Vite (\texttt{npm run build}).
+  \item Sincroniza\c{c}\~{a}o dos artefatos mobile com o container nativo Capacitor.
 \end{itemize}
 
-% ================================================================
+% ========================================================================
+%  9. QUALIDADE E TESTES
+% ========================================================================
 \section{Qualidade de Software e Testes}
-\label{sec:qualidade}
 
-\subsection{Ferramental}
+\subsection{Ferramental de Qualidade}
 
 \begin{itemize}[leftmargin=2cm]
-  \item \textbf{TypeScript:} Verifica\c{c}\~{a}o estrita de tipos (\texttt{tsc --noEmit}).
-  \item \textbf{ESLint:} Padroniza\c{c}\~{a}o e preven\c{c}\~{a}o de antipadr\~{o}es React/Ionic.
-  \item \textbf{Vitest + React Testing Library:} Testes unit\'{a}rios e de componentes \cite{basili1994gqm}.
-  \item \textbf{Cypress:} Testes E2E simulando navega\c{c}\~{a}o completa do usu\'{a}rio.
+  \item \textbf{TypeScript:} Verifica\c{c}\~{a}o estrita de tipos em tempo de compila\c{c}\~{a}o (\texttt{tsc --noEmit}).
+  \item \textbf{ESLint:} Padroniza\c{c}\~{a}o do estilo de c\'{o}digo e preven\c{c}\~{a}o de antipadr\~{o}es React/Ionic.
+  \item \textbf{Vitest + React Testing Library:} Testes unit\'{a}rios e de componentes com foco em regras de neg\'{o}cio.
+  \item \textbf{Cypress:} Testes de integra\c{c}\~{a}o e E2E simulando navega\c{c}\~{a}o completa do usu\'{a}rio.
   \item \textbf{CI/CD:} Valida\c{c}\~{a}o autom\'{a}tica via GitHub Actions a cada Pull Request.
 \end{itemize}
 
@@ -462,13 +539,10 @@ O MVP foi desenvolvido em 5 sprints semanais, totalizando 30 dias:
 
 \begin{table}[H]
 \centering
-\caption{M\'{e}tricas de qualidade do MVP}
-\label{tab:metricas}
-\vspace{4pt}
-\small
+\caption{M\'{e}tricas de qualidade estabelecidas para o MVP}
 \begin{tabularx}{\textwidth}{l l X}
 \toprule
-\textbf{M\'{e}trica} & \textbf{Alvo} & \textbf{Mecanismo de Aferi\c{c}\~{a}o} \\
+\textbf{M\'{e}trica} & \textbf{Alvo} & \textbf{Mecanismo} \\
 \midrule
 Sucesso de Compila\c{c}\~{a}o & 100\% & Pipeline CI / \texttt{npm run build} \\
 Tempo de Carregamento & $< 1{,}5\text{s}$ em 4G & Google Lighthouse / DevTools \\
@@ -478,24 +552,27 @@ Erros de Renderiza\c{c}\~{a}o KaTeX & Zero & Testes de regress\~{a}o visual \\
 \end{tabularx}
 \end{table}
 
-% ================================================================
+% ========================================================================
+%  10. HISTORIAS DE USUARIO
+% ========================================================================
 \section{Backlog: Hist\'{o}rias de Usu\'{a}rio}
-\label{sec:backlog}
 
-As 18 hist\'{o}rias de usu\'{a}rio foram organizadas em 6 \'{e}picos funcionais no formato \textit{``Como [ator], desejo [funcionalidade] para que [benef\'{i}cio]''}:
+As hist\'{o}rias de usu\'{a}rio foram organizadas em 6 \'{e}picos funcionais no formato: \textit{``Como [ator], desejo [funcionalidade] para que [benef\'{i}cio]''}:
 
 \begin{enumerate}[leftmargin=2cm]
   \item \textbf{\'{E}pico 1 (Autentica\c{c}\~{a}o):} Cadastro, login e encerramento de sess\~{a}o (US01 a US03).
   \item \textbf{\'{E}pico 2 (Multi-Universidade):} Sele\c{c}\~{a}o e altern\^{a}ncia de universidade ativa (US04 a US05).
-  \item \textbf{\'{E}pico 3 (Conte\'{u}do Te\'{o}rico):} M\'{o}dulos, teoria com KaTeX e dicas da Limia (US06 a US08).
-  \item \textbf{\'{E}pico 4 (Pr\'{a}tica):} Resolu\c{c}\~{a}o, feedback imediato e progresso (US09 a US12).
-  \item \textbf{\'{E}pico 5 (F\'{o}rum Acad\^{e}mico):} D\'{u}vidas, respostas e visualiza\c{c}\~{a}o moderada (US13 a US15).
-  \item \textbf{\'{E}pico 6 (Painel Administrativo):} T\'{o}picos, quest\~{o}es e modera\c{c}\~{a}o (US16 a US18).
+  \item \textbf{\'{E}pico 3 (Conte\'{u}do Te\'{o}rico):} Visualiza\c{c}\~{a}o de m\'{o}dulos, teoria com KaTeX e dicas da Limia (US06 a US08).
+  \item \textbf{\'{E}pico 4 (Pr\'{a}tica de Exerc\'{i}cios):} Resolu\c{c}\~{a}o, feedback imediato, explica\c{c}\~{a}o passo a passo e progresso (US09 a US12).
+  \item \textbf{\'{E}pico 5 (F\'{o}rum Acad\^{e}mico):} Publica\c{c}\~{a}o de d\'{u}vidas, respostas e visualiza\c{c}\~{a}o moderada (US13 a US15).
+  \item \textbf{\'{E}pico 6 (Painel Administrativo):} Cadastro de t\'{o}picos, quest\~{o}es e modera\c{c}\~{a}o do f\'{o}rum (US16 a US18).
 \end{enumerate}
 
-\textbf{Todas as 18 hist\'{o}rias foram implementadas e entregues no MVP.}
+Todas as 18 hist\'{o}rias de usu\'{a}rio foram implementadas e entregues no MVP.
 
-% ================================================================
+% ========================================================================
+%  DEMONSTRACAO DO PRODUTO EM EXECUCAO
+% ========================================================================
 \section{Demonstra\c{c}\~{a}o Pr\'{a}tica do Produto em Execu\c{c}\~{a}o}
 \label{sec:demonstracao}
 
@@ -506,6 +583,7 @@ Para comprovar a entrega funcional e a fidelidade visual do MVP desenvolvido ao 
 	\url{https://youtu.be/lCUiceX9FIk}
 \end{center}
 
+\clearpage
 \subsection{Capturas de Tela da Aplica\c{c}\~{a}o}
 
 As figuras a seguir apresentam os principais m\'{o}dulos do BeeGe operando em dispositivo m\'{o}vel:
@@ -561,40 +639,46 @@ As figuras a seguir apresentam os principais m\'{o}dulos do BeeGe operando em di
 \end{minipage}
 \end{figure}
 
-% ================================================================
+% ========================================================================
+%  11. MODELO DE NEGOCIO
+% ========================================================================
 \section{Modelo de Neg\'{o}cio e Vis\~{a}o de Futuro}
-\label{sec:negocio}
 
 \subsection{De MVP a SaaS}
 
-O BeeGe foi projetado desde a concep\c{c}\~{a}o como uma plataforma \textbf{multi-inquilino} (multi-tenant) \cite{sommerville2019}. Cada universidade opera como um \textit{tenant} isolado, com seus pr\'{o}prios t\'{o}picos, quest\~{o}es e f\'{o}rum. Essa arquitetura viabiliza a transforma\c{c}\~{a}o do MVP em produto SaaS:
+O BeeGe foi projetado desde a concep\c{c}\~{a}o como uma plataforma \textbf{multi-inquilino} (multi-tenant). Cada universidade opera como um \textit{tenant} isolado, com seus pr\'{o}prios t\'{o}picos, quest\~{o}es e f\'{o}rum. Essa arquitetura viabiliza a transforma\c{c}\~{a}o do MVP em um produto SaaS, onde:
 
 \begin{itemize}[leftmargin=2cm]
-  \item Universidades modelam quest\~{o}es e trilhas de acordo com suas grades curriculares.
-  \item Monitores e professores criam e moderam conte\'{u}do com autonomia.
-  \item Escala horizontal: novas institui\c{c}\~{o}es s\~{a}o adicionadas sem altera\c{c}\~{a}o no c\'{o}digo.
+  \item Universidades e faculdades podem modelar quest\~{o}es e trilhas de acordo com suas grades curriculares espec\'{i}ficas.
+  \item Monitores e professores t\^{e}m autonomia para criar e moderar conte\'{u}do sem depend\^{e}ncia do desenvolvedor.
+  \item A escala \'{e} horizontal: novas institui\c{c}\~{o}es s\~{a}o adicionadas sem altera\c{c}\~{a}o no c\'{o}digo-fonte.
 \end{itemize}
 
 \subsection{Extensibilidade}
 
-A arquitetura permite receber disciplinas subsequentes: C\'{a}lculo~2 (integrais m\'{u}ltiplas), C\'{a}lculo~3 (c\'{a}lculo vetorial), \'{A}lgebra Linear e Equa\c{c}\~{o}es Diferenciais.
+A arquitetura extens\'{i}vel permite receber disciplinas subsequentes:
+
+\begin{itemize}[leftmargin=2cm]
+  \item C\'{a}lculo~2 (Integrais m\'{u}ltiplas, s\'{e}ries)
+  \item C\'{a}lculo~3 (C\'{a}lculo vetorial)
+  \item \'{A}lgebra Linear
+  \item Equa\c{c}\~{o}es Diferenciais
+\end{itemize}
 
 \subsection{Potencial de Impacto}
 
 \begin{destaque}[Impacto Esperado]
-O BeeGe tem potencial para impactar positivamente milhares de estudantes de C\'{a}lculo~1 em todo o Brasil, oferecendo uma ferramenta de revis\~{a}o acess\'{i}vel, gamificada e alinhada com a realidade de cada institui\c{c}\~{a}o. Al\'{e}m disso, representa a concretiza\c{c}\~{a}o de um sonho empreendedor que nasceu dentro do programa NaPr\'{a}tica.
+O BeeGe tem potencial para impactar positivamente milhares de estudantes de C\'{a}lculo~1 em todo o Brasil, oferecendo uma ferramenta de revis\~{a}o acess\'{i}vel, gamificada e alinhada com a realidade de cada institui\c{c}\~{a}o de ensino. Al\'{e}m disso, representa a concretiza\c{c}\~{a}o de um sonho empreendedor que nasceu dentro do programa NaPr\'{a}tica.
 \end{destaque}
 
-% ================================================================
+% ========================================================================
+%  12. RESULTADOS DO MVP
+% ========================================================================
 \section{Resultados Alcan\c{c}ados}
-\label{sec:resultados}
 
 \begin{table}[H]
 \centering
 \caption{M\'{e}tricas de sucesso do MVP}
-\label{tab:resultados}
-\vspace{4pt}
-\small
 \begin{tabularx}{\textwidth}{X l l}
 \toprule
 \textbf{Meta} & \textbf{Alvo} & \textbf{Resultado} \\
@@ -604,21 +688,21 @@ Quest\~{o}es com explica\c{c}\~{a}o anal\'{i}tica completa & $\geq 20$ & 24 (sup
 Testes unit\'{a}rios automatizados & Cobertura de servi\c{c}os & 17 testes (100\% sucesso) \\
 Build de produ\c{c}\~{a}o & Compila\c{c}\~{a}o sem erros & Atingido \\
 Pacote mobile via Capacitor & Android/iOS & Sincronizado \\
-Documenta\c{c}\~{a}o t\'{e}cnica & Todos os artefatos & 12 documentos \\
+Documenta\c{c}\~{a}o t\'{e}cnica completa & Todos os artefatos & 12 documentos \\
 \bottomrule
 \end{tabularx}
 \end{table}
 
-% ================================================================
+% ========================================================================
+%  13. DOCUMENTACAO
+% ========================================================================
 \section{Documenta\c{c}\~{a}o Produzida}
-\label{sec:documentacao}
+
+Durante o desenvolvimento do MVP, foram produzidos os seguintes artefatos de documenta\c{c}\~{a}o t\'{e}cnica, todos versionados no reposit\'{o}rio \texttt{beege-docs}:
 
 \begin{table}[H]
 \centering
 \caption{Artefatos de documenta\c{c}\~{a}o do projeto}
-\label{tab:documentacao}
-\vspace{4pt}
-\small
 \begin{tabularx}{\textwidth}{l X}
 \toprule
 \textbf{Documento} & \textbf{Conte\'{u}do} \\
@@ -631,7 +715,7 @@ Backlog & 18 hist\'{o}rias de usu\'{a}rio em 6 \'{e}picos \\
 Arquitetura & Camadas, diagrama de fluxo e padr\~{o}es de projeto \\
 Diagramas UML & Casos de uso, classes, componentes e sequ\^{e}ncias \\
 Metodologia & Scrum adaptado e pr\'{a}ticas de engenharia \\
-Cronograma & 5 sprints com marcos e entreg\'{a}veis \\
+Cronograma & 5 sprints com marco e entreg\'{a}veis \\
 Qualidade & Ferramental, crit\'{e}rios de aceite e m\'{e}tricas \\
 Riscos & Mapeamento e plano de mitiga\c{c}\~{a}o \\
 Guia de Contribui\c{c}\~{a}o & Padr\~{o}es de c\'{o}digo e fluxo de trabalho \\
@@ -639,9 +723,10 @@ Guia de Contribui\c{c}\~{a}o & Padr\~{o}es de c\'{o}digo e fluxo de trabalho \\
 \end{tabularx}
 \end{table}
 
-% ================================================================
+% ========================================================================
+%  14. CONCLUSAO
+% ========================================================================
 \section{Conclus\~{a}o}
-\label{sec:conclusao}
 
 O desenvolvimento do BeeGe ao longo de 30 dias representou n\~{a}o apenas um desafio t\'{e}cnico, mas sobretudo um \textbf{salto pessoal} na dire\c{c}\~{a}o do empreendedorismo. O projeto demonstrou que \'{e} poss\'{i}vel, com planejamento, metodologia \'{a}gil e as ferramentas certas, construir um MVP funcional e robusto em um prazo curto.
 
@@ -650,9 +735,9 @@ O resultado \'{e} uma plataforma que:
 \begin{itemize}[leftmargin=2cm]
   \item Resolve um problema real enfrentado por milhares de estudantes universit\'{a}rios.
   \item Foi constru\'{i}da com arquitetura extens\'{i}vel e pronta para escalar como SaaS.
-  \item Possui documenta\c{c}\~{a}o completa de engenharia de software \cite{pressman2021}.
+  \item Possui documenta\c{c}\~{a}o completa de engenharia de software.
   \item Foi validada com testes automatizados e builds de produ\c{c}\~{a}o.
-  \item Conta com identidade visual pr\'{o}pria e mascote pedag\'{o}gica.
+  \item Conta com uma identidade visual pr\'{o}pria e uma mascote pedag\'{o}gica.
 \end{itemize}
 
 Mais do que um projeto t\'{e}cnico, o BeeGe \'{e} a materializa\c{c}\~{a}o da coragem de empreender. Um passo que nasceu dentro do programa NaPr\'{a}tica e que agora est\'{a} pronto para se tornar uma empresa real, capaz de transformar a maneira como estudantes de todo o Brasil revisam e aprendem C\'{a}lculo~1.
@@ -660,13 +745,15 @@ Mais do que um projeto t\'{e}cnico, o BeeGe \'{e} a materializa\c{c}\~{a}o da co
 \vspace{1cm}
 
 \begin{center}
-\rule{0.5\textwidth}{0.4pt}\\[0.5cm]
+\textcolor{beegePurple}{\rule{0.5\textwidth}{1pt}}\\[0.5cm]
 \textit{``Me desafiei a fazer algo que eu sempre quis, mas n\~{a}o tinha coragem: empreender.''}\\[0.3cm]
 \textbf{Gabriel Monteiro, 2026}\\[0.5cm]
-\rule{0.5\textwidth}{0.4pt}
+\textcolor{beegePurple}{\rule{0.5\textwidth}{1pt}}
 \end{center}
 
-% ================================================================
+% ========================================================================
+%  REFERENCIAS
+% ========================================================================
 \addcontentsline{toc}{section}{Refer\^{e}ncias}
 \begin{thebibliography}{99}
 

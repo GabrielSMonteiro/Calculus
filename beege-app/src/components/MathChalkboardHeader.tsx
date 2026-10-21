@@ -73,11 +73,18 @@ export const MathChalkboardHeader: React.FC<MathChalkboardHeaderProps> = ({
       {/* Limia Mascot if requested */}
       {showMascot && (
         <div className="chalkboard-mascot-wrapper">
+          <div className="chalkboard-mascot-glow" />
           <img
             src="/limia.png"
-            alt="Limia Mascote"
+            alt="Limia Mascote BeeGe"
             className="chalkboard-mascot-img"
+            onError={(e) => {
+              if (!e.currentTarget.src.includes('mascote.jpg')) {
+                e.currentTarget.src = '/mascote.jpg';
+              }
+            }}
           />
+          <div className="chalkboard-mascot-tag">BeeGe • Limia</div>
         </div>
       )}
 

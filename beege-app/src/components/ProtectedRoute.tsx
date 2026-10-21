@@ -41,11 +41,16 @@ export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({
     );
   }
 
-  if (!user || !profile) {
+  const hasUser = user || (localStorage.getItem('beege_current_user') ? JSON.parse(localStorage.getItem('beege_current_user')!) : null);
+  const hasProfile = profile || (localStorage.getItem('beege_current_profile') ? JSON.parse(localStorage.getItem('beege_current_profile')!) : null);
+
+  if (!hasUser || !hasProfile) {
     return <Navigate to="/login" replace />;
   }
 
-  if (requireAdmin && !isAdmin) {
+  const effectiveAdmin = (hasProfile?.role === 'admin') || isAdmin;
+
+  if (requireAdmin && !effectiveAdmin) {
     return <Navigate to="/dashboard" replace />;
   }
 

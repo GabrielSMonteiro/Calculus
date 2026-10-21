@@ -16,7 +16,7 @@ interface BeegeHeaderProps {
 }
 
 export const BeegeHeader: React.FC<BeegeHeaderProps> = ({ title = 'BeeGe' }) => {
-  const { profile, isAdmin, toggleMockAdmin, useMockMode } = useAuth();
+  const { profile, isAdmin } = useAuth();
   const navigate = useNavigate();
 
   return (
@@ -48,19 +48,16 @@ export const BeegeHeader: React.FC<BeegeHeaderProps> = ({ title = 'BeeGe' }) => 
             </span>
           </div>
 
-          <IonButtons slot="end" style={{ display: 'flex', alignItems: 'center', gap: '6px' }}>
-            {useMockMode && (
-              <IonButton
-                fill="solid"
-                size="small"
-                color={isAdmin ? 'primary' : 'medium'}
-                onClick={toggleMockAdmin}
-                title="Alternar entre Aluno e Admin"
-                style={{ fontSize: '0.7rem', '--border-radius': '10px' }}
+          <IonButtons slot="end" style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+            {isAdmin && (
+              <IonBadge
+                color="tertiary"
+                style={{ fontSize: '0.72rem', padding: '4px 8px', borderRadius: '8px', cursor: 'pointer', fontWeight: 700 }}
+                onClick={() => navigate('/admin')}
+                title="Ir para o Painel de Administração"
               >
-                <IonIcon slot="start" icon={shieldCheckmarkOutline} />
-                {isAdmin ? 'Admin' : 'Aluno'}
-              </IonButton>
+                Painel Admin
+              </IonBadge>
             )}
 
             {profile ? (
